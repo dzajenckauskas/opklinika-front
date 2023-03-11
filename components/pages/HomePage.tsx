@@ -1,0 +1,102 @@
+import { colors } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import Layout from '../Layout';
+import { getColors } from '../layout/colors';
+import { ArrowForward } from '@mui/icons-material';
+import ServiceCard from '../services/ServiceCard';
+
+type Props = {
+    title?: string;
+    color?: string;
+    services: any;
+    reviews?: any;
+}
+
+const HomePage = ({ title, color, services,
+    reviews
+}: Props) => {
+    const colors = getColors()
+
+    const renderServices = services.data.map((service: any) => {
+        return (
+            <ServiceCard service={service} key={service.id} />
+        )
+    })
+    return (
+        <Layout color={colors.primary}
+            reviews={reviews}
+        >
+            <Stack direction={'row'} maxHeight={500} height={'100%'} width={'100vw'} overflow={'hidden'} position={'absolute'} left={0} top={{ lg: 130, md: 130, sm: 80, xs: 80 }} zIndex={9}
+                sx={{ background: 'linear-gradient( transparent,#1e6da190);', opacity: 1 }} >
+            </Stack>
+            <Stack direction={'row'} maxHeight={500} overflow={'hidden'} width={'100vw'} alignItems={'center'} position={'absolute'} left={0} top={{ lg: 130, md: 130, sm: 80, xs: 80 }} sx={{ opacity: .5 }} pt={{ lg: 30, md: 20, sm: 10, xs: 0 }}>
+                <img alt={'ortopedijos specialistas'} src={'/media/banner.jpg'} width={'100%'} height={'auto'} style={{ position: 'relative' }} />
+            </Stack>
+            <Stack minHeight={'460px'} zIndex={100} justifyContent={'flex-end'} alignItems={'flex-start'}
+                sx={{
+                    px: { lg: 4, md: 4, sm: 3, xs: 3 }, mx: 'auto', maxWidth: '1200px', width: '100%'
+                }}>
+                <Stack sx={{ borderLeft: '2px solid #1E6EA1' }} mb={8}>
+                    <Typography variant='h1' fontSize={'34px'} color={'#fff'} px={2} textAlign={'left'} lineHeight={'35px'}>
+                        {'ORTOPEDIJOS PASLAUGŲ KLINIKA'}
+                    </Typography>
+                    <Typography variant='h5' color={'#fff'} px={2} textAlign={'left'} maxWidth={'600px'} lineHeight={'16px'}>
+                        Profesionalus patyrusių ir jaunų energingų specialistų kolektyvas, kuris kiekvieno paciento problemas sprendžia individualiai
+                    </Typography>
+                </Stack>
+            </Stack>
+
+            <Stack sx={{
+                backgroundColor: colors.white, mx: 'auto', width: '100%',
+                pt: 10, pb: 10
+            }}>
+                {/* <Typography variant='h1' color={color ?? '#1E6EA1'} mb={1} textAlign={'left'}>
+                    {'ORTOPEDIJOS PASLAUGŲ KLINIKA'}
+                </Typography> */}
+                <Stack sx={{ maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 }, }}>
+
+                    <Typography fontSize={14} color={'secondary.main'}>
+                        UAB „ORTOPEDIJOS PASLAUGŲ KLINIKA“ suburtas profesionalus patyrusių ir jaunų energingų specialistų kolektyvas, kuris kiekvieno paciento problemas sprendžia individualiai. Įmonėje konsultuoja ir gydymą bei ortopedijos technines priemones paskiria aukščiausios kvalifikacijos gydytojai specialistai – ortopedai-traumatologai bei fizinės medicinos ir reabilitacijos gydytojai.
+                        <br />
+                        <br />
+                        <b style={{ color: colors.primary }}>   Patyrę ir atsakingi ortopedai-protezuotojai bei ortopedai-technikai užsako, pagamina ir individualiai pritaiko ortopedijos technines priemones:</b>
+                    </Typography>
+                    <Typography fontSize={14} color={'secondary.main'} pl={1} pt={0} lineHeight={'20px'} fontWeight={500}>
+                        <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.primary }} /> po galūnių amputacijų – rankų ir kojų protezus; <br />
+                        <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.primary }} /> po traumų ir kitų susirgimų – rankų, kojų, stuburo plastikinius ir tekstilinius įtvarus, korsetus;<br />
+                        <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.primary }} />  avalynės įdėklus, skirtus gydymui, reabilitacijai, sportui ir kasdieniniam naudojimui;<br />
+                        <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.primary }} /> kitus ortopedinės paskirties gaminius ir įvairias pagalbines priemones neįgaliems žmonėms.<br />
+                    </Typography>
+                    <Typography fontSize={14} color={'primary.main'} py={2} textAlign={'left'} lineHeight={'16px'} fontWeight={600}>
+                        Mūsų vizija – būti profesionalia, dinamiška ir konkurencinga ortopedijos techninių priemonių gamybos ir prekybos įmone.
+                        Įmonės misija – aprūpinti gyventojus atsakingai ir kokybiškai pagamintomis ortopedijos techninėmis priemonėmis, užtikrinančiomis aukštesnę jų gyvenimo kokybę.
+                    </Typography>
+                    <Typography fontSize={14} color={'secondary.main'}>
+                        UAB „ORTOPEDIJOS PASLAUGŲ KLINIKA“ taikomas lankstus pacientų aptarnavimas. Glaudžiai bendradarbiaujame su įvairiomis medicinos įstaigomis, neįgalius pacientus vizituojame ir konsultuojame jų gyvenamosiose vietose, ortopedijos techninės priemonės užsakomos, gaminamos ir pritaikomos beveik visoje Lietuvoje. Gamyboje naudojamos kokybiškos, nekenksmingos ir saugios žaliavos, iš kurių gaminamos ortopedijos priemonės yra puikiai vertinamos gydytojų ir pacientų.
+                    </Typography>
+                    <Typography fontSize={14} color={'secondary.main'}>
+                        Mūsų gaminamos ortopedijos techninės priemonės yra aprobuotos Lietuvos sveikatos apsaugos ministerijos, atitinka Europos direktyvos 93/42/EEB reikalavimus ir Lietuvos medicinos normos MN 4:2009 būtinuosius reikalavimus. Visiems mūsų gaminiams yra taikomi garantiniai įsipareigojimai.
+                    </Typography>
+                    <Typography fontSize={14} color={'secondary.main'}>
+                        Įmonė yra sudariusi sutartį su Valstybine ligonių kasa prie Lietuvos Respublikos sveikatos apsaugos ministerijos, todėl atsižvelgiant į paciento diagnozę ortopediniai gaminiai bei gydytojų konsultacijos yra visiškai arba iš dalies kompensuojami pagal nustatytą tvarką.
+                    </Typography>
+                </Stack>
+
+            </Stack>
+            <Stack sx={{ maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 }, }} pt={7} pb={2} alignItems={'center'} >
+                <Typography variant='h1' color={color ?? '#1E6EA1'} mb={4} textAlign={'center'}>
+                    {'ORTOPEDIJOS PASLAUGOS'}
+                </Typography>
+                <Grid container spacing={2}>
+                    {renderServices}
+                </Grid>
+            </Stack>
+
+
+        </Layout>
+    )
+}
+
+export default HomePage
