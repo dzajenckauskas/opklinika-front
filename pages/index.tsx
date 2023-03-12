@@ -12,8 +12,6 @@ type Props = {
 }
 
 export default function Home({ services, reviews }: Props) {
-  console.log(services);
-
   return (
     <>
       <Head>

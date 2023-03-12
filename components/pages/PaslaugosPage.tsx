@@ -6,7 +6,6 @@ type Props = {
     services: any
 }
 const PaslaugosPage = ({ services }: Props) => {
-    console.log(services);
     const renderServices = services.data.map((service: any) => {
         return (
             <ServiceCard service={service} key={service.id} />

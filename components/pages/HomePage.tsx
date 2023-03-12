@@ -1,29 +1,27 @@
-import { colors } from '@mui/material';
+import { ReviewsResponseType } from '@/app/services/ReviewTypes';
+import { ServicesResponseType } from '@/app/services/ServiceType';
+import { ArrowForward } from '@mui/icons-material';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import Image from 'next/legacy/image';
 import Layout from '../Layout';
 import { getColors } from '../layout/colors';
-import { ArrowForward } from '@mui/icons-material';
 import ServiceCard from '../services/ServiceCard';
 
 type Props = {
     title?: string;
     color?: string;
-    services: any;
-    reviews?: any;
+    services: ServicesResponseType;
+    reviews?: ReviewsResponseType;
 }
 
-const HomePage = ({ title, color, services,
-    reviews
-}: Props) => {
+const HomePage = ({ color, services, reviews }: Props) => {
     const colors = getColors()
 
-    const renderServices = services.data.map((service: any) => {
-        return (
-            <ServiceCard service={service} key={service.id} />
-        )
-    })
+    const renderServices = services.data.map((service) =>
+        <ServiceCard service={service} key={service.id} />
+    )
     return (
         <Layout color={colors.primary}
             reviews={reviews}
@@ -31,8 +29,10 @@ const HomePage = ({ title, color, services,
             <Stack direction={'row'} maxHeight={500} height={'100%'} width={'100vw'} overflow={'hidden'} position={'absolute'} left={0} top={{ lg: 130, md: 130, sm: 80, xs: 80 }} zIndex={9}
                 sx={{ background: 'linear-gradient( transparent,#1e6da190);', opacity: 1 }} >
             </Stack>
-            <Stack direction={'row'} maxHeight={500} overflow={'hidden'} width={'100vw'} alignItems={'center'} position={'absolute'} left={0} top={{ lg: 130, md: 130, sm: 80, xs: 80 }} sx={{ opacity: .5 }} pt={{ lg: 30, md: 20, sm: 10, xs: 0 }}>
-                <img alt={'ortopedijos specialistas'} src={'/media/banner.jpg'} width={'100%'} height={'auto'} style={{ position: 'relative' }} />
+            <Stack direction={'row'} overflow={'hidden'} width={'100vw'} height={{ lg: '1000px', md: '500px', sm: '700px', xs: '500px' }} alignItems={'center'} position={'absolute'} left={0}
+                top={{ lg: 130, md: 130, sm: 80, xs: 80 }} sx={{ opacity: .5 }}
+                pt={{ lg: 30, md: 20, sm: 10, xs: 0 }}>
+                <Image alt={'ortopedijos specialistai'} src={'/media/banner.jpg'} layout={'fill'} objectFit={'cover'} objectPosition={'center'} priority />
             </Stack>
             <Stack minHeight={'460px'} zIndex={100} justifyContent={'flex-end'} alignItems={'flex-start'}
                 sx={{
@@ -49,14 +49,10 @@ const HomePage = ({ title, color, services,
             </Stack>
 
             <Stack sx={{
-                backgroundColor: colors.white, mx: 'auto', width: '100%',
+                backgroundColor: colors.white, mx: 'auto', width: '100%', position: 'relative', zIndex: 99,
                 pt: 10, pb: 10
             }}>
-                {/* <Typography variant='h1' color={color ?? '#1E6EA1'} mb={1} textAlign={'left'}>
-                    {'ORTOPEDIJOS PASLAUGŲ KLINIKA'}
-                </Typography> */}
                 <Stack sx={{ maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 }, }}>
-
                     <Typography fontSize={14} color={'secondary.main'}>
                         UAB „ORTOPEDIJOS PASLAUGŲ KLINIKA“ suburtas profesionalus patyrusių ir jaunų energingų specialistų kolektyvas, kuris kiekvieno paciento problemas sprendžia individualiai. Įmonėje konsultuoja ir gydymą bei ortopedijos technines priemones paskiria aukščiausios kvalifikacijos gydytojai specialistai – ortopedai-traumatologai bei fizinės medicinos ir reabilitacijos gydytojai.
                         <br />

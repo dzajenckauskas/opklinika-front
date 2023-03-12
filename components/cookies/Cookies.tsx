@@ -4,7 +4,7 @@ import Stack from '@mui/material/Stack';
 import { useCookies } from 'react-cookie';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { getColors } from 'components/layout/colors';
+import { getColors } from '../layout/colors';
 
 function Cookies() {
     const [cookies, setCookie] = useCookies(['gdpr-google-analytics'])

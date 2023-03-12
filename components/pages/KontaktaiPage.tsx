@@ -1,6 +1,6 @@
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import Layout from 'components/Layout'
+import Layout from '../Layout';
 
 type Props = {
     title?: string;
@@ -9,11 +9,9 @@ type Props = {
 
 const KontaktaiPage = ({ title, color }: Props) => {
     const primaryColor = '#1E6EA1'
-    const darkColor = '#090909'
-    const lightColor = '#E9E9E9'
 
     return (
-        <Layout locale={''} title={'Kontaktai'} color={primaryColor}>
+        <Layout title={'Kontaktai'} color={primaryColor}>
             <Stack spacing={2} textAlign={'left'} sx={{ width: '100%', maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 }, }}>
                 <Stack sx={{}}>
                     <Typography fontWeight={900} color={'primary.main'}>

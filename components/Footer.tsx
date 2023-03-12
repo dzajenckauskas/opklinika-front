@@ -18,7 +18,7 @@ const Footer = () => {
                         <Logo width={'200px'} icon primaryColor={'#fff'} />
                     </Stack>
                     <Stack height={'100%'} spacing={.5} mt={2}>
-                        <Typography fontSize={16} mt={2} color={'#fff'} fontWeight={900}>UAB "Ortopedijos paslaugų klnika</Typography>
+                        <Typography fontSize={16} mt={2} color={'#fff'} fontWeight={900}>UAB Ortopedijos paslaugų klnika</Typography>
                         <Link href={`mailto:${'info@opklinika.lt'}`} passHref>
                             <Typography fontSize={14} color={'#fff'}>Laisvės pr. 77, Vilnius</Typography>
                         </Link>

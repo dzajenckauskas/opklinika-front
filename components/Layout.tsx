@@ -1,60 +1,57 @@
+import { ReviewsResponseType } from '@/app/services/ReviewTypes';
 import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import React, { useState } from 'react';
-import Cookies from './cookies/Cookies';
 import Footer from './Footer';
 import Header from './Header';
 import { getColors } from './layout/colors';
-// import Cookies from './Cookies';
 
 type Props = {
     children: React.ReactNode;
-    locale?: string;
     title?: string;
     color?: string;
-    checkout?: boolean;
-    reviews?: any;
+    reviews?: ReviewsResponseType;
 }
 
-const Layout = ({ children, locale, checkout, title, color, reviews }: Props) => {
+const Layout = ({ children, title, color, reviews }: Props) => {
     const [activeSlide, setActiveSlide] = useState<number>(0)
-    const [touchStart, setTouchStart] = useState(0);
-    const [touchEnd, setTouchEnd] = useState(0);
+    // const [touchStart, setTouchStart] = useState(0);
+    // const [touchEnd, setTouchEnd] = useState(0);
 
-    function handleTouchStart(e: any) {
-        setTouchStart(e.targetTouches[0].clientX);
-    }
+    // function handleTouchStart(e: any) {
+    //     setTouchStart(e.targetTouches[0].clientX);
+    // }
 
-    function handleTouchMove(e: any) {
-        setTouchEnd(e.targetTouches[0].clientX);
-    }
+    // function handleTouchMove(e: any) {
+    //     setTouchEnd(e.targetTouches[0].clientX);
+    // }
 
     const toNextSlide = () => {
-        if (reviews.data) {
+        if (reviews?.data) {
             const max = reviews.data && reviews.data.length - 1
             setActiveSlide((activeSlide + 1) > max ? 0 : activeSlide + 1)
         }
     }
     const toPreviousSlide = () => {
-        if (reviews.data) {
+        if (reviews?.data) {
             const max = reviews.data && reviews.data.length - 1
             setActiveSlide((activeSlide - 1) < 0 ? max : activeSlide - 1)
         }
     }
 
-    function handleTouchEnd() {
-        if (reviews.data)
-            if (touchStart - touchEnd > 100) {
-                toNextSlide()
-            }
+    // function handleTouchEnd() {
+    //     if (reviews?.data)
+    //         if (touchStart - touchEnd > 100) {
+    //             toNextSlide()
+    //         }
 
-        if (touchStart - touchEnd < -100) {
-            toPreviousSlide()
+    //     if (touchStart - touchEnd < -100) {
+    //         toPreviousSlide()
 
-        }
-    }
+    //     }
+    // }
     const colors = getColors()
     const renderReviews = reviews?.data.map((review: any) => {
         return (
@@ -102,13 +99,13 @@ const Layout = ({ children, locale, checkout, title, color, reviews }: Props) =>
                 <Stack direction={'row'} sx={{ maxWidth: '650px', mx: 'auto', alignItems: 'center', position: 'relative', width: '100%', px: 10, pb: 2 }}>
                     <Button variant='contained' sx={{ position: 'absolute', opacity: .5, left: '20px', height: 20, width: 20, borderRadius: '50%', p: 0, minWidth: 20 }}
                         onClick={toPreviousSlide}><ArrowBackIosNew sx={{ p: .7 }} /></Button>
-                    {renderReviews[activeSlide]}
+                    {renderReviews && renderReviews[activeSlide]}
                     <Button variant='contained' sx={{ position: 'absolute', opacity: .5, right: '20px', height: 20, width: 20, borderRadius: '50%', p: 0, minWidth: 20 }}
                         onClick={toNextSlide}><ArrowForwardIos sx={{ p: .7 }} /></Button>
                 </Stack>
             </Stack>}
             <Footer />
-            <Cookies />
+            {/* <Cookies /> */}
         </Stack>
     )
 }

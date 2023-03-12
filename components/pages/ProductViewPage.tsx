@@ -11,8 +11,6 @@ type Props = {
 
 const ProductViewPage = ({ product }: Props) => {
     const router = useRouter()
-    console.log(product);
-
     const imageUrl = product?.attributes.images?.data[0]?.attributes.url
     return (
         <Stack alignItems={'flex-start'} p={4} maxWidth={'lg'} mx={'auto'} minHeight={'80vh'}>
