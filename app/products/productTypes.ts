@@ -28,7 +28,7 @@ export type ProductAttributesType = {
     description: string;
     images: ImagesType;
     category: ProductCategoryType;
-    diagnoses: DiagnosesType[]
+    diagnosesTable: DiagnosesTableType[]
 }
 
 export type ImagesType = {
@@ -59,34 +59,20 @@ export type ProductCategoryType = {
     }
 }
 
-export type DiagnosesType = {
-    diagnoses: {
-        data: DiagnoseType[];
-
-    };
-    specialists: {
-        data: SpecialistType[];
-    }
+export type DiagnosesTableType = {
+    notes?: {
+        id: number;
+        text: string
+    }[];
+    percent?: string;
+    specialists: string;
     id: number;
-    reimbursementPercentage: {
-        data: {
-            id: number;
-            attributes: {
-                value: string;
-            }
-        }
-    }
+    diagnoses: DiagnoseType[];
 }
 
 export type DiagnoseType = {
     id: number;
-    attributes: {
-        code: string;
-        description: string;
-    }
-    specialists: {
-        data: SpecialistType[];
-    }
+    description: string;
 }
 export type SpecialistType = {
     id: number;

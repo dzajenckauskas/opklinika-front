@@ -1,12 +1,14 @@
 import { ReviewsResponseType } from '@/app/services/ReviewTypes';
 import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
 import Button from '@mui/material/Button';
+import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import React, { useState } from 'react';
 import Footer from './Footer';
 import Header from './Header';
 import { getColors } from './layout/colors';
+import StarIcon from '@mui/icons-material/Star';
 
 type Props = {
     children: React.ReactNode;
@@ -53,24 +55,29 @@ const Layout = ({ children, title, color, reviews }: Props) => {
     //     }
     // }
     const colors = getColors()
-    const renderReviews = reviews?.data.map((review: any) => {
+    const renderReviews = reviews?.data.map((review) => {
         return (
             <Stack key={review.id} sx={{ minHeight: 50, justifyContent: 'center', width: '100%', px: 1 }}>
                 <Typography color={colors.dark} fontWeight={500} fontSize={'14px'} fontStyle={'italic'} lineHeight={'16px'}
                     sx={{
+                        lineHeight: '25px',
                         textAlign: 'justify',
                         textJustify: "inter-word",
                         minHeight: '70px',
                     }}>
-                    <span style={{ fontSize: 30, color: colors.primary, position: 'relative', left: '-2px', bottom: '2px' }}>{'„'}</span>
+                    <span style={{ fontSize: 26, color: colors.primary, opacity: 0.75, position: 'relative', left: '-2px', bottom: '2px' }}>{'„'}</span>
                     {review.attributes.review}
-                    <span style={{ fontSize: 30, color: colors.primary, position: 'relative', right: '2px', top: '8px' }}>{'“'}</span>
+                    <span style={{ fontSize: 26, color: colors.primary, opacity: 0.75, position: 'relative', right: '2px', top: '2px' }}>{'“'}</span>
                 </Typography>
 
-                <Stack pt={3}>
-                    <Typography color={'primary.main'} fontWeight={700} fontSize={'18px'} textAlign={'right'} lineHeight={'10px'}>
-                        {'* * * * *'}
-                    </Typography>
+                <Stack pt={3} alignItems={'flex-end'}>
+                    <Rating
+                        size={'small'}
+                        disabled
+                        value={review.attributes.rate}
+                        emptyIcon={<StarIcon style={{ opacity: 0.85, width: '14px', color: colors.primary }} />}
+                        icon={<StarIcon style={{ opacity: 1, width: '14px', color: colors.primary }} />}
+                    />
                     <Typography color={'primary.main'} fontWeight={700} fontSize={'12px'} textAlign={'right'}>
                         {review.attributes.customer.toUpperCase()}
                     </Typography>

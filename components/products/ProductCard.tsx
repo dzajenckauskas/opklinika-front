@@ -14,7 +14,7 @@ type Props = {
     product: ProductType;
 }
 const ProductCard = ({ product }: Props) => {
-    const imageUrl = product.attributes.images?.data[0].attributes.url
+    const imageUrl = product.attributes.images?.data && product.attributes.images?.data[0].attributes.url
     return (
         <>
             <Grid item lg={3} md={4} sm={6} xs={12} >
@@ -29,8 +29,8 @@ const ProductCard = ({ product }: Props) => {
                     <Stack>
                         <Link passHref href={`/products/${product.id}`} style={{ width: '100%' }}>
                             <Stack sx={{ '::hover': { opacity: .8 }, px: 2, pt: 3 }}>
-                                <Image src={imageUrl}
-                                    alt={product.attributes.images?.data[0].attributes.alternativeText} height={340} width={340} objectFit={'contain'} />
+                                {imageUrl && <Image src={imageUrl}
+                                    alt={product.attributes.images?.data && product.attributes.images?.data[0].attributes.alternativeText} height={340} width={340} objectFit={'contain'} />}
                             </Stack>
                         </Link>
                         <CardContent>

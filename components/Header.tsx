@@ -16,7 +16,11 @@ const Header = () => {
         <>
             <Stack sx={{ zIndex: 999, position: 'relative', top: '0px', mb: { lg: '130px', md: '130px', sm: '80px', xs: '80px' } }}>
                 <TopNav />
-                <Stack direction={'row'} alignItems={'center'} sx={{ position: 'fixed', top: { lg: 30, md: 30, sm: 0, xs: 0 }, width: '100vw', height: { lg: '100px', md: '100px', sm: '80px', xs: '80px' }, backgroundColor: '#fff', boxShadow: ' rgba(50, 50, 93, 0.15) 0px 7px 11px -5px, rgba(0, 0, 0, 0.13) 0px 5px 10px -8px' }}>
+                <Stack direction={'row'} alignItems={'center'} sx={{
+                    position: 'fixed', top: { lg: 30, md: 30, sm: 0, xs: 0 },
+                    width: '100vw', height: { lg: '100px', md: '100px', sm: '80px', xs: '80px' }, backgroundColor: '#fff',
+                    boxShadow: 'rgba(50, 50, 93, 0.15) 0px 6px 16px -5px, rgba(0, 0, 0, 0.01) 0px 5px 12px -8px'
+                }}>
                     <Stack direction={'row'} justifyContent={'space-between'} sx={{ width: '100%', maxWidth: '1200px', mx: 'auto' }}>
                         <Stack width='300px' px={{ lg: 4, md: 4, sm: 3, xs: 3 }} height={'100%'} alignSelf={'center'}>
                             <Link passHref href={'/'}>

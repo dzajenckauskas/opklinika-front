@@ -3,7 +3,11 @@ export type ReviewsResponseType = {
 }
 
 export type ReviewType = {
-    rate: number;
-    review?: string;
+    id: number;
+    attributes: ReviewAttributesType
+}
+export type ReviewAttributesType = {
+    review: string;
     customer: string;
+    rate: number;
 }
