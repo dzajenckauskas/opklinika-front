@@ -24,7 +24,7 @@ const ProductCard = ({ product }: Props) => {
                     width: '100%', position: 'relative', display: 'flex',
                     flexDirection: 'column', justifyContent: 'space-between',
                     minHeight: '100%',
-                    boxShadow: 'rgba(0, 0, 0, 0.1) 2px 4px 12px !important'
+                    boxShadow: 'rgba(0, 0, 0, 0.15) 2px 6px 16px !important'
                 }}>
                     <Stack>
                         <Link passHref href={`/products/${product.id}`} style={{ width: '100%' }}>

@@ -125,7 +125,7 @@ const Layout = ({ children, title, color, reviews }: Props) => {
                     </Stack>
                 </Stack>
             </Stack>
-            {reviews && <Stack sx={{ width: '100%', backgroundColor: '#fff' }} pt={8} pb={6}>
+            {reviews && <Stack sx={{ width: '100%', backgroundColor: '#f9f9f9' }} pt={8} pb={6}>
                 <Typography variant='h1' lineHeight={'20px'} color={'#1E6EA1'} mb={2} sx={{
                     textTransform: 'uppercase', textAlign: 'center'
                 }}>
