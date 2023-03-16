@@ -30,7 +30,7 @@ const Header = () => {
                         <Stack direction={'row'} spacing={5} p={4} sx={{ display: { xs: 'none', md: 'flex' } }}>
                             <Link passHref href={'/katalogas'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Katalogas</Typography></Link>
                             <Link passHref href={'/kainorastis'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Kainoraštis</Typography></Link>
-                            <Link passHref href={'/paslaugos'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Paslaugos</Typography></Link>
+                            <Link passHref href={'#services'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Paslaugos</Typography></Link>
                             <Link passHref href={'#contacts'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Kontaktai</Typography></Link>
                         </Stack>
                         <Stack direction={'row'} px={{ lg: 4, md: 4, sm: 3, xs: 3 }} sx={{ display: { xs: 'flex', md: 'none', cursor: 'pointer' } }} alignSelf={'center'}>

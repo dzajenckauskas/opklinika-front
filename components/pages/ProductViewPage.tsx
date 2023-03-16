@@ -51,7 +51,7 @@ const ProductViewPage = ({ product }: Props) => {
                                 {'TIPAS: '} <span style={{ fontWeight: 600 }}>{product?.attributes.type}</span>
                             </Typography>
 
-                            <Typography variant='body1' fontSize={14} color={'#000000DE'}>
+                            <Typography variant='body1' fontSize={14} color={'#000000DE'} fontWeight={300}>
                                 <span style={{ fontWeight: 600 }}> {'Techninis aprašymas ir paskirtis:'}</span> <br />
                                 {product?.attributes.description}
                             </Typography>

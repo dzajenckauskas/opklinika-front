@@ -11,6 +11,7 @@ import { getColors } from './layout/colors';
 import StarIcon from '@mui/icons-material/Star';
 import Link from 'next/link';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
+import Cookies from './cookies/Cookies';
 
 type Props = {
     children: React.ReactNode;
@@ -60,7 +61,7 @@ const Layout = ({ children, title, color, reviews }: Props) => {
     const renderReviews = reviews?.data.map((review) => {
         return (
             <Stack key={review.id} sx={{ minHeight: 50, justifyContent: 'center', width: '100%', px: 1 }}>
-                <Typography color={colors.dark} fontWeight={500} fontSize={'14px'} fontStyle={'italic'} lineHeight={'16px'}
+                <Typography color={colors.dark} fontWeight={300} fontSize={'14px'} fontStyle={'italic'} lineHeight={'16px'}
                     sx={{
                         lineHeight: '25px',
                         textAlign: 'justify',
@@ -100,17 +101,17 @@ const Layout = ({ children, title, color, reviews }: Props) => {
                 {children}
             </Stack>
             <Stack alignItems={'center'} justifyContent={'space-between'} sx={{ width: '100%', backgroundColor: colors.primary, }} pt={8} pb={8}>
-                <Stack flexDirection={'row'} sx={{ maxWidth: '1200px' }}>
-                    <Stack direction={'column'} spacing={1} sx={{ maxWidth: '60%', mx: 'auto', alignItems: 'flex-start', position: 'relative', width: '100%', px: 4 }}>
+                <Stack flexDirection={{ lg: 'row', md: 'row', sm: 'column', xs: 'column' }} sx={{ maxWidth: '1200px' }}>
+                    <Stack direction={'column'} spacing={1} sx={{ mx: 'auto', alignItems: 'flex-start', position: 'relative', width: '100%', px: 4 }}>
                         <Typography variant='h1' lineHeight={'20px'} color={'#fff'} mb={1} sx={{
                             textTransform: 'uppercase', textAlign: 'left'
                         }}>
                             {'Registracija'}
                         </Typography>
-                        <Typography fontSize={14}>Mūsų ortopedijos klinikoje kiekvieno paciento vizitus deriname individualiai registracijos laikus pas specialistus. Kreipkitės telefonu, kad galėtumėte paskirti Jums tinkamą vizito laiką pas kvalifikuotus specialistus, kurie padės rasti tinkamiausią sprendimą Jūsų poreikiams spręsti.</Typography>
+                        <Typography fontSize={14} fontWeight={300}>Mūsų ortopedijos klinikoje kiekvieno paciento vizitus deriname individualiai registracijos laikus pas specialistus. Kreipkitės telefonu, kad galėtumėte paskirti Jums tinkamą vizito laiką pas kvalifikuotus specialistus, kurie padės rasti tinkamiausią sprendimą Jūsų poreikiams spręsti.</Typography>
                     </Stack>
-                    <Stack direction={'column'} sx={{ maxWidth: '40%', my: 'auto', mx: 'auto', alignItems: 'flex-end', width: '100%', }}>
-                        <Typography variant='h1' lineHeight={'20px'} color={'#fff'} mb={1} sx={{
+                    <Stack direction={'column'} sx={{ my: 'auto', mx: 'auto', alignItems: 'flex-end', width: '100%', px: 4 }}>
+                        <Typography variant='h1' lineHeight={'20px'} color={'#fff'} mb={1} mt={{ lg: 0, md: 0, sm: 3, xs: 3 }} sx={{
                             textTransform: 'uppercase', textAlign: 'left'
                         }}>
                             <Link href={`tel:${'+370 607 921 11'}`} passHref>
@@ -140,7 +141,7 @@ const Layout = ({ children, title, color, reviews }: Props) => {
                 </Stack>
             </Stack>}
             <Footer />
-            {/* <Cookies /> */}
+            <Cookies />
         </Stack>
     )
 }
