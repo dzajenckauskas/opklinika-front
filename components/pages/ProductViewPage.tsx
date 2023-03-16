@@ -43,16 +43,17 @@ const ProductViewPage = ({ product }: Props) => {
                             <Typography variant='h2'>
                                 {product?.attributes.price} Eur
                             </Typography>
-                            <Typography fontWeight={600} color={'#000000DE'} fontSize={14}>
+                            {/* <Typography fontWeight={600} color={'#000000DE'} fontSize={14}>
                                 {'KATEGORIJA: '}
                                 <span style={{ fontWeight: 600 }}>{product?.attributes.category?.data?.attributes.title}</span>
-                            </Typography>
-                            <Typography fontWeight={600} color={'#000000DE'} fontSize={14}>
-                                {'TIPAS: '} <span style={{ fontWeight: 600 }}>{product?.attributes.type}</span>
+                            </Typography> */}
+                            <Typography fontWeight={600} color={colors.dark} fontSize={14}>
+                                {'TIPAS: '}
+                                <span style={{ fontWeight: 600, color: colors.dark }}>{product?.attributes.type}</span>
                             </Typography>
 
-                            <Typography variant='body1' fontSize={14} color={'#000000DE'} fontWeight={300}>
-                                <span style={{ fontWeight: 600 }}> {'Techninis aprašymas ir paskirtis:'}</span> <br />
+                            <Typography variant='body1' fontSize={14} color={'#000000DE'} fontWeight={300} pt={1}>
+                                <span style={{ fontWeight: 600, textTransform: 'uppercase', lineHeight: '30px' }}> {'Techninis aprašymas ir paskirtis'}</span> <br />
                                 {product?.attributes.description}
                             </Typography>
                         </Stack>
@@ -75,7 +76,7 @@ const ProductViewPage = ({ product }: Props) => {
                                                     {'Diagnozė'}
                                                 </Typography>
                                             </Stack>
-                                            <Stack justifyContent={'center'} width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }}
+                                            <Stack justifyContent={'center'} display={{ lg: 'flex', md: 'flex', sm: 'flex', xs: 'none' }} width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }}
                                                 sx={{ border: '.5px solid #1e6da1', p: 1 }}>
                                                 <Typography color={'#fff'} fontSize={14} lineHeight={'15px'} >
                                                     {'Gydytojai'}
@@ -96,9 +97,18 @@ const ProductViewPage = ({ product }: Props) => {
                                         ))}
 
                                     </Stack>
+                                    <Stack direction={{ lg: 'row', md: 'row', sm: 'row', xs: 'column' }} display={{ lg: 'none', md: 'none', sm: 'none', xs: 'flex' }} sx={{ backgroundColor: '#1e6da1' }} >
+
+                                        <Stack justifyContent={'center'} width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }}
+                                            sx={{ border: '.5px solid #1e6da1', p: 1 }}>
+                                            <Typography color={'#fff'} fontSize={14} lineHeight={'15px'} >
+                                                {'Gydytojai'}
+                                            </Typography>
+                                        </Stack>
+                                    </Stack>
                                     <Stack justifyContent={'center'} width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }}
                                         sx={{ border: '.5px solid #1e6da1', p: 1 }}>
-                                        <Typography fontSize={14} lineHeight={'15px'} textAlign={'center'}>
+                                        <Typography fontSize={14} lineHeight={'15px'} textAlign={{ lg: 'center', md: 'center', sm: 'center', xs: 'left' }}>
                                             {diagnose.specialists}
                                         </Typography>
                                     </Stack>
