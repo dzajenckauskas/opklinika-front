@@ -1,7 +1,7 @@
 import { getProductQuery } from '@/app/products/getProductQuery'
 import { ProductType } from '@/app/products/productTypes'
 import Footer from '@/components/Footer'
-import Header from '@/components/Header'
+import Header from '@/components/layout/Header'
 import ProductViewPage from '@/components/pages/ProductViewPage'
 import Stack from '@mui/material/Stack'
 import axios from 'axios'

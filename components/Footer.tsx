@@ -11,7 +11,7 @@ const Footer = () => {
     const colors = getColors()
 
     return (
-        <Stack sx={{ width: '100%', backgroundColor: colors.primary, }} >
+        <Stack sx={{ width: '100%', backgroundColor: colors.primary, }} id={"contacts"}>
             <Stack sx={{
                 minHeight: '100px', width: '100%', backgroundColor: colors.primary, maxWidth: '1200px', mx: 'auto'
             }} pt={6} pb={2} px={{ lg: 4, md: 4, sm: 3, xs: 3 }} >

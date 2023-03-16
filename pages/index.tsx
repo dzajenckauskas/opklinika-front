@@ -1,5 +1,6 @@
 import { getCustomerReviewsQuery } from '@/app/reviews/getCustomerReviewsQuery'
 import { getServicesQuery } from '@/app/services/getServicesQuery'
+import { ReviewsResponseType } from '@/app/services/ReviewTypes'
 import HomePage from '@/components/pages/HomePage'
 import Stack from '@mui/material/Stack'
 import axios from 'axios'
@@ -8,7 +9,7 @@ import Head from 'next/head'
 
 type Props = {
   services: any;
-  reviews: any;
+  reviews: ReviewsResponseType;
 }
 
 export default function Home({ services, reviews }: Props) {

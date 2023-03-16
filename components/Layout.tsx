@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import React, { useState } from 'react';
 import Footer from './Footer';
-import Header from './Header';
+import Header from './layout/Header';
 import { getColors } from './layout/colors';
 import StarIcon from '@mui/icons-material/Star';
 import Link from 'next/link';

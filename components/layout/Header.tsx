@@ -1,9 +1,9 @@
 import Stack from '@mui/material/Stack'
 import React, { useState } from 'react'
 import Typography from '@mui/material/Typography'
-import Logo from './Logo'
+import Logo from '../Logo'
 import Link from 'next/link'
-import TopNav from './layout/TopNav'
+import TopNav from './TopNav'
 
 const Header = () => {
     const primaryColor = '#1E6EA1'
@@ -31,7 +31,7 @@ const Header = () => {
                             <Link passHref href={'/katalogas'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Katalogas</Typography></Link>
                             <Link passHref href={'/kainorastis'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Kainoraštis</Typography></Link>
                             <Link passHref href={'/paslaugos'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Paslaugos</Typography></Link>
-                            <Link passHref href={'/kontaktai'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Kontaktai</Typography></Link>
+                            <Link passHref href={'#contacts'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Kontaktai</Typography></Link>
                         </Stack>
                         <Stack direction={'row'} px={{ lg: 4, md: 4, sm: 3, xs: 3 }} sx={{ display: { xs: 'flex', md: 'none', cursor: 'pointer' } }} alignSelf={'center'}>
                             <div className={`hamburger ${openMenu ? 'is-active' : ''}`} id="hamburger" onClick={() => { setOpenMenu(!openMenu) }}>

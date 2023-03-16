@@ -1,4 +1,5 @@
 import { ProductsType } from '@/app/products/productTypes'
+import { ReviewsResponseType } from '@/app/services/ReviewTypes'
 import { Grid, Pagination } from '@mui/material'
 import Stack from '@mui/material/Stack'
 import { useRouter } from 'next/router'
@@ -8,9 +9,10 @@ import ProductCard from '../products/ProductCard'
 
 type Props = {
     products?: ProductsType;
+    reviews?: ReviewsResponseType
 }
 
-const KatalogasPage = ({ products }: Props) => {
+const KatalogasPage = ({ products, reviews }: Props) => {
     const renderProducts = products?.data.map((product) => (
         <ProductCard product={product} key={product.id} />
     ))
@@ -23,7 +25,7 @@ const KatalogasPage = ({ products }: Props) => {
     const { page } = router.query
 
     return (
-        <Layout title={'Katalogas'} color={"#1E6EA1"}>
+        <Layout title={'Katalogas'} color={"#1E6EA1"} reviews={reviews}>
             <Stack color={'primary.main'} direction={'row'} sx={{ maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 }, }}>
                 <Stack spacing={4} direction={'column'}>
                     {products && <Grid container spacing={4}>

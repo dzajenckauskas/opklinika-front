@@ -1,9 +1,15 @@
+import { ReviewsResponseType } from '@/app/services/ReviewTypes'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import React from 'react'
 import Layout from '../Layout'
 
-const KainorastisPage = () => {
+type Props = {
+    reviews: ReviewsResponseType;
+}
+
+
+const KainorastisPage = ({ reviews }: Props) => {
     const priceList2 = [
         {
             category: 'Konsultacijos',
@@ -229,7 +235,7 @@ const KainorastisPage = () => {
     })
 
     return (
-        <Layout title={'Kainoraštis'}>
+        <Layout title={'Kainoraštis'} reviews={reviews}>
             <Stack pb={20} spacing={{ lg: 30, md: 10, sm: 10, xs: 10 }} direction={{ lg: 'row', md: 'row', sm: 'column', xs: 'column' }}
                 sx={{ maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 }, }}>
                 <Stack width={'100%'}>
