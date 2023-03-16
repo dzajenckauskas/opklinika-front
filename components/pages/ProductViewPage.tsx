@@ -98,7 +98,7 @@ const ProductViewPage = ({ product }: Props) => {
                                     </Stack>
                                     <Stack justifyContent={'center'} width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }}
                                         sx={{ border: '.5px solid #1e6da1', p: 1 }}>
-                                        <Typography fontSize={14} lineHeight={'15px'}>
+                                        <Typography fontSize={14} lineHeight={'15px'} textAlign={'center'}>
                                             {diagnose.specialists}
                                         </Typography>
                                     </Stack>
