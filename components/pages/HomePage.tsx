@@ -4,7 +4,7 @@ import { ArrowForward } from '@mui/icons-material';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
-// import Image from 'next/legacy/image';
+import Image from 'next/legacy/image';
 import Layout from '../Layout';
 import { getColors } from '../layout/colors';
 import ServiceCard from '../services/ServiceCard';
@@ -32,7 +32,7 @@ const HomePage = ({ color, services, reviews }: Props) => {
             <Stack direction={'row'} overflow={'hidden'} width={'100vw'} height={{ lg: '1000px', md: '500px', sm: '700px', xs: '500px' }} alignItems={'center'} position={'absolute'} left={0}
                 top={{ lg: 130, md: 130, sm: 80, xs: 80 }} sx={{ opacity: .5 }}
                 pt={{ lg: 30, md: 20, sm: 10, xs: 0 }}>
-                {/* <Image alt={'ortopedijos specialistai'} src={'/media/banner.jpg'} layout={'fill'} objectFit={'cover'} objectPosition={'center'} priority /> */}
+                <Image alt={'ortopedijos specialistai'} src={'/media/banner.jpg'} layout={'fill'} objectFit={'cover'} objectPosition={'center'} priority />
             </Stack>
             <Stack minHeight={'460px'} zIndex={100} justifyContent={'flex-end'} alignItems={'flex-start'}
                 sx={{

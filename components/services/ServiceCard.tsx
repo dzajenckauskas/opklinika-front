@@ -3,13 +3,13 @@ import CardContent from '@mui/material/CardContent'
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-// import Image from 'next/legacy/image'
+import Image from 'next/legacy/image'
 
 type Props = {
     service: ServiceType;
 }
 const ServiceCard = ({ service }: Props) => {
-    // const imageUrl = service.attributes.images?.data && service.attributes.images?.data[0].attributes.url
+    const imageUrl = service.attributes.images?.data && service.attributes.images?.data[0].attributes.url
     return (
         <>
             <Grid item lg={3} md={4} sm={6} xs={12} >
@@ -27,7 +27,7 @@ const ServiceCard = ({ service }: Props) => {
                     </Stack>
                     <Stack direction={'row'} height={200} width={'100%'}
                         position={'absolute'} zIndex={0}>
-                        {/* <Image priority alt={service.attributes.title} objectFit={'cover'} src={imageUrl ?? '/assets/images/cover.png'} layout={'fill'} style={{ position: 'relative', opacity: 0.1, objectFit: 'cover' }} /> */}
+                        <Image priority alt={service.attributes.title} objectFit={'cover'} src={imageUrl ?? '/assets/images/cover.png'} layout={'fill'} style={{ position: 'relative', opacity: 0.1, objectFit: 'cover' }} />
                     </Stack>
                     <CardContent sx={{ height: '100%', position: 'absolute', bottom: 0, zIndex: 99 }}>
                         <Stack height={'100%'} flexDirection={'column'} justifyContent={'flex-end'}

@@ -12,7 +12,7 @@ const TopNav = () => {
                 backgroundColor: '#1E6EA1', height: 30, position: 'fixed', top: '0px', width: '100vw',
                 display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex' }, zIndex: 999
             }}>
-            <Stack direction={'row'} mt={1} spacing={3} pb={1} px={5} maxWidth={'1200px'} justifyContent={'flex-start'} width={'100%'}>
+            <Stack direction={'row'} mt={1} spacing={5} pb={1} px={5} maxWidth={'1200px'} justifyContent={'flex-start'} width={'100%'}>
                 <Link href={`tel:${'+370 607 921 11'}`} passHref>
                     <Stack direction={'row'} spacing={1} sx={{ cursor: 'pointer' }} alignItems={'center'}>
                         <LocalPhoneOutlinedIcon fontSize='small' sx={{ height: '18px', marginRight: '-5px' }} />

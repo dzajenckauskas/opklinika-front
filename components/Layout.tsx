@@ -9,6 +9,8 @@ import Footer from './Footer';
 import Header from './Header';
 import { getColors } from './layout/colors';
 import StarIcon from '@mui/icons-material/Star';
+import Link from 'next/link';
+import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 
 type Props = {
     children: React.ReactNode;
@@ -88,7 +90,7 @@ const Layout = ({ children, title, color, reviews }: Props) => {
     return (
         <Stack sx={{ minHeight: '100vh', height: '100%', backgroundColor: '#f9f9f9' }}>
             <Header />
-            <Stack minHeight={'80vh'} >
+            <Stack minHeight={'80vh'} pb={8}>
                 {title && <Typography variant='h1' lineHeight={'20px'} color={color ?? '#1E6EA1'} mb={4} sx={{
                     textAlign: 'left', width: '100%', pt: 8,
                     textTransform: 'uppercase', maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 },
@@ -97,9 +99,35 @@ const Layout = ({ children, title, color, reviews }: Props) => {
                 </Typography>}
                 {children}
             </Stack>
+            <Stack alignItems={'center'} justifyContent={'space-between'} sx={{ width: '100%', backgroundColor: colors.primary, }} pt={8} pb={8}>
+                <Stack flexDirection={'row'} sx={{ maxWidth: '1200px' }}>
+                    <Stack direction={'column'} spacing={1} sx={{ maxWidth: '60%', mx: 'auto', alignItems: 'flex-start', position: 'relative', width: '100%', px: 4 }}>
+                        <Typography variant='h1' lineHeight={'20px'} color={'#fff'} mb={1} sx={{
+                            textTransform: 'uppercase', textAlign: 'left'
+                        }}>
+                            {'Registracija'}
+                        </Typography>
+                        <Typography fontSize={14}>Mūsų ortopedijos klinikoje individualiai deriname registracijos laikus pas specialistus. Kreipkitės telefonu, kad galėtumėte užsiregistruoti pas kvalifikuotus specialistus, kurie padės rasti tinkamiausią sprendimą Jūsų poreikiams spręsti.</Typography>
+                    </Stack>
+                    <Stack direction={'column'} sx={{ maxWidth: '40%', my: 'auto', mx: 'auto', alignItems: 'flex-end', width: '100%', }}>
+                        <Typography variant='h1' lineHeight={'20px'} color={'#fff'} mb={1} sx={{
+                            textTransform: 'uppercase', textAlign: 'left'
+                        }}>
+                            <Link href={`tel:${'+370 607 921 11'}`} passHref>
+                                <Stack direction={'row'} spacing={3} sx={{ cursor: 'pointer' }} alignItems={'center'}>
+                                    <LocalPhoneOutlinedIcon fontSize='large' sx={{ height: '50px', marginRight: '-5px' }} />
+                                    <Typography variant='h1' lineHeight={'20px'}>
+                                        {'+370 607 92111'}
+                                    </Typography>
+                                </Stack>
+                            </Link>
+                        </Typography>
+                    </Stack>
+                </Stack>
+            </Stack>
             {reviews && <Stack sx={{ width: '100%', backgroundColor: '#fff' }} pt={8} pb={6}>
                 <Typography variant='h1' lineHeight={'20px'} color={'#1E6EA1'} mb={2} pb={3} sx={{
-                    textTransform: 'uppercase', textAlign: 'center', borderLeft: '2px solid red',
+                    textTransform: 'uppercase', textAlign: 'center'
                 }}>
                     {'Pacientų atsiliepimai'}
                 </Typography>
