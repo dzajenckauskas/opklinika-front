@@ -29,7 +29,7 @@ const HomePage = ({ color, services, reviews }: Props) => {
             <Stack direction={'row'} maxHeight={500} height={'100%'} width={'100vw'} overflow={'hidden'} position={'absolute'} left={0} top={{ lg: 130, md: 130, sm: 80, xs: 80 }} zIndex={9}
                 sx={{ background: 'linear-gradient( transparent,#1e6da190);', opacity: 1 }} >
             </Stack>
-            <Stack direction={'row'} overflow={'hidden'} width={'100vw'} height={{ lg: '1000px', md: '500px', sm: '700px', xs: '500px' }} alignItems={'center'} position={'absolute'} left={0}
+            <Stack direction={'row'} overflow={'hidden'} width={'100vw'} height={{ lg: '950px', md: '500px', sm: '700px', xs: '500px' }} alignItems={'center'} position={'absolute'} left={0}
                 top={{ lg: 130, md: 130, sm: 80, xs: 80 }} sx={{ opacity: .5 }}
                 pt={{ lg: 30, md: 20, sm: 10, xs: 0 }}>
                 <Image alt={'ortopedijos specialistai'} src={'/media/banner.jpg'} layout={'fill'} objectFit={'cover'} objectPosition={'center'} priority />
@@ -82,7 +82,7 @@ const HomePage = ({ color, services, reviews }: Props) => {
 
             </Stack>
             <Stack id={'services'} sx={{ scrollMarginTop: '120px;', maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 }, }} pt={7} pb={2} alignItems={'center'} >
-                <Typography variant='h1' color={color ?? '#1E6EA1'} mb={4} textAlign={'center'}>
+                <Typography variant='h1' color={color ?? '#1E6EA1'} mb={4} pt={7} textAlign={'center'}>
                     {'ORTOPEDIJOS PASLAUGOS'}
                 </Typography>
                 <Grid container spacing={2}>
