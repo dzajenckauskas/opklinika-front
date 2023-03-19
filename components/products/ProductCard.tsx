@@ -1,18 +1,20 @@
+import { ProductType } from '@/app/products/productTypes'
 import Button from '@mui/material/Button'
 import CardActions from '@mui/material/CardActions'
-import CardContent from '@mui/material/CardContent'
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
-import Link from 'next/link'
-import React from 'react'
 import Image from 'next/legacy/image'
-import { ProductType } from '@/app/products/productTypes'
+import Link from 'next/link'
+import { getColors } from '../layout/colors'
 
 type Props = {
     product: ProductType;
 }
 const ProductCard = ({ product }: Props) => {
+    console.log(product);
+
+    const colors = getColors()
     const imageUrl = product.attributes.images?.data && product.attributes.images?.data[0].attributes.url
     return (
         <>
@@ -32,18 +34,25 @@ const ProductCard = ({ product }: Props) => {
                                     alt={product.attributes.images?.data && product.attributes.images?.data[0].attributes.alternativeText} height={340} width={340} objectFit={'contain'} />}
                             </Stack>
                         </Link>
-                        <CardContent>
-                            <Typography gutterBottom variant="h2" color={"primary"} lineHeight={'22px'} fontWeight={900}
-                                sx={{ ':hover': { filter: 'brightness(75%)', cursor: 'pointer' } }}>
-                                {(product.attributes.title.toUpperCase())}
-                            </Typography>
-                            <Typography variant="h5">
-                                {product.attributes.category?.data?.attributes.title}
-                            </Typography>
-                            <Typography variant="h5" fontWeight={700} color={"primary"}>
-                                {product.attributes.typeGroup}
-                            </Typography>
-                        </CardContent>
+                        <Stack px={2} py={2}>
+                            <Link passHref href={`/products/${product.id}`} style={{ width: '100%' }}>
+                                <Typography gutterBottom variant="h2" pb={0} color={"primary"} lineHeight={'20px'} fontWeight={900}
+                                    sx={{ ':hover': { filter: 'brightness(75%)', cursor: 'pointer' } }}>
+                                    {(product.attributes.title)}
+                                </Typography>
+                            </Link>
+
+                            {product?.attributes.category?.data?.attributes.title &&
+                                <Typography color={colors.primary} fontSize={12}>
+                                    <span style={{ fontWeight: 600, color: colors.grey, fontSize: 14, lineHeight: '12px', textTransform: 'uppercase' }}>{product?.attributes.category?.data?.attributes.title}</span>
+                                </Typography>}
+                            {product?.attributes.type &&
+                                <Typography color={colors.primary} fontSize={12} pt={1}>
+                                    {'TIPAS: '} <br />
+                                    <span style={{ fontWeight: 600, color: colors.grey, fontSize: 14, lineHeight: '12px', textTransform: 'uppercase' }}>{product?.attributes.type}</span>
+                                </Typography>}
+
+                        </Stack>
                     </Stack>
                     <CardActions sx={{ p: 0, pt: 0, position: 'relative', bottom: 0 }}>
                         <Link passHref href={`/products/${product.id}`} style={{ width: '100%' }}>

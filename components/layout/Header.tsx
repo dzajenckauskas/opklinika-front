@@ -7,9 +7,6 @@ import TopNav from './TopNav'
 
 const Header = () => {
     const primaryColor = '#1E6EA1'
-    const darkColor = '#090909'
-    const lightColor = '#E9E9E9'
-
 
     const [openMenu, setOpenMenu] = useState(false)
     return (
@@ -30,7 +27,7 @@ const Header = () => {
                         <Stack direction={'row'} spacing={5} p={4} sx={{ display: { xs: 'none', md: 'flex' } }}>
                             <Link passHref href={'/katalogas'}><Typography fontSize={14} color={primaryColor} fontWeight={300}>Katalogas</Typography></Link>
                             <Link passHref href={'/kainorastis'}><Typography fontSize={14} color={primaryColor} fontWeight={300}>Kainoraštis</Typography></Link>
-                            <Link passHref href={'#services'}><Typography fontSize={14} color={primaryColor} fontWeight={300}>Paslaugos</Typography></Link>
+                            <Link passHref href={'/#services'}><Typography fontSize={14} color={primaryColor} fontWeight={300}>Paslaugos</Typography></Link>
                             <Link passHref href={'#contacts'}><Typography fontSize={14} color={primaryColor} fontWeight={300}>Kontaktai</Typography></Link>
                         </Stack>
                         <Stack direction={'row'} px={{ lg: 4, md: 4, sm: 3, xs: 3 }} sx={{ display: { xs: 'flex', md: 'none', cursor: 'pointer' } }} alignSelf={'center'}>
@@ -55,8 +52,8 @@ const Header = () => {
                         <Stack direction={'column'} spacing={3} px={3} py={8}>
                             <Link passHref href={'/katalogas'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Katalogas</Typography></Link>
                             <Link passHref href={'/kainorastis'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Kainoraštis</Typography></Link>
-                            <Link passHref href={'/paslaugos'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Paslaugos</Typography></Link>
-                            <Link passHref href={'/kontaktai'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Kontaktai</Typography></Link>
+                            <Link passHref href={'/#services'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Paslaugos</Typography></Link>
+                            <Link passHref href={'#contacts'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Kontaktai</Typography></Link>
                         </Stack>
                     </Stack>
                 </Stack>}

@@ -4,7 +4,7 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Image from 'next/legacy/image';
-import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { getColors } from '../layout/colors';
 
 type Props = {
@@ -12,24 +12,25 @@ type Props = {
 }
 
 const ProductViewPage = ({ product }: Props) => {
-    const router = useRouter()
     const imageUrl = product?.attributes.images?.data && product?.attributes.images?.data[0]?.attributes.url
     console.log(product);
 
     const colors = getColors()
     return (
         <Stack alignItems={'flex-start'} p={4} maxWidth={'lg'} mx={'auto'} minHeight={'80vh'}>
-            <Stack direction={'row'} sx={{ alignItems: 'center' }}>
-                <ArrowBack sx={{ height: '14px', color: colors.primary }} />
-                <Button onClick={() => router.push('/katalogas')} size="small" disableRipple sx={{
-                    display: 'flex', flexDirection: 'row', alignContent: 'center',
-                    ':hover': { backgroundColor: 'transparent', textDecoration: 'underline' }
-                }}>
-                    {"Katalogas"}
-                </Button>
-            </Stack>
+            <Link href={'/katalogas'} >
+                <Stack direction={'row'} sx={{ alignItems: 'center' }}>
+                    <ArrowBack sx={{ height: '14px', color: colors.primary }} />
+                    <Button size="small" disableRipple sx={{
+                        display: 'flex', flexDirection: 'row', alignContent: 'center',
+                        ':hover': { backgroundColor: 'transparent', textDecoration: 'underline' }
+                    }}>
+                        {"Katalogas"}
+                    </Button>
+                </Stack>
+            </Link>
             <Stack color={'primary.main'} direction={'row'} >
-                <Stack mt={{ lg: 4, md: 4, sm: 4, xs: 2 }} spacing={{ lg: 4, md: 4, sm: 4, xs: 2 }}>
+                <Stack mt={{ lg: 4, md: 4, sm: 4, xs: 2 }} spacing={{ lg: 4, md: 2, sm: 4, xs: 2 }}>
                     <Stack sx={{ color: 'primary.main' }} direction={{ lg: 'row', md: 'row', sm: 'column', xs: 'column' }}
                         spacing={{ lg: 4, md: 4, sm: 4, xs: 4 }}>
                         {imageUrl && <Stack sx={{ border: '1px solid' }}>
@@ -37,23 +38,32 @@ const ProductViewPage = ({ product }: Props) => {
                                 src={imageUrl} width={1093} height={1051} objectFit={'contain'} />
                         </Stack>}
                         <Stack spacing={1}>
-                            <Typography variant='h1'>
+                            <Typography variant='h1' maxWidth={600}>
                                 {product?.attributes.title}
                             </Typography>
-                            <Typography variant='h2'>
-                                {product?.attributes.price} Eur
-                            </Typography>
-                            {/* <Typography fontWeight={600} color={'#000000DE'} fontSize={14}>
-                                {'KATEGORIJA: '}
-                                <span style={{ fontWeight: 600 }}>{product?.attributes.category?.data?.attributes.title}</span>
-                            </Typography> */}
-                            <Typography fontWeight={600} color={colors.dark} fontSize={14}>
-                                {'TIPAS: '}
-                                <span style={{ fontWeight: 600, color: colors.dark }}>{product?.attributes.type}</span>
+                            {product?.attributes.category?.data?.attributes.title &&
+                                <Typography color={colors.primary} fontSize={12}>
+                                    <span style={{ fontWeight: 600, color: colors.grey, fontSize: 16, lineHeight: '14px', textTransform: 'uppercase' }}>{product?.attributes.category?.data?.attributes.title}</span>
+                                </Typography>}
+                            {product?.attributes.price &&
+                                <Typography color={colors.primary} fontSize={12}>
+                                    {'KAINA: '} <br />
+                                    <span style={{ fontWeight: 600, color: colors.grey, fontSize: 16, lineHeight: '14px' }}>{product?.attributes.price}€</span>
+                                </Typography>}
+                            {product?.attributes.prices &&
+                                <Typography color={colors.primary} fontSize={12}>
+                                    {'KAINOS: '} <br />
+                                    <span style={{ fontWeight: 600, color: colors.grey, fontSize: 16, lineHeight: '14px' }}>{product?.attributes.prices}€</span>
+                                </Typography>}
+
+
+                            <Typography fontSize={12} color={colors.primary}>
+                                {'TIPAS: '} <br />
+                                <span style={{ fontWeight: 600, color: colors.grey, fontSize: 16, lineHeight: '14px' }}>{product?.attributes.type}</span>
                             </Typography>
 
-                            <Typography variant='body1' fontSize={14} color={'#000000DE'} fontWeight={300} pt={1}>
-                                <span style={{ fontWeight: 600, textTransform: 'uppercase', lineHeight: '30px' }}> {'Techninis aprašymas ir paskirtis'}</span> <br />
+                            <Typography variant='body1' fontSize={14} lineHeight={'18px'} color={colors.grey} pt={1}>
+                                <span style={{ fontWeight: 600, textTransform: 'uppercase', lineHeight: '30px', fontSize: '16px' }}> {'Techninis aprašymas ir paskirtis'}</span> <br />
                                 {product?.attributes.description}
                             </Typography>
                         </Stack>
@@ -66,7 +76,7 @@ const ProductViewPage = ({ product }: Props) => {
                                     <>
                                         <Stack direction={'row'} justifyContent={'space-between'} width={{ lg: '100%', md: '100%', sm: '100%', xs: '100%' }}
                                             sx={{ py: 2 }}>
-                                            <Typography color={colors.primary} fontSize={18} lineHeight={'15px'} fontWeight={600} >
+                                            <Typography color={colors.primary} fontSize={22} pt={2} fontWeight={600} >
                                                 {'Kompensuojama'} {diagnose.percent}{'%:'}
                                             </Typography>
                                         </Stack>
@@ -101,7 +111,7 @@ const ProductViewPage = ({ product }: Props) => {
 
                                         <Stack justifyContent={'center'} width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }}
                                             sx={{ border: '.5px solid #1e6da1', p: 1 }}>
-                                            <Typography color={'#fff'} fontSize={14} lineHeight={'15px'} >
+                                            <Typography color={'#fff'} fontSize={14} lineHeight={'15px'}>
                                                 {'Gydytojai'}
                                             </Typography>
                                         </Stack>
@@ -113,17 +123,16 @@ const ProductViewPage = ({ product }: Props) => {
                                         </Typography>
                                     </Stack>
                                 </Stack>
-                                {diagnose?.notes?.map((note) => (
-                                    <Stack key={note.id} justifyContent={'center'} width={{ lg: '100%', md: '100%', sm: '100%', xs: '100%' }} pt={1}>
-                                        <Typography color={colors.primary} fontStyle={'italic'}>
-                                            {note?.text}
-                                        </Typography>
-                                    </Stack>
-                                ))}
                             </Stack>
                         ))}
                     </Stack>
-
+                    {product?.attributes.notes?.map((note) => (
+                        <Stack key={note.id} justifyContent={'center'} width={{ lg: '100%', md: '100%', sm: '100%', xs: '100%' }} pt={0}>
+                            <Typography color={colors.primary} fontStyle={'italic'} lineHeight={'14px'}>
+                                {note?.text}
+                            </Typography>
+                        </Stack>
+                    ))}
                 </Stack>
             </Stack>
         </Stack>

@@ -22,15 +22,21 @@ export type ProductAttributesType = {
     typeGroup: string;
     title: string;
     price: number;
+    prices: string;
     updatedAt: Date;
     publishedAt: Date;
     createdAt: Date;
     description: string;
     images: ImagesType;
+    notes: NoteType[];
     category: ProductCategoryType;
     diagnosesTable: DiagnosesTableType[]
 }
 
+export type NoteType = {
+    id: number;
+    text: string;
+}
 export type ImagesType = {
     data: ImagesType[];
     attributes: ImageAttributesType;

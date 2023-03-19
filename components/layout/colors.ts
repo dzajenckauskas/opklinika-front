@@ -4,7 +4,8 @@ export const getColors = () => {
         primaryDark: '#154d73',
         dark: '#090909',
         light: '#E9E9E9',
-        white: '#fff'
+        white: '#fff',
+        grey: '#464853'
     }
     return colors
 }
