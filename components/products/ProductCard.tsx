@@ -12,8 +12,6 @@ type Props = {
     product: ProductType;
 }
 const ProductCard = ({ product }: Props) => {
-    console.log(product);
-
     const colors = getColors()
     const imageUrl = product.attributes.images?.data && product.attributes.images?.data[0].attributes.url
     return (
@@ -44,11 +42,12 @@ const ProductCard = ({ product }: Props) => {
 
                             {product?.attributes.category?.data?.attributes.title &&
                                 <Typography color={colors.primary} fontSize={12}>
+                                    {'KATEGORIJA '} <br />
                                     <span style={{ fontWeight: 600, color: colors.grey, fontSize: 14, lineHeight: '12px', textTransform: 'uppercase' }}>{product?.attributes.category?.data?.attributes.title}</span>
                                 </Typography>}
                             {product?.attributes.type &&
                                 <Typography color={colors.primary} fontSize={12} pt={1}>
-                                    {'TIPAS: '} <br />
+                                    {'TIPAS '} <br />
                                     <span style={{ fontWeight: 600, color: colors.grey, fontSize: 14, lineHeight: '12px', textTransform: 'uppercase' }}>{product?.attributes.type}</span>
                                 </Typography>}
 

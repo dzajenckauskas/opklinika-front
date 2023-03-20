@@ -22,7 +22,7 @@ const ProductView = ({ product }: Props) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Stack sx={{ minHeight: '100vh', height: '100%', backgroundColor: '#fff' }}>
+            <Stack sx={{ minHeight: '100vh', height: '100%', backgroundColor: '#f9f9f9' }}>
                 <Header />
                 <ProductViewPage product={product} />
                 <Footer />

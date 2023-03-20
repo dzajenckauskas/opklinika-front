@@ -78,7 +78,7 @@ export type DiagnosesTableType = {
 
 export type DiagnoseType = {
     id: number;
-    description: string;
+    diagnose: string;
 }
 export type SpecialistType = {
     id: number;

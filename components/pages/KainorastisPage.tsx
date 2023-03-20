@@ -3,6 +3,7 @@ import Stack from '@mui/material/Stack'
 import Typography from '@mui/material/Typography'
 import React from 'react'
 import Layout from '../Layout'
+import { getColors } from '../layout/colors'
 
 type Props = {
     reviews: ReviewsResponseType;
@@ -10,6 +11,7 @@ type Props = {
 
 
 const KainorastisPage = ({ reviews }: Props) => {
+    const colors = getColors()
     const priceList2 = [
         {
             category: 'Konsultacijos',
@@ -44,7 +46,7 @@ const KainorastisPage = ({ reviews }: Props) => {
             products:
                 [{
                     title: 'Individuali kineziterapija (suaugusiems ir vaikams nuo 7 m.) 1 kartas',
-                    duration: '30 min',
+                    duration: '30min',
                     price: 16,
                 },
                 {
@@ -57,37 +59,37 @@ const KainorastisPage = ({ reviews }: Props) => {
             products:
                 [{
                     title: 'Viršutinės galūnės ir pečių juostos masažas (1 kartas)',
-                    duration: '15 min',
+                    duration: '15min',
                     price: '18*/20**',
                 },
                 {
                     title: ' Plaštakos ir dilbio masažas (1 kartas)',
-                    duration: '10 min',
+                    duration: '10min',
                     price: '12*/14**',
                 },
                 {
                     title: 'Nugaros masažas (kaklo, krūtinės, juosmens -1 kartas)',
-                    duration: '20 min',
+                    duration: '20min',
                     price: ' 25*/27**',
                 },
                 {
                     title: 'Juosmens - kryžmens masažas (1 kartas)',
-                    duration: '15 min',
+                    duration: '15min',
                     price: '18*/20**',
                 },
                 {
                     title: 'Kaklo ir pečių juostos srities masažas (1 kartas)',
-                    duration: '15 min',
+                    duration: '15min',
                     price: '18*/20**',
                 },
                 {
                     title: 'Apatinės galūnės masažas (pėdos, čiurnos , kelio - 1 kartas)',
-                    duration: '15 min',
+                    duration: '15min',
                     price: '18*/20**',
                 },
                 {
                     title: 'Apatinės galūnės ir juosmens srities masažas – 1 kartas',
-                    duration: '15 min',
+                    duration: '15min',
                     price: '18*/20**',
                 }]
         },
@@ -96,22 +98,22 @@ const KainorastisPage = ({ reviews }: Props) => {
             products:
                 [{
                     title: 'Magneto terapija (1 laukas) 1 kartas',
-                    duration: '10-20 min',
+                    duration: '10-20min',
                     price: '9*/10**',
                 },
                 {
                     title: 'Elektroterapija (1 laukas) 1 kartas',
-                    duration: '10-15 min',
+                    duration: '10-15min',
                     price: '9*/10**',
                 },
                 {
                     title: 'Ultragarso terapija (1 laukas) 1 kartas',
-                    duration: '5-10 min',
+                    duration: '5-10min',
                     price: '9*/10**',
                 },
                 {
                     title: 'Kompresinė terapija 1 kartas',
-                    duration: '20 min',
+                    duration: '20min',
                     price: 15,
                 },
                 {
@@ -197,7 +199,7 @@ const KainorastisPage = ({ reviews }: Props) => {
                 {category.products.map((product) => {
                     return (
                         <Stack key={product.title} spacing={5} direction={'row'} justifyContent={'space-between'} alignItems={'center'} pb={1}>
-                            <Typography variant='body1' color={'secondary.main'} width={'80%'} >
+                            <Typography fontSize={16} color={'secondary.main'} width={'80%'} >
                                 {product.title}
                             </Typography>
                             <Typography variant='h6' color={'primary.main'} fontWeight={600} width={'20%'} textAlign={'right'}>
@@ -218,13 +220,13 @@ const KainorastisPage = ({ reviews }: Props) => {
                 {category.products.map((product) => {
                     return (
                         <Stack key={product.title} spacing={5} direction={'row'} justifyContent={'space-between'} alignItems={'center'} pb={1}>
-                            <Typography variant='body1' color={'secondary.main'} width={product?.duration ? '70%' : '85%'} lineHeight={'12px'}>
+                            <Typography fontSize={16} color={'secondary.main'} width={product?.duration ? '70%' : '85%'} lineHeight={'16px'}>
                                 {product.title}
                             </Typography>
-                            {product?.duration && <Typography variant='body1' color={'secondary.main'} width={'15%'} lineHeight={'12px'} >
+                            {product?.duration && <Typography fontSize={14} fontWeight={300} color={'secondary.main'} width={'15%'} lineHeight={'12px'} >
                                 {product?.duration}
                             </Typography>}
-                            <Typography lineHeight={'12px'} variant='h6' color={'primary.main'} fontWeight={600} width={'15%'} textAlign={'right'}>
+                            <Typography lineHeight={'12px'} fontSize={16} color={'primary.main'} fontWeight={600} width={'15%'} textAlign={'right'}>
                                 {product.price}
                             </Typography>
                         </Stack>
@@ -243,11 +245,11 @@ const KainorastisPage = ({ reviews }: Props) => {
                         PASLAUGOS
                     </Typography>
                     {renderPricelist2}
-                    <Stack mt={4}>
-                        <Typography variant='body1' color={'secondary.main'} >
+                    <Stack mt={4} spacing={1}>
+                        <Typography fontSize={14} color={colors.primary} fontStyle={'italic'} lineHeight={'14px'}>
                             {'* papildomos paslaugos kurių pageidauja UAB Ortopedijos paslaugų klinika pacientas'}
                         </Typography>
-                        <Typography variant='body1' color={'secondary.main'}>
+                        <Typography fontSize={14} color={colors.primary} fontStyle={'italic'} lineHeight={'14px'}>
                             {'** nedraustiems privalomuoju sveikatos draudimu pacientams, užsienio piliečiams ir pacientams kreipiantis be gydytojo'}
                         </Typography>
                     </Stack>
