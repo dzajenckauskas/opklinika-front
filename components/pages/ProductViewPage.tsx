@@ -33,10 +33,11 @@ const ProductViewPage = ({ product }: Props) => {
                 <Stack mt={{ lg: 4, md: 4, sm: 4, xs: 2 }} spacing={{ lg: 4, md: 2, sm: 4, xs: 2 }} pb={10}>
                     <Stack sx={{ color: 'primary.main' }} direction={{ lg: 'row', md: 'row', sm: 'column', xs: 'column' }} pb={4}
                         spacing={{ lg: 4, md: 4, sm: 4, xs: 4 }}>
-                        {imageUrl && <Stack sx={{ backgroundColor: '#fff', boxShadow: 'rgba(0, 0, 0, 0.15) 2px 6px 16px !important' }}>
-                            <Image alt={product?.attributes.images?.data[0]?.attributes.alternativeText}
-                                src={imageUrl} width={1093} height={1051} objectFit={'contain'} />
-                        </Stack>}
+                        {imageUrl &&
+                            <Stack sx={{ backgroundColor: '#fff', boxShadow: 'rgba(0, 0, 0, 0.15) 2px 6px 16px !important' }}>
+                                <Image alt={product?.attributes.images?.data[0]?.attributes.alternativeText}
+                                    src={imageUrl} width={1093} height={1051} objectFit={'contain'} />
+                            </Stack>}
                         <Stack spacing={1}>
                             <Typography variant='h1' maxWidth={600} pb={2}>
                                 {product?.attributes.title}
@@ -65,7 +66,7 @@ const ProductViewPage = ({ product }: Props) => {
                                 <span style={{ fontWeight: 600, color: colors.grey, fontSize: 16, lineHeight: '14px' }}>{product?.attributes.type}</span>
                             </Typography>
 
-                            <Typography variant='body1' fontSize={14} lineHeight={'18px'} color={colors.grey} pt={1}>
+                            <Typography variant='body1' fontSize={14} lineHeight={'18px'} color={colors.grey} pt={1} textAlign={'justify'}>
                                 <span style={{ fontWeight: 600, textTransform: 'uppercase', lineHeight: '30px', fontSize: '16px' }}> {'Techninis aprašymas ir paskirtis'}</span> <br />
                                 {product?.attributes.description}
                             </Typography>
@@ -79,23 +80,17 @@ const ProductViewPage = ({ product }: Props) => {
                                     <Stack>
                                         <Stack direction={'row'} justifyContent={'space-between'} width={{ lg: '100%', md: '100%', sm: '100%', xs: '100%' }}
                                             sx={{ py: 0, px: 1, backgroundColor: colors.primary }}>
-                                            <Typography color={colors.white} fontSize={22} pt={2} fontWeight={600} textTransform={'uppercase'}>
+                                            <Typography color={colors.white} fontSize={22} py={1} fontWeight={600} textTransform={'uppercase'}>
                                                 {'Kompensuojama'} {diagnose.percent}{'%'}
                                             </Typography>
                                         </Stack>
                                         <Stack direction={{ lg: 'row', md: 'row', sm: 'row', xs: 'column' }} sx={{ backgroundColor: '#fff', border: '1px solid #1e6da1', }} >
 
-                                            <Stack width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }} direction={'row'} alignItems={'center'} p={1} sx={{ borderRight: '1px solid #1e6da1' }}>
+                                            <Stack width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }} direction={'row'} p={1} sx={{ borderRight: '1px solid #1e6da1' }}>
                                                 <Typography color={colors.primary} fontSize={16} fontWeight={600} textTransform={'uppercase'} lineHeight={'15px'} >
                                                     {'Diagnozės'}
                                                 </Typography>
                                             </Stack>
-                                            {/* <Stack justifyContent={'center'} display={{ lg: 'flex', md: 'flex', sm: 'flex', xs: 'none' }} width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }}
-                                                sx={{ border: '.5px solid #1e6da1', p: 1, borderLeft: '2px solid #1e6da1', }}>
-                                                <Typography color={colors.primary} fontSize={16} fontWeight={600} textTransform={'uppercase'} lineHeight={'15px'} >
-                                                    {'Gydytojai'}
-                                                </Typography>
-                                            </Stack> */}
                                             <Stack width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }} direction={'row'} alignItems={'center'} p={1} sx={{ borderLeft: '1px solid #1e6da1' }}>
                                                 <Typography color={colors.primary} fontSize={16} fontWeight={600} textTransform={'uppercase'} lineHeight={'15px'} >
                                                     {'Gydytojai'}
@@ -136,7 +131,7 @@ const ProductViewPage = ({ product }: Props) => {
                     </Stack>
                     {product?.attributes.notes?.map((note) => (
                         <Stack key={note.id} justifyContent={'center'} width={{ lg: '100%', md: '100%', sm: '100%', xs: '100%' }} pt={0}>
-                            <Typography color={colors.primary} fontStyle={'italic'} fontSize={14} lineHeight={'14px'}>
+                            <Typography color={colors.primary} fontStyle={'italic'} fontSize={12} lineHeight={'14px'}>
                                 {note?.text}
                             </Typography>
                         </Stack>

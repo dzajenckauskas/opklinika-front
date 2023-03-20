@@ -220,14 +220,14 @@ const KainorastisPage = ({ reviews }: Props) => {
                 {category.products.map((product) => {
                     return (
                         <Stack key={product.title} spacing={5} direction={'row'} justifyContent={'space-between'} alignItems={'center'} pb={1}>
-                            <Typography fontSize={16} color={'secondary.main'} width={product?.duration ? '70%' : '85%'} lineHeight={'16px'}>
+                            <Typography fontSize={14} color={'secondary.main'} width={product?.duration ? '70%' : '85%'} lineHeight={'16px'}>
                                 {product.title}
                             </Typography>
-                            {product?.duration && <Typography fontSize={14} fontWeight={300} color={'secondary.main'} width={'15%'} lineHeight={'12px'} >
+                            {product?.duration && <Typography fontSize={12} fontWeight={300} color={'secondary.main'} width={'15%'} lineHeight={'12px'} >
                                 {product?.duration}
                             </Typography>}
-                            <Typography lineHeight={'12px'} fontSize={16} color={'primary.main'} fontWeight={600} width={'15%'} textAlign={'right'}>
-                                {product.price}
+                            <Typography lineHeight={'12px'} fontSize={14} color={'primary.main'} fontWeight={600} width={'15%'} textAlign={'right'}>
+                                {product.price}€
                             </Typography>
                         </Stack>
                     )
@@ -246,10 +246,10 @@ const KainorastisPage = ({ reviews }: Props) => {
                     </Typography>
                     {renderPricelist2}
                     <Stack mt={4} spacing={1}>
-                        <Typography fontSize={14} color={colors.primary} fontStyle={'italic'} lineHeight={'14px'}>
+                        <Typography fontSize={12} color={colors.primary} fontStyle={'italic'} lineHeight={'14px'}>
                             {'* papildomos paslaugos kurių pageidauja UAB Ortopedijos paslaugų klinika pacientas'}
                         </Typography>
-                        <Typography fontSize={14} color={colors.primary} fontStyle={'italic'} lineHeight={'14px'}>
+                        <Typography fontSize={12} color={colors.primary} fontStyle={'italic'} lineHeight={'14px'}>
                             {'** nedraustiems privalomuoju sveikatos draudimu pacientams, užsienio piliečiams ir pacientams kreipiantis be gydytojo'}
                         </Typography>
                     </Stack>
