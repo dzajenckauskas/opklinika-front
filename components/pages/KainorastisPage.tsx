@@ -203,7 +203,7 @@ const KainorastisPage = ({ reviews }: Props) => {
                                 {product.title}
                             </Typography>
                             <Typography variant='h6' color={'primary.main'} fontWeight={600} width={'20%'} textAlign={'right'}>
-                                {product.price}
+                                {product.price}€
                             </Typography>
                         </Stack>
                     )

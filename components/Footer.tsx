@@ -7,6 +7,7 @@ import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
 import MailOutlinedIcon from '@mui/icons-material/MailOutlined';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import Link from 'next/link'
+import ContactForm from './contacts/ContactForm'
 const Footer = () => {
     const colors = getColors()
 
@@ -20,32 +21,35 @@ const Footer = () => {
                     <Stack height={'100%'} maxWidth={200} direction={'row'}>
                         <Logo width={'200px'} icon primaryColor={'#fff'} />
                     </Stack>
-                    <Stack height={'100%'} spacing={2} mt={2}>
-                        <Typography fontSize={16} mt={2} color={'#fff'} fontWeight={900}>UAB „ORTOPEDIJOS PASLAUGŲ KLINIKA“</Typography>
-                        <Link href={`https://goo.gl/maps/RVoW7FDnbvK3EUiBA`} passHref target={'_blank'}>
-                            <Stack direction={'row'} spacing={2} sx={{ cursor: 'pointer' }} alignItems={'center'}>
-                                <PlaceOutlinedIcon fontSize='small' sx={{ height: '19px', marginRight: '-5px' }} />
-                                <Typography fontWeight={300} color={'#fff'} fontSize={'13px'} className="underlineOnHover">
-                                    {'Laisvės pr. 77, Vilnius'}
-                                </Typography>
-                            </Stack>
-                        </Link>
-                        <Link href={`tel:${'+370 607 921 11'}`} passHref>
-                            <Stack direction={'row'} spacing={2} sx={{ cursor: 'pointer' }} alignItems={'center'}>
-                                <LocalPhoneOutlinedIcon fontSize='small' sx={{ height: '18px', marginRight: '-5px' }} />
-                                <Typography fontWeight={300} color={'#fff'} fontSize={'13px'} className="underlineOnHover">
-                                    {'+370 607 92111'}
-                                </Typography>
-                            </Stack>
-                        </Link>
-                        <Link href={`mailto:${'info@opklinika.lt'}`} passHref>
-                            <Stack direction={'row'} spacing={2} sx={{ cursor: 'pointer' }} alignItems={'center'}>
-                                <MailOutlinedIcon fontSize='small' sx={{ height: '18px', marginRight: '-5px' }} />
-                                <Typography fontWeight={300} color={'#fff'} fontSize={'13px'} className="underlineOnHover">
-                                    {'info@opklinika.lt'}
-                                </Typography>
-                            </Stack>
-                        </Link>
+                    <Stack height={'100%'} direction={'row'} spacing={2} mt={2} justifyContent={'space-between'} >
+                        <Stack spacing={1}>
+                            <Typography fontSize={16} mt={2} color={'#fff'} fontWeight={900}>UAB „ORTOPEDIJOS PASLAUGŲ KLINIKA“</Typography>
+                            <Link href={`https://goo.gl/maps/RVoW7FDnbvK3EUiBA`} passHref target={'_blank'}>
+                                <Stack direction={'row'} spacing={2} sx={{ cursor: 'pointer' }} alignItems={'center'}>
+                                    <PlaceOutlinedIcon fontSize='small' sx={{ height: '19px', marginRight: '-5px' }} />
+                                    <Typography fontWeight={300} color={'#fff'} fontSize={'14px'} className="underlineOnHover">
+                                        {'Laisvės pr. 77, Vilnius'}
+                                    </Typography>
+                                </Stack>
+                            </Link>
+                            <Link href={`tel:${'+370 607 921 11'}`} passHref>
+                                <Stack direction={'row'} spacing={2} sx={{ cursor: 'pointer' }} alignItems={'center'}>
+                                    <LocalPhoneOutlinedIcon fontSize='small' sx={{ height: '18px', marginRight: '-5px' }} />
+                                    <Typography fontWeight={300} color={'#fff'} fontSize={'14px'} className="underlineOnHover">
+                                        {'+370 607 92111'}
+                                    </Typography>
+                                </Stack>
+                            </Link>
+                            <Link href={`mailto:${'info@opklinika.lt'}`} passHref>
+                                <Stack direction={'row'} spacing={2} sx={{ cursor: 'pointer' }} alignItems={'center'}>
+                                    <MailOutlinedIcon fontSize='small' sx={{ height: '18px', marginRight: '-5px' }} />
+                                    <Typography fontWeight={300} color={'#fff'} fontSize={'14px'} className="underlineOnHover">
+                                        {'info@opklinika.lt'}
+                                    </Typography>
+                                </Stack>
+                            </Link>
+                        </Stack>
+                        <ContactForm />
                     </Stack>
                 </Stack>
                 <Stack mt={20}>
