@@ -10,13 +10,16 @@ const ContactForm = () => {
 
     const colors = getColors()
     const [completed, setCompleted] = useState(false)
+    const [email, setEmail] = useState<string>()
+    const [name, setName] = useState<string>()
+    const [message, setMessage] = useState<string>()
+    // const [completed, setCompleted] = useState(false)
     const onSubmit = () => {
         axios.post("https://www.api.opklinika.lt/api/contact-forms", {
             data: {
-                email: 'email@gmail.com',
-                password: 'password',
-                name: 'name',
-                message: 'hello'
+                email: email,
+                name: name,
+                message: message
             }
         })
             .then((response) => {
@@ -36,13 +39,20 @@ const ContactForm = () => {
                 <Stack spacing={2} py={2}>
                     <Stack direction={'row'} spacing={2}>
                         <TextField
-                            color={'info'} sx={{ fontSize: 14 }} variant={'outlined'} InputProps={{ sx: { color: colors.white } }} InputLabelProps={{ sx: { color: colors.white } }}
-                            fullWidth size='small' label='Vardas' />
-                        <TextField color={'info'} sx={{ fontSize: 14 }} variant={'outlined'} InputProps={{ sx: { color: colors.white } }} InputLabelProps={{ sx: { color: colors.white } }}
-                            fullWidth size='small' label='El. paštas' />
+                            color={'info'} sx={{ fontSize: 14 }} variant={'outlined'} InputProps={{ sx: { color: colors.white } }}
+                            InputLabelProps={{ sx: { color: colors.white } }}
+                            fullWidth size='small' label='Vardas'
+                            onChange={(e) => setName(e.target.value)} />
+
+                        <TextField color={'info'} sx={{ fontSize: 14 }} variant={'outlined'} InputProps={{ sx: { color: colors.white } }}
+                            InputLabelProps={{ sx: { color: colors.white } }}
+                            fullWidth size='small' label='El. paštas'
+                            onChange={(e) => setEmail(e.target.value)} />
                     </Stack>
-                    <TextField color={'info'} sx={{ fontSize: 14 }} variant={'outlined'} InputProps={{ sx: { color: colors.white } }} InputLabelProps={{ sx: { color: colors.white } }}
-                        fullWidth size='small' label='Žinutės tekstas' rows={6} multiline />
+                    <TextField color={'info'} sx={{ fontSize: 14 }} variant={'outlined'} InputProps={{ sx: { color: colors.white } }}
+                        InputLabelProps={{ sx: { color: colors.white } }}
+                        fullWidth size='small' label='Žinutės tekstas' rows={6} multiline
+                        onChange={(e) => setMessage(e.target.value)} />
                 </Stack>
 
                 <Button type={'submit'} variant='outlined' fullWidth
