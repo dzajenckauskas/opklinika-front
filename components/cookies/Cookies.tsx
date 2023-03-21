@@ -56,11 +56,11 @@ function Cookies() {
                             </Typography>
                         </Stack>
                     </Stack>
-                    <Stack direction={'row'} spacing={2} pt={1}>
-                        <Button onClick={acceptPrivacyPolicy} variant={'contained'} color={'info'} >
+                    <Stack direction={'row'} spacing={2} pt={1} width={{ sm: '50%', xs: '100%' }}>
+                        <Button sx={{ width: { sm: '50%', xs: '100%' } }} onClick={acceptPrivacyPolicy} variant={'contained'} color={'info'} >
                             <Typography color={colors.primary} fontSize={'14px'} fontWeight={400} px={3} py={1}>LEISTI</Typography>
                         </Button>
-                        <Button onClick={rejectPrivacyPolicy} variant={'outlined'} color={'info'} >
+                        <Button sx={{ width: { sm: '50%', xs: '100%' } }} onClick={rejectPrivacyPolicy} variant={'outlined'} color={'info'} >
                             <Typography color={'#fff'} fontSize={'14px'} fontWeight={400} px={3} py={1}>NELEISTI</Typography>
                         </Button>
                     </Stack>

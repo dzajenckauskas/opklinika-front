@@ -106,7 +106,7 @@ const Layout = ({ children, title, color, reviews }: Props) => {
                         }}>
                             {'Registracija'}
                         </Typography>
-                        <Typography fontSize={14} fontWeight={300}>Mūsų ortopedijos klinikoje kiekvieno paciento vizitus deriname individualiai registracijos laikus pas specialistus. Kreipkitės telefonu, kad galėtumėte paskirti Jums tinkamą vizito laiką pas kvalifikuotus specialistus, kurie padės rasti tinkamiausią sprendimą Jūsų poreikiams spręsti.</Typography>
+                        <Typography fontSize={14} color={colors.white} fontWeight={300}>Mūsų ortopedijos klinikoje kiekvieno paciento vizitus deriname individualiai registracijos laikus pas specialistus. Kreipkitės telefonu, kad galėtumėte paskirti Jums tinkamą vizito laiką pas kvalifikuotus specialistus, kurie padės rasti tinkamiausią sprendimą Jūsų poreikiams spręsti.</Typography>
                     </Stack>
                     <Stack direction={'column'} sx={{ my: 'auto', mx: 'auto', alignItems: 'flex-end', width: '100%', px: 4 }}>
                         <Typography variant='h1' lineHeight={'20px'} color={'#fff'} mb={1} mt={{ lg: 0, md: 0, sm: 3, xs: 3 }} sx={{

@@ -26,7 +26,7 @@ const Footer = () => {
                             <Typography fontSize={16} mt={2} color={'#fff'} fontWeight={900}>UAB „ORTOPEDIJOS PASLAUGŲ KLINIKA“</Typography>
                             <Link href={`https://goo.gl/maps/RVoW7FDnbvK3EUiBA`} passHref target={'_blank'}>
                                 <Stack direction={'row'} spacing={2} sx={{ cursor: 'pointer' }} alignItems={'center'}>
-                                    <PlaceOutlinedIcon fontSize='small' sx={{ height: '19px', marginRight: '-5px' }} />
+                                    <PlaceOutlinedIcon fontSize='small' color={'info'} sx={{ height: '19px', marginRight: '-5px' }} />
                                     <Typography fontWeight={300} color={'#fff'} fontSize={'14px'} className="underlineOnHover">
                                         {'Laisvės pr. 77, Vilnius'}
                                     </Typography>
@@ -34,7 +34,7 @@ const Footer = () => {
                             </Link>
                             <Link href={`tel:${'+370 607 921 11'}`} passHref>
                                 <Stack direction={'row'} spacing={2} sx={{ cursor: 'pointer' }} alignItems={'center'}>
-                                    <LocalPhoneOutlinedIcon fontSize='small' sx={{ height: '18px', marginRight: '-5px' }} />
+                                    <LocalPhoneOutlinedIcon fontSize='small' color={'info'} sx={{ height: '18px', marginRight: '-5px' }} />
                                     <Typography fontWeight={300} color={'#fff'} fontSize={'14px'} className="underlineOnHover">
                                         {'+370 607 92111'}
                                     </Typography>
@@ -42,7 +42,7 @@ const Footer = () => {
                             </Link>
                             <Link href={`mailto:${'info@opklinika.lt'}`} passHref>
                                 <Stack direction={'row'} spacing={2} sx={{ cursor: 'pointer' }} alignItems={'center'}>
-                                    <MailOutlinedIcon fontSize='small' sx={{ height: '18px', marginRight: '-5px' }} />
+                                    <MailOutlinedIcon fontSize='small' color={'info'} sx={{ height: '18px', marginRight: '-5px' }} />
                                     <Typography fontWeight={300} color={'#fff'} fontSize={'14px'} className="underlineOnHover">
                                         {'info@opklinika.lt'}
                                     </Typography>

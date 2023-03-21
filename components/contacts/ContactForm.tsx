@@ -27,10 +27,10 @@ const ContactForm = () => {
     return (
         <Stack width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }} pt={{ lg: 2, md: 2, sm: 2, xs: 8 }}>
             <form onSubmit={onSubmit}>
-                <Typography variant='h3'>
+                <Typography color={colors.white} variant='h3'>
                     Palikite mums žinutę
                 </Typography>
-                <Typography fontSize={14} fontWeight={300} py={1} lineHeight={'18px'}>
+                <Typography color={colors.white} fontSize={14} fontWeight={300} py={1} lineHeight={'18px'}>
                     Vienas iš būdų gauti reikiamą informaciją, bei užsiregistruoti vizitui - susisiekti el. paštu
                 </Typography>
                 <Stack spacing={2} py={2}>
