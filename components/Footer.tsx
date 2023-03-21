@@ -21,7 +21,7 @@ const Footer = () => {
                     <Stack height={'100%'} maxWidth={200} direction={'row'}>
                         <Logo width={'200px'} icon primaryColor={'#fff'} />
                     </Stack>
-                    <Stack height={'100%'} direction={'row'} spacing={2} mt={2} justifyContent={'space-between'} >
+                    <Stack height={'100%'} direction={{ sm: 'row', xs: 'column' }} spacing={2} mt={2} justifyContent={'space-between'} >
                         <Stack spacing={1}>
                             <Typography fontSize={16} mt={2} color={'#fff'} fontWeight={900}>UAB „ORTOPEDIJOS PASLAUGŲ KLINIKA“</Typography>
                             <Link href={`https://goo.gl/maps/RVoW7FDnbvK3EUiBA`} passHref target={'_blank'}>

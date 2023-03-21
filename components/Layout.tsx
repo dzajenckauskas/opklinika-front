@@ -60,12 +60,10 @@ const Layout = ({ children, title, color, reviews }: Props) => {
     const colors = getColors()
     const renderReviews = reviews?.data.map((review) => {
         return (
-            <Stack key={review.id} sx={{ minHeight: 50, justifyContent: 'center', width: '100%', px: 1 }}>
-                <Typography color={colors.dark} fontWeight={300} fontSize={'14px'} fontStyle={'italic'} lineHeight={'16px'}
+            <Stack key={review.id} sx={{ minHeight: 50, justifyContent: 'center', width: '100%', px: { lg: 1, md: 1, sm: 1, xs: 0 } }}>
+                <Typography color={colors.dark} fontWeight={300} fontSize={'14px'} fontStyle={'italic'} lineHeight={{ lg: '25px', md: '25px', sm: '20px', xs: '18px' }}
                     sx={{
-                        lineHeight: '25px',
                         textAlign: 'justify',
-                        textJustify: "inter-word",
                         minHeight: '70px',
                     }}>
                     <span style={{ fontSize: 26, color: colors.primary, opacity: 0.75, position: 'relative', left: '-2px', bottom: '2px' }}>{'„'}</span>
@@ -132,7 +130,7 @@ const Layout = ({ children, title, color, reviews }: Props) => {
                 }}>
                     {'Pacientų atsiliepimai'}
                 </Typography>
-                <Stack direction={'row'} sx={{ maxWidth: '650px', mx: 'auto', alignItems: 'center', position: 'relative', width: '100%', px: 10, pb: 2 }}>
+                <Stack direction={'row'} sx={{ maxWidth: '650px', mx: 'auto', alignItems: 'center', position: 'relative', width: '100%', px: { lg: 10, md: 10, sm: 10, xs: 8 }, pb: 2 }}>
                     <Button variant='contained' sx={{ position: 'absolute', opacity: .5, left: '20px', height: 20, width: 20, borderRadius: '50%', p: 0, minWidth: 20 }}
                         onClick={toPreviousSlide}><ArrowBackIosNew sx={{ p: .7 }} /></Button>
                     {renderReviews && renderReviews[activeSlide]}

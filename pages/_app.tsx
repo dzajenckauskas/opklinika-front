@@ -4,6 +4,35 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { PT_Sans } from '@next/font/google'
 
 const mainTheme = createTheme({
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          '& label': {
+            color: '#fff',
+          },
+          '& label.Mui-focused': {
+            color: '#fff',
+          },
+          '& .MuiInput-underline:after': {
+            borderBottomColor: '#fff',
+          },
+          '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+              borderColor: '#fff',
+            },
+            '&:hover fieldset': {
+              borderColor: '#fff',
+              borderWidth: '0.15rem',
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: '#fff',
+            },
+          },
+        },
+      },
+    },
+  },
   typography: {
     h1: {
       fontSize: '25px',
@@ -55,6 +84,7 @@ const mainTheme = createTheme({
       dark: '#f2f2f2'
     }
   },
+
 })
 
 const ptSans = PT_Sans({

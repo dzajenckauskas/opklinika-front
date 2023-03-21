@@ -7,6 +7,7 @@ import React, { useState } from 'react'
 import { getColors } from '../layout/colors'
 
 const ContactForm = () => {
+
     const colors = getColors()
     const [completed, setCompleted] = useState(false)
     const onSubmit = () => {
@@ -24,7 +25,7 @@ const ContactForm = () => {
             });
     }
     return (
-        <Stack width={'40%'} pt={2}>
+        <Stack width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }} pt={{ lg: 2, md: 2, sm: 2, xs: 8 }}>
             <form onSubmit={onSubmit}>
                 <Typography variant='h3'>
                     Palikite mums žinutę
@@ -32,15 +33,34 @@ const ContactForm = () => {
                 <Typography fontSize={14} fontWeight={300} py={1} lineHeight={'18px'}>
                     Vienas iš būdų gauti reikiamą informaciją, bei užsiregistruoti vizitui - susisiekti el. paštu
                 </Typography>
-                <Stack spacing={1} py={2}>
-                    <Stack direction={'row'} spacing={1}>
-                        <TextField color={'info'} sx={{ fontSize: 14, backgroundColor: '#fff' }} fullWidth size='small' placeholder='Vardas' />
-                        <TextField color={'info'} sx={{ fontSize: 14, backgroundColor: '#fff' }} fullWidth size='small' placeholder='El. paštas' />
+                <Stack spacing={2} py={2}>
+                    <Stack direction={'row'} spacing={2}>
+                        <TextField
+                            color={'info'} sx={{ fontSize: 14 }} variant={'outlined'} InputProps={{ sx: { color: colors.white } }} InputLabelProps={{ sx: { color: colors.white } }}
+                            fullWidth size='small' label='Vardas' />
+                        <TextField color={'info'} sx={{ fontSize: 14 }} variant={'outlined'} InputProps={{ sx: { color: colors.white } }} InputLabelProps={{ sx: { color: colors.white } }}
+                            fullWidth size='small' label='El. paštas' />
                     </Stack>
-                    <TextField color={'info'} sx={{ fontSize: 14, backgroundColor: '#fff' }} fullWidth size='small' placeholder='Žinutės tekstas' rows={6} multiline />
+                    <TextField color={'info'} sx={{ fontSize: 14 }} variant={'outlined'} InputProps={{ sx: { color: colors.white } }} InputLabelProps={{ sx: { color: colors.white } }}
+                        fullWidth size='small' label='Žinutės tekstas' rows={6} multiline />
                 </Stack>
-                <Button type={'submit'} variant='outlined' sx={{ borderRadius: 0, color: colors.white, fontWeight: 600, border: '2px solid #fff', fontSize: 14, backgroundColor: 'transparent', ':hover': { color: colors.primary, backgroundColor: colors.white, opacity: 1, border: '2px solid #fff', } }}>SIŲSTI UŽKLAUSĄ</Button>
-                {completed && <Typography fontWeight={300} pt={1}>Žinutė išsiųsta! Su Jumis susisieksime artimiausiu metu.</Typography>}
+
+                <Button type={'submit'} variant='outlined' fullWidth
+                    sx={{
+                        color: colors.white, fontWeight: 600, border: '2px solid #fff',
+                        fontSize: 14, backgroundColor: 'transparent', ':hover': {
+                            color: colors.primary,
+                            backgroundColor: colors.white, border: '2px solid #fff',
+                        }
+                    }}>
+                    SIŲSTI UŽKLAUSĄ
+                </Button>
+
+                {completed &&
+                    <Typography fontWeight={300} pt={1}>
+                        Žinutė išsiųsta! Su Jumis susisieksime artimiausiu metu.
+                    </Typography>
+                }
             </form>
         </Stack>
     )
