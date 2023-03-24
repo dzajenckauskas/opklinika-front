@@ -100,8 +100,8 @@ const HomePage = ({ color, services, reviews, products }: Props) => {
                     maxWidth: '1200px', mx: 'auto', width: '100%',
                     px: { lg: 4, md: 4, sm: 3, xs: 3 }
                 }}>
-                    <Stack>
-                        <Typography pb={1} maxWidth={'600px'} fontSize={16} color={colors.white} fontWeight={900} lineHeight={'18px'}>
+                    <Stack width={'100%'}>
+                        <Typography pb={1} fontSize={16} color={colors.white} fontWeight={900} lineHeight={'18px'}>
                             Patyrę ir atsakingi ortopedai-protezuotojai bei ortopedai-technikai užsako, pagamina ir
                             individualiai pritaiko ortopedijos technines priemones:
                         </Typography>
@@ -121,8 +121,8 @@ const HomePage = ({ color, services, reviews, products }: Props) => {
                         </Typography>
                     </Stack>
                 </Stack>
-                <Stack direction={'row'} height={400} width={'100%'}
-                    position={'absolute'} zIndex={0}>
+                <Stack direction={'row'} height={400} width={'100%'} overflow={'hidden'}
+                    position={'absolute'} zIndex={-1}>
                     <Image priority alt={'.attributes.title'} objectFit={'cover'} src={'/assets/images/cover.png'} layout={'fill'}
                         style={{ position: 'relative', opacity: 0.15, objectFit: 'cover', objectPosition: 'center' }} />
                 </Stack>
