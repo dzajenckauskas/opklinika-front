@@ -5,7 +5,8 @@ export const getColors = () => {
         dark: '#090909',
         light: '#E9E9E9',
         white: '#fff',
-        grey: '#464853'
+        grey: '#464853',
+        softGrey: '#f9f9f9'
     }
     return colors
 }

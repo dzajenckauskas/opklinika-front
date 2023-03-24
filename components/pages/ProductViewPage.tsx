@@ -13,8 +13,6 @@ type Props = {
 
 const ProductViewPage = ({ product }: Props) => {
     const imageUrl = product?.attributes.images?.data && product?.attributes.images?.data[0]?.attributes.url
-    console.log(product);
-
     const colors = getColors()
     return (
         <Stack alignItems={'flex-start'} p={4} maxWidth={'lg'} mx={'auto'} minHeight={'80vh'} sx={{ backgroundColor: '#f9f9f9' }}>
@@ -59,13 +57,10 @@ const ProductViewPage = ({ product }: Props) => {
                                     {'KAINOS '} <br />
                                     <span style={{ fontWeight: 600, color: colors.grey, fontSize: 16, lineHeight: '14px' }}>{product?.attributes.prices}€</span>
                                 </Typography>}
-
-
                             <Typography fontSize={12} color={colors.primary}>
                                 {'TIPAS '} <br />
                                 <span style={{ fontWeight: 600, color: colors.grey, fontSize: 16, lineHeight: '14px' }}>{product?.attributes.type}</span>
                             </Typography>
-
                             <Typography variant='body1' fontSize={14} lineHeight={'18px'} color={colors.grey} pt={1} textAlign={'justify'}>
                                 <span style={{ fontWeight: 600, textTransform: 'uppercase', lineHeight: '30px', fontSize: '16px' }}> {'Techninis aprašymas ir paskirtis'}</span> <br />
                                 {product?.attributes.description}
@@ -85,7 +80,6 @@ const ProductViewPage = ({ product }: Props) => {
                                             </Typography>
                                         </Stack>
                                         <Stack direction={{ lg: 'row', md: 'row', sm: 'row', xs: 'column' }} sx={{ backgroundColor: '#fff', border: '1px solid #1e6da1', }} >
-
                                             <Stack width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }} direction={'row'} p={1} sx={{ borderRight: '1px solid #1e6da1' }}>
                                                 <Typography color={colors.primary} fontSize={16} fontWeight={600} textTransform={'uppercase'} lineHeight={'15px'} >
                                                     {'Diagnozės'}
@@ -96,7 +90,6 @@ const ProductViewPage = ({ product }: Props) => {
                                                     {'Gydytojai'}
                                                 </Typography>
                                             </Stack>
-
                                         </Stack>
                                     </Stack>
                                 }
@@ -109,7 +102,6 @@ const ProductViewPage = ({ product }: Props) => {
                                                 </Typography>
                                             </Stack>
                                         ))}
-
                                     </Stack>
                                     <Stack direction={{ lg: 'row', md: 'row', sm: 'row', xs: 'column' }} display={{ lg: 'none', md: 'none', sm: 'none', xs: 'flex' }} sx={{ backgroundColor: '#1e6da1' }} >
                                         <Stack justifyContent={'center'} width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }}

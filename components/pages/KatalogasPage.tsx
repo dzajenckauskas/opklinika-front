@@ -26,7 +26,10 @@ const KatalogasPage = ({ products, reviews }: Props) => {
 
     return (
         <Layout title={'ORTOPEDIJOS PRIEMONĖS'} color={"#1E6EA1"} reviews={reviews}>
-            <Stack color={'primary.main'} direction={'row'} sx={{ maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 }, }}>
+            <Stack color={'primary.main'} direction={'row'} sx={{
+                maxWidth: '1200px', mx: 'auto',
+                px: { lg: 4, md: 4, sm: 3, xs: 3 }, pb: 10
+            }}>
                 <Stack spacing={4} direction={'column'}>
                     {products && <Grid container spacing={4}>
                         {renderProducts}

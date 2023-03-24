@@ -10,8 +10,9 @@ import { getColors } from '../layout/colors'
 
 type Props = {
     product: ProductType;
+    preview?: boolean;
 }
-const ProductCard = ({ product }: Props) => {
+const ProductCard = ({ product, preview }: Props) => {
     const colors = getColors()
     const imageUrl = product.attributes.images?.data && product.attributes.images?.data[0].attributes.url
     return (
@@ -25,32 +26,40 @@ const ProductCard = ({ product }: Props) => {
                     minHeight: '100%',
                     boxShadow: 'rgba(0, 0, 0, 0.15) 2px 6px 16px !important'
                 }}>
+                    {product.attributes.isNew &&
+                        <CardActions sx={{ p: 0, pt: 0, position: 'absolute', top: 16, zIndex: 999 }}>
+                            <Button size="large" variant='contained'
+                                sx={{ borderRadius: 0, height: '30px', opacity: '80%', textAlign: 'left' }}>
+                                NAUJAS!
+                            </Button>
+                        </CardActions>}
                     <Stack>
                         <Link passHref href={`/products/${product.id}`} style={{ width: '100%' }}>
                             <Stack sx={{ '::hover': { opacity: .8 }, px: 2, pt: 3 }}>
                                 {imageUrl && <Image src={imageUrl}
-                                    alt={product.attributes.images?.data && product.attributes.images?.data[0].attributes.alternativeText} height={340} width={340} objectFit={'contain'} />}
+                                    alt={product.attributes.images?.data && product.attributes.images?.data[0].attributes.alternativeText}
+                                    height={340} width={340} objectFit={'contain'} />}
                             </Stack>
                         </Link>
                         <Stack px={2} py={2}>
                             <Link passHref href={`/products/${product.id}`} style={{ width: '100%' }}>
-                                <Typography gutterBottom variant="h2" pb={0} color={"primary"} lineHeight={'20px'} fontWeight={900}
+                                <Typography gutterBottom variant="h3" color={colors.primary} fontWeight={900}
                                     sx={{ ':hover': { filter: 'brightness(75%)', cursor: 'pointer' } }}>
                                     {(product.attributes.title)}
                                 </Typography>
                             </Link>
-
-                            {product?.attributes.category?.data?.attributes.title &&
-                                <Typography color={colors.primary} fontSize={12}>
-                                    {'KATEGORIJA '} <br />
-                                    <span style={{ fontWeight: 600, color: colors.grey, fontSize: 14, lineHeight: '12px', textTransform: 'uppercase' }}>{product?.attributes.category?.data?.attributes.title}</span>
-                                </Typography>}
-                            {product?.attributes.type &&
-                                <Typography color={colors.primary} fontSize={12} pt={1}>
-                                    {'TIPAS '} <br />
-                                    <span style={{ fontWeight: 600, color: colors.grey, fontSize: 14, lineHeight: '12px', textTransform: 'uppercase' }}>{product?.attributes.type}</span>
-                                </Typography>}
-
+                            {!preview && <>
+                                {product?.attributes.category?.data?.attributes.title &&
+                                    <Typography color={colors.primary} fontSize={12}>
+                                        {'KATEGORIJA '} <br />
+                                        <span style={{ fontWeight: 600, color: colors.grey, fontSize: 14, lineHeight: '12px', textTransform: 'uppercase' }}>{product?.attributes.category?.data?.attributes.title}</span>
+                                    </Typography>}
+                                {product?.attributes.type &&
+                                    <Typography color={colors.primary} fontSize={12} pt={1}>
+                                        {'TIPAS '} <br />
+                                        <span style={{ fontWeight: 600, color: colors.grey, fontSize: 14, lineHeight: '12px', textTransform: 'uppercase' }}>{product?.attributes.type}</span>
+                                    </Typography>}
+                            </>}
                         </Stack>
                     </Stack>
                     <CardActions sx={{ p: 0, pt: 0, position: 'relative', bottom: 0 }}>
