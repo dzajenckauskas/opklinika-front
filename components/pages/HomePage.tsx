@@ -93,29 +93,6 @@ const HomePage = ({ color, services, reviews, products }: Props) => {
                 </Stack>
             </Stack>
             <Stack sx={{
-                backgroundColor: colors.white, mx: 'auto',
-                width: '100%', position: 'relative', zIndex: 99,
-                pt: 5, pb: 8
-            }}>
-                <Stack sx={{ maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 } }}>
-                    <Typography fontSize={16} color={colors.primary} py={2} lineHeight={'18px'} fontWeight={600}>
-                        Mūsų vizija – būti profesionalia, dinamiška ir konkurencinga ortopedijos techninių priemonių gamybos ir prekybos įmone.
-                        Įmonės misija – aprūpinti gyventojus atsakingai ir kokybiškai pagamintomis ortopedijos techninėmis priemonėmis, užtikrinančiomis aukštesnę jų gyvenimo kokybę.
-                    </Typography>
-                    <Typography lineHeight={'18px'} fontSize={14} textAlign={'justify'} color={'secondary.main'} fontWeight={300}>
-                        Glaudžiai bendradarbiaujame su įvairiomis medicinos įstaigomis, neįgalius pacientus vizituojame ir konsultuojame jų gyvenamosiose vietose, ortopedijos techninės priemonės užsakomos, gaminamos ir pritaikomos beveik visoje Lietuvoje. Gamyboje naudojamos kokybiškos, nekenksmingos ir saugios žaliavos, iš kurių gaminamos ortopedijos priemonės yra puikiai vertinamos gydytojų ir pacientų.
-                    </Typography>
-                    <br />
-                    <Typography lineHeight={'18px'} fontSize={14} textAlign={'justify'} color={'secondary.main'} fontWeight={300}>
-                        Mūsų gaminamos ortopedijos techninės priemonės yra aprobuotos Lietuvos sveikatos apsaugos ministerijos, atitinka Europos direktyvos 93/42/EEB reikalavimus ir Lietuvos medicinos normos MN 4:2009 būtinuosius reikalavimus. Visiems mūsų gaminiams yra taikomi garantiniai įsipareigojimai.
-                    </Typography>
-                    <br />
-                    <Typography lineHeight={'18px'} fontSize={14} textAlign={'justify'} color={'secondary.main'} fontWeight={300}>
-                        Įmonė yra sudariusi sutartį su Valstybine ligonių kasa prie Lietuvos Respublikos sveikatos apsaugos ministerijos, todėl atsižvelgiant į paciento diagnozę ortopediniai gaminiai bei gydytojų konsultacijos yra visiškai arba iš dalies kompensuojami pagal nustatytą tvarką.
-                    </Typography>
-                </Stack>
-            </Stack>
-            <Stack sx={{
                 backgroundColor: colors.primary,
                 width: '100%', position: 'relative', zIndex: 99,
             }}>
@@ -152,6 +129,30 @@ const HomePage = ({ color, services, reviews, products }: Props) => {
             </Stack>
             <Stack sx={{
                 backgroundColor: colors.white, mx: 'auto',
+                width: '100%', position: 'relative', zIndex: 99,
+                pt: 5, pb: 8
+            }}>
+                <Stack sx={{ maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 } }}>
+                    <Typography fontSize={16} color={colors.primary} py={2} lineHeight={'18px'} fontWeight={600}>
+                        Mūsų vizija – būti profesionalia, dinamiška ir konkurencinga ortopedijos techninių priemonių gamybos ir prekybos įmone.
+                        Įmonės misija – aprūpinti gyventojus atsakingai ir kokybiškai pagamintomis ortopedijos techninėmis priemonėmis, užtikrinančiomis aukštesnę jų gyvenimo kokybę.
+                    </Typography>
+                    <Typography lineHeight={'18px'} fontSize={14} textAlign={'justify'} color={'secondary.main'} fontWeight={300}>
+                        Glaudžiai bendradarbiaujame su įvairiomis medicinos įstaigomis, neįgalius pacientus vizituojame ir konsultuojame jų gyvenamosiose vietose, ortopedijos techninės priemonės užsakomos, gaminamos ir pritaikomos beveik visoje Lietuvoje. Gamyboje naudojamos kokybiškos, nekenksmingos ir saugios žaliavos, iš kurių gaminamos ortopedijos priemonės yra puikiai vertinamos gydytojų ir pacientų.
+                    </Typography>
+                    <br />
+                    <Typography lineHeight={'18px'} fontSize={14} textAlign={'justify'} color={'secondary.main'} fontWeight={300}>
+                        Mūsų gaminamos ortopedijos techninės priemonės yra aprobuotos Lietuvos sveikatos apsaugos ministerijos, atitinka Europos direktyvos 93/42/EEB reikalavimus ir Lietuvos medicinos normos MN 4:2009 būtinuosius reikalavimus. Visiems mūsų gaminiams yra taikomi garantiniai įsipareigojimai.
+                    </Typography>
+                    <br />
+                    <Typography lineHeight={'18px'} fontSize={14} textAlign={'justify'} color={'secondary.main'} fontWeight={300}>
+                        Įmonė yra sudariusi sutartį su Valstybine ligonių kasa prie Lietuvos Respublikos sveikatos apsaugos ministerijos, todėl atsižvelgiant į paciento diagnozę ortopediniai gaminiai bei gydytojų konsultacijos yra visiškai arba iš dalies kompensuojami pagal nustatytą tvarką.
+                    </Typography>
+                </Stack>
+            </Stack>
+
+            <Stack sx={{
+                backgroundColor: colors.softGrey, mx: 'auto',
                 width: '100%', position: 'relative', zIndex: 99,
                 pt: 5
             }}>

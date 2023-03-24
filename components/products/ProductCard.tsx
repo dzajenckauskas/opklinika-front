@@ -27,7 +27,7 @@ const ProductCard = ({ product, preview }: Props) => {
                     boxShadow: 'rgba(0, 0, 0, 0.15) 2px 6px 16px !important'
                 }}>
                     {product.attributes.isNew &&
-                        <CardActions sx={{ p: 0, pt: 0, position: 'absolute', top: 16, zIndex: 999 }}>
+                        <CardActions sx={{ p: 0, pt: 0, position: 'absolute', top: 16, zIndex: 99 }}>
                             <Button size="large" variant='contained'
                                 sx={{ borderRadius: 0, height: '30px', opacity: '80%', textAlign: 'left' }}>
                                 NAUJAS!
