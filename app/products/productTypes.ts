@@ -28,6 +28,7 @@ export type ProductAttributesType = {
     publishedAt: Date;
     createdAt: Date;
     description: string;
+    slug?: string;
     images: ImagesType;
     notes: NoteType[];
     category: ProductCategoryType;

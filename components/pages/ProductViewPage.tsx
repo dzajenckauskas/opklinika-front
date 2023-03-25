@@ -12,8 +12,9 @@ type Props = {
 }
 
 const ProductViewPage = ({ product }: Props) => {
-    const imageUrl = product?.attributes.images?.data && product?.attributes.images?.data[0]?.attributes.url
+    const imageUrl = product?.attributes?.images?.data && product?.attributes.images?.data[0]?.attributes.url
     const colors = getColors()
+
     return (
         <Stack alignItems={'flex-start'} p={4} maxWidth={'lg'} mx={'auto'} minHeight={'80vh'} sx={{ backgroundColor: '#f9f9f9' }}>
             <Link href={'/katalogas'} >
@@ -38,38 +39,38 @@ const ProductViewPage = ({ product }: Props) => {
                             </Stack>}
                         <Stack spacing={1}>
                             <Typography variant='h1' maxWidth={600} pb={2}>
-                                {product?.attributes.title}
+                                {product?.attributes?.title}
                             </Typography>
-                            {product?.attributes.category?.data?.attributes.title &&
+                            {product?.attributes?.category?.data?.attributes.title &&
                                 <Typography color={colors.primary} fontSize={12}>
                                     {'KATEGORIJA '} <br />
                                     <span style={{ fontWeight: 600, color: colors.grey, fontSize: 16, lineHeight: '14px', textTransform: 'uppercase' }}>
-                                        {product?.attributes.category?.data?.attributes.title}
+                                        {product?.attributes?.category?.data?.attributes.title}
                                     </span>
                                 </Typography>}
-                            {product?.attributes.price &&
+                            {product?.attributes?.price &&
                                 <Typography color={colors.primary} fontSize={12}>
                                     {'KAINA '} <br />
                                     <span style={{ fontWeight: 600, color: colors.grey, fontSize: 16, lineHeight: '14px' }}>{product?.attributes.price}€</span>
                                 </Typography>}
-                            {product?.attributes.prices &&
+                            {product?.attributes?.prices &&
                                 <Typography color={colors.primary} fontSize={12}>
                                     {'KAINOS '} <br />
                                     <span style={{ fontWeight: 600, color: colors.grey, fontSize: 16, lineHeight: '14px' }}>{product?.attributes.prices}€</span>
                                 </Typography>}
                             <Typography fontSize={12} color={colors.primary}>
                                 {'TIPAS '} <br />
-                                <span style={{ fontWeight: 600, color: colors.grey, fontSize: 16, lineHeight: '14px' }}>{product?.attributes.type}</span>
+                                <span style={{ fontWeight: 600, color: colors.grey, fontSize: 16, lineHeight: '14px' }}>{product?.attributes?.type}</span>
                             </Typography>
                             <Typography variant='body1' fontSize={14} lineHeight={'18px'} color={colors.grey} pt={1} textAlign={'justify'}>
                                 <span style={{ fontWeight: 600, textTransform: 'uppercase', lineHeight: '30px', fontSize: '16px' }}> {'Techninis aprašymas ir paskirtis'}</span> <br />
-                                {product?.attributes.description}
+                                {product?.attributes?.description}
                             </Typography>
                         </Stack>
                     </Stack>
 
                     <Stack direction={'column'} sx={{ border: '1px solid #1e6da1', color: '#000000DE', boxShadow: 'rgba(0, 0, 0, 0.15) 2px 6px 16px !important' }}>
-                        {product.attributes.diagnosesTable.map((diagnose, index) => (
+                        {product.attributes?.diagnosesTable.map((diagnose, index) => (
                             <Stack key={diagnose.id} sx={{ boxShadow: 'rgba(0, 0, 0, 0.15) 2px 6px 16px !important' }}>
                                 {product.attributes.diagnosesTable[(index) !== 1 ? index - 1 : 0]?.percent !== product.attributes.diagnosesTable[index].percent &&
                                     <Stack>
@@ -121,7 +122,7 @@ const ProductViewPage = ({ product }: Props) => {
                             </Stack>
                         ))}
                     </Stack>
-                    {product?.attributes.notes?.map((note) => (
+                    {product?.attributes?.notes?.map((note) => (
                         <Stack key={note.id} justifyContent={'center'} width={{ lg: '100%', md: '100%', sm: '100%', xs: '100%' }} pt={0}>
                             <Typography color={colors.primary} fontStyle={'italic'} fontSize={12} lineHeight={'14px'}>
                                 {note?.text}

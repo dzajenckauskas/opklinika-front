@@ -34,12 +34,12 @@ const ProductView = ({ product }: Props) => {
 export default ProductView
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const id = context.query.slug
-    const data = await axios.get(getProductQuery(Number(id)))
+    const slug = context.query.slug
 
+    const data = await axios.get(getProductQuery(slug))
     return {
         props: {
-            product: data.data.data,
+            product: data.data.data[0],
         }
     }
 }

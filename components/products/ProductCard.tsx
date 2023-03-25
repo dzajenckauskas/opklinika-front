@@ -15,6 +15,7 @@ type Props = {
 const ProductCard = ({ product, preview }: Props) => {
     const colors = getColors()
     const imageUrl = product.attributes.images?.data && product.attributes.images?.data[0].attributes.url
+
     return (
         <>
             <Grid item lg={3} md={4} sm={6} xs={12} >
@@ -34,7 +35,7 @@ const ProductCard = ({ product, preview }: Props) => {
                             </Button>
                         </CardActions>}
                     <Stack>
-                        <Link passHref href={`/products/${product.id}`} style={{ width: '100%' }}>
+                        <Link passHref href={`/produktai/${product.attributes.slug}`} style={{ width: '100%' }}>
                             <Stack sx={{ '::hover': { opacity: .8 }, px: 2, pt: 3 }}>
                                 {imageUrl && <Image src={imageUrl}
                                     alt={product.attributes.images?.data && product.attributes.images?.data[0].attributes.alternativeText}
@@ -42,7 +43,7 @@ const ProductCard = ({ product, preview }: Props) => {
                             </Stack>
                         </Link>
                         <Stack px={2} py={2}>
-                            <Link passHref href={`/products/${product.id}`} style={{ width: '100%' }}>
+                            <Link passHref href={`/produktai/${product.attributes.slug}`} style={{ width: '100%' }}>
                                 <Typography gutterBottom variant="h3" color={colors.primary} fontWeight={900}
                                     sx={{ ':hover': { filter: 'brightness(75%)', cursor: 'pointer' } }}>
                                     {(product.attributes.title)}
@@ -57,13 +58,16 @@ const ProductCard = ({ product, preview }: Props) => {
                                 {product?.attributes.type &&
                                     <Typography color={colors.primary} fontSize={12} pt={1}>
                                         {'TIPAS '} <br />
-                                        <span style={{ fontWeight: 600, color: colors.grey, fontSize: 14, lineHeight: '12px', textTransform: 'uppercase' }}>{product?.attributes.type}</span>
+                                        <span style={{
+                                            fontWeight: 600, color: colors.grey, fontSize: 14,
+                                            lineHeight: '12px', textTransform: 'uppercase'
+                                        }}>{product?.attributes.type}</span>
                                     </Typography>}
                             </>}
                         </Stack>
                     </Stack>
                     <CardActions sx={{ p: 0, pt: 0, position: 'relative', bottom: 0 }}>
-                        <Link passHref href={`/products/${product.id}`} style={{ width: '100%' }}>
+                        <Link passHref href={`/produktai/${product.attributes.slug}`} style={{ width: '100%' }}>
                             <Button size="large" color="primary" variant='contained' fullWidth
                                 sx={{ borderRadius: 0, height: '50px' }}>
                                 Peržiūrėti
