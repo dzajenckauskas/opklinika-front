@@ -38,13 +38,13 @@ const ProductCard = ({ product, preview }: Props) => {
                         <Link passHref href={`/produktai/${product.attributes.slug}`} style={{ width: '100%' }}>
                             <Stack sx={{ '::hover': { opacity: .8 }, px: 2, pt: 3 }}>
                                 {imageUrl && <Image src={imageUrl}
-                                    alt={product.attributes.images?.data && product.attributes.images?.data[0].attributes.alternativeText}
+                                    alt={product.attributes.images?.data && product.attributes.images?.data[0].attributes.name}
                                     height={340} width={340} objectFit={'contain'} />}
                             </Stack>
                         </Link>
                         <Stack px={2} py={2}>
                             <Link passHref href={`/produktai/${product.attributes.slug}`} style={{ width: '100%' }}>
-                                <Typography gutterBottom variant="h3" color={colors.primary} fontWeight={900}
+                                <Typography gutterBottom color={colors.primary} fontWeight={900}
                                     sx={{ ':hover': { filter: 'brightness(75%)', cursor: 'pointer' } }}>
                                     {(product.attributes.title)}
                                 </Typography>

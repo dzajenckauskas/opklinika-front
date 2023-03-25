@@ -6,7 +6,7 @@ import { getColors } from '../layout/colors';
 const HeroBanner = () => {
     const colors = getColors()
     return (
-        <>
+        <Stack overflow={'hidden'}>
             <Stack direction={'row'} maxHeight={500} height={'100%'} width={'100vw'} overflow={'hidden'}
                 position={'absolute'} left={0} top={{ lg: 130, md: 130, sm: 80, xs: 80 }} zIndex={9}
                 sx={{ background: 'linear-gradient(#f9f9f910,#1e6da119);', backgroundColor: colors.primary, opacity: .7, }} >
@@ -35,7 +35,7 @@ const HeroBanner = () => {
                     </Typography>
                 </Stack>
             </Stack>
-        </>
+        </Stack>
     )
 }
 
