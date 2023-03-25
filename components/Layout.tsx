@@ -102,11 +102,10 @@ const Layout = ({ children, title, color, reviews }: Props) => {
                 backgroundColor: colors.primary, overflow: 'hidden',
                 width: '100%', position: 'relative', zIndex: 99,
             }}>
-                <Stack direction={'row'} justifyContent={'center'} py={8} sx={{
+                <Stack direction={{ lg: 'row', md: 'row', sm: 'column', xs: 'column' }} justifyContent={'center'} py={8} sx={{
                     maxWidth: '1200px', mx: 'auto', width: '100%',
-                    px: { lg: 4, md: 4, sm: 3, xs: 3 }
                 }}>
-                    <Stack direction={'column'} spacing={1} sx={{ mx: 'auto', alignItems: 'flex-start', position: 'relative', width: '100%', px: 4 }}>
+                    <Stack direction={'column'} spacing={1} sx={{ mx: 'auto', alignItems: 'flex-start', position: 'relative', width: '100%', px: { lg: 4, md: 4, sm: 3, xs: 3 } }}>
                         <Typography variant='h1' lineHeight={'20px'} color={'#fff'} mb={1} sx={{
                             textTransform: 'uppercase', textAlign: 'left'
                         }}>
@@ -114,7 +113,7 @@ const Layout = ({ children, title, color, reviews }: Props) => {
                         </Typography>
                         <Typography fontSize={14} color={colors.white} fontWeight={300}>Mūsų ortopedijos klinikoje kiekvieno paciento vizitus deriname individualiai registracijos laikus pas specialistus. Kreipkitės telefonu, kad galėtumėte paskirti Jums tinkamą vizito laiką pas kvalifikuotus specialistus, kurie padės rasti tinkamiausią sprendimą Jūsų poreikiams spręsti.</Typography>
                     </Stack>
-                    <Stack direction={'column'} sx={{ my: 'auto', mx: 'auto', alignItems: 'flex-end', width: '100%', px: 4 }}>
+                    <Stack direction={'column'} sx={{ my: 'auto', mx: 'auto', alignItems: 'flex-end', width: '100%', px: { lg: 4, md: 4, sm: 3, xs: 3 } }}>
                         <Typography variant='h1' lineHeight={'20px'} color={'#fff'} mb={1} mt={{ lg: 0, md: 0, sm: 3, xs: 3 }} sx={{
                             textTransform: 'uppercase', textAlign: 'left'
                         }}>
@@ -130,37 +129,11 @@ const Layout = ({ children, title, color, reviews }: Props) => {
                     </Stack>
                 </Stack>
                 <Stack direction={'row'} height={400} width={'100%'}
-                    position={'absolute'} zIndex={0}>
+                    position={'absolute'} zIndex={-1}>
                     <Image priority alt={'.attributes.title'} objectFit={'cover'} src={'/assets/images/cover.png'} layout={'fill'}
                         style={{ position: 'relative', opacity: 0.05, objectFit: 'cover', objectPosition: 'center' }} />
                 </Stack>
             </Stack>
-            {/* <Stack alignItems={'center'} justifyContent={'space-between'} sx={{ width: '100%', backgroundColor: colors.primary, }} pt={8} pb={8}>
-                <Stack flexDirection={{ lg: 'row', md: 'row', sm: 'column', xs: 'column' }} sx={{ maxWidth: '1200px' }}>
-                    <Stack direction={'column'} spacing={1} sx={{ mx: 'auto', alignItems: 'flex-start', position: 'relative', width: '100%', px: 4 }}>
-                        <Typography variant='h1' lineHeight={'20px'} color={'#fff'} mb={1} sx={{
-                            textTransform: 'uppercase', textAlign: 'left'
-                        }}>
-                            {'Registracija'}
-                        </Typography>
-                        <Typography fontSize={14} color={colors.white} fontWeight={300}>Mūsų ortopedijos klinikoje kiekvieno paciento vizitus deriname individualiai registracijos laikus pas specialistus. Kreipkitės telefonu, kad galėtumėte paskirti Jums tinkamą vizito laiką pas kvalifikuotus specialistus, kurie padės rasti tinkamiausią sprendimą Jūsų poreikiams spręsti.</Typography>
-                    </Stack>
-                    <Stack direction={'column'} sx={{ my: 'auto', mx: 'auto', alignItems: 'flex-end', width: '100%', px: 4 }}>
-                        <Typography variant='h1' lineHeight={'20px'} color={'#fff'} mb={1} mt={{ lg: 0, md: 0, sm: 3, xs: 3 }} sx={{
-                            textTransform: 'uppercase', textAlign: 'left'
-                        }}>
-                            <Link href={`tel:${'+370 607 921 11'}`} passHref>
-                                <Stack direction={'row'} spacing={3} sx={{ cursor: 'pointer' }} alignItems={'center'}>
-                                    <LocalPhoneOutlinedIcon fontSize='large' sx={{ height: '50px', marginRight: '-5px' }} />
-                                    <Typography variant='h1' lineHeight={'20px'}>
-                                        {'+370 607 92111'}
-                                    </Typography>
-                                </Stack>
-                            </Link>
-                        </Typography>
-                    </Stack>
-                </Stack>
-            </Stack> */}
             {reviews && <Stack sx={{ width: '100%', backgroundColor: '#f9f9f9' }} pt={8} pb={6}>
                 <Typography variant='h1' lineHeight={'20px'} color={'#1E6EA1'} mb={2} sx={{
                     textTransform: 'uppercase', textAlign: 'center'
