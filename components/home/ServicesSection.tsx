@@ -25,7 +25,7 @@ const ServicesSection = ({ services, color }: Props) => {
                 width: '100%', position: 'relative', zIndex: 99,
                 pt: 5
             }}>
-                <Stack sx={{ maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 } }}>
+                <Stack sx={{ maxWidth: '1200px', mx: 'auto' }}>
                     <Stack id={'services'} sx={{
                         scrollMarginTop: '200px',
                         maxWidth: '1200px', mx: 'auto',

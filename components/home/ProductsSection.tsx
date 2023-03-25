@@ -28,14 +28,12 @@ const ProductsSection = ({ products, color }: Props) => {
                 <Stack sx={{ maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 } }}>
                     <Stack sx={{
                         maxWidth: '1200px', mx: 'auto',
-                        px: { lg: 4, md: 4, sm: 3, xs: 3 },
                     }} pt={2} pb={10} alignItems={'center'} >
                         <Typography variant='h1' color={color ?? '#1E6EA1'} py={5} textAlign={'center'}>
                             {'NAUJI PRODUKTAI'}
                         </Typography>
                         <Stack color={'primary.main'} direction={'row'} sx={{
                             maxWidth: '1200px', mx: 'auto',
-                            px: { lg: 4, md: 4, sm: 3, xs: 3 },
                         }}>
                             <Stack spacing={4} direction={'column'}>
                                 {products &&

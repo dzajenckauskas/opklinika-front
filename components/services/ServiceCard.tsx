@@ -39,12 +39,12 @@ const ServiceCard = ({ service }: Props) => {
                     <CardContent sx={{ height: '100%', position: 'absolute', bottom: 0, zIndex: 99 }}>
                         <Stack height={'100%'} flexDirection={'column'} justifyContent={'flex-end'}
                             alignContent={'flex-start'}>
-                            <Typography variant="h3" lineHeight={'20px'} fontWeight={700}
+                            <Typography variant="h3" lineHeight={'20px'} fontWeight={700} color={colors.white}
                                 sx={{ ':hover': { filter: 'brightness(75%)', cursor: 'pointer', color: colors.white, } }}>
                                 {(service.attributes.title)}
                             </Typography>
                             {first &&
-                                <Typography mt={.5} fontSize={15} lineHeight={'17px'} fontWeight={300}
+                                <Typography mt={.5} fontSize={15} lineHeight={'17px'} fontWeight={300} color={colors.white}
                                     sx={{ ':hover': { filter: 'brightness(75%)', cursor: 'pointer', color: colors.white } }}>
                                     {(service.attributes.description)}
                                 </Typography>}
