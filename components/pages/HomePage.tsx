@@ -38,20 +38,24 @@ const HomePage = ({ services, reviews, products }: Props) => {
                             Patyrę ir atsakingi ortopedai-protezuotojai bei ortopedai-technikai užsako, pagamina ir
                             individualiai pritaiko ortopedijos technines priemones:
                         </Typography>
-                        <Typography fontSize={14} color={colors.white} fontWeight={300} pl={1} lineHeight={'22px'}>
-                            <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.white }} />
-                            po galūnių amputacijų – rankų ir kojų protezus;
-                            <br />
-                            <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.white }} />
-                            po traumų ir kitų susirgimų – rankų, kojų, stuburo plastikinius ir tekstilinius įtvarus, korsetus;
-                            <br />
-                            <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.white }} />
-                            avalynės įdėklus, skirtus gydymui, reabilitacijai, sportui ir kasdieniniam naudojimui;
-                            <br />
-                            <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.white }} />
-                            kitus ortopedinės paskirties gaminius ir įvairias pagalbines priemones neįgaliems žmonėms.
-                            <br />
-                        </Typography>
+                        <Stack spacing={1}>
+                            <Typography fontSize={14} color={colors.white} fontWeight={300} pl={1} lineHeight={'22px'}>
+                                <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.white }} />
+                                po galūnių amputacijų – rankų ir kojų protezus;
+                            </Typography>
+                            <Typography fontSize={14} color={colors.white} fontWeight={300} pl={1} lineHeight={'22px'}>
+                                <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.white }} />
+                                po traumų ir kitų susirgimų – rankų, kojų, stuburo plastikinius ir tekstilinius įtvarus, korsetus;
+                            </Typography>
+                            <Typography fontSize={14} color={colors.white} fontWeight={300} pl={1} lineHeight={'22px'}>
+                                <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.white }} />
+                                avalynės įdėklus, skirtus gydymui, reabilitacijai, sportui ir kasdieniniam naudojimui;
+                            </Typography>
+                            <Typography fontSize={14} color={colors.white} fontWeight={300} pl={1} lineHeight={'22px'}>
+                                <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.white }} />
+                                kitus ortopedinės paskirties gaminius ir įvairias pagalbines priemones neįgaliems žmonėms.
+                            </Typography>
+                        </Stack>
                     </Stack>
                 </Stack>
                 <Stack direction={'row'} height={400} width={'100%'} overflow={'hidden'}

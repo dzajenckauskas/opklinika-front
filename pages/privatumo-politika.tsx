@@ -8,11 +8,10 @@ import Head from 'next/head'
 import PrivacyPolicyPagePage from '@/components/pages/PrivacyPolicyPagePage';
 
 type Props = {
-    products: ProductsType;
     reviews: ReviewsResponseType;
 
 }
-export default function PrivacyPolicyPage({ products, reviews }: Props) {
+export default function PrivacyPolicyPage({ reviews }: Props) {
     return (
         <>
             <Head>
@@ -28,14 +27,11 @@ export default function PrivacyPolicyPage({ products, reviews }: Props) {
 
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-    const data = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/products?pagination[page]=${context.query.page ?? 1}&pagination[pageSize]=12&populate=deep`)
     const reviews = await axios.get(getCustomerReviewsQuery())
 
     return {
         props: {
-            products: data.data,
             reviews: reviews.data
-
         }
     }
 }
