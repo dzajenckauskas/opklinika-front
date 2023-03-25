@@ -27,9 +27,9 @@ const ServiceCard = ({ service }: Props) => {
                 }}>
                     <Stack direction={'row'} height={300} width={'100%'}
                         position={'absolute'} zIndex={991} >
-                        <Image priority alt={service.attributes.title} objectFit={'cover'}
-                            src={imageUrl ?? '/assets/images/cover.png'}
-                            layout={'fill'} style={{ position: 'relative', opacity: 0.1, objectFit: 'cover' }} />
+                        {imageUrl && <Image priority alt={service.attributes.title} objectFit={'cover'}
+                            src={imageUrl}
+                            layout={'fill'} style={{ position: 'relative', opacity: 0.1, objectFit: 'cover' }} />}
                     </Stack>
                     <Stack direction={'row'} height={300}
                         sx={{ background: 'linear-gradient(#f9f9f940,#1e6da199);', backgroundColor: colors.primary, opacity: .9, }}
@@ -39,7 +39,7 @@ const ServiceCard = ({ service }: Props) => {
                     <CardContent sx={{ height: '100%', position: 'absolute', bottom: 0, zIndex: 99 }}>
                         <Stack height={'100%'} flexDirection={'column'} justifyContent={'flex-end'}
                             alignContent={'flex-start'}>
-                            <Typography variant="h3" lineHeight={'20px'} fontWeight={700} color={colors.white}
+                            <Typography fontSize={20} lineHeight={'22px'} fontWeight={700} color={colors.white}
                                 sx={{ ':hover': { filter: 'brightness(75%)', cursor: 'pointer', color: colors.white, } }}>
                                 {(service.attributes.title)}
                             </Typography>

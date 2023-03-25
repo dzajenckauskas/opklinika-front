@@ -44,7 +44,7 @@ const ProductCard = ({ product, preview }: Props) => {
                         </Link>
                         <Stack px={2} py={2}>
                             <Link passHref href={`/produktai/${product.attributes.slug}`} style={{ width: '100%' }}>
-                                <Typography gutterBottom color={colors.primary} fontWeight={900}
+                                <Typography fontSize={20} lineHeight={'22px'} gutterBottom color={colors.primary} fontWeight={900}
                                     sx={{ ':hover': { filter: 'brightness(75%)', cursor: 'pointer' } }}>
                                     {(product.attributes.title)}
                                 </Typography>

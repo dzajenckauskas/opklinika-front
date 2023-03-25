@@ -39,19 +39,19 @@ const HomePage = ({ services, reviews, products }: Props) => {
                             individualiai pritaiko ortopedijos technines priemones:
                         </Typography>
                         <Stack spacing={1}>
-                            <Typography fontSize={14} color={colors.white} fontWeight={300} pl={1} lineHeight={'22px'}>
+                            <Typography fontSize={14} color={colors.white} fontWeight={300} pl={1} lineHeight={'20px'}>
                                 <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.white }} />
                                 po galūnių amputacijų – rankų ir kojų protezus;
                             </Typography>
-                            <Typography fontSize={14} color={colors.white} fontWeight={300} pl={1} lineHeight={'22px'}>
+                            <Typography fontSize={14} color={colors.white} fontWeight={300} pl={1} lineHeight={'20px'}>
                                 <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.white }} />
                                 po traumų ir kitų susirgimų – rankų, kojų, stuburo plastikinius ir tekstilinius įtvarus, korsetus;
                             </Typography>
-                            <Typography fontSize={14} color={colors.white} fontWeight={300} pl={1} lineHeight={'22px'}>
+                            <Typography fontSize={14} color={colors.white} fontWeight={300} pl={1} lineHeight={'20px'}>
                                 <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.white }} />
                                 avalynės įdėklus, skirtus gydymui, reabilitacijai, sportui ir kasdieniniam naudojimui;
                             </Typography>
-                            <Typography fontSize={14} color={colors.white} fontWeight={300} pl={1} lineHeight={'22px'}>
+                            <Typography fontSize={14} color={colors.white} fontWeight={300} pl={1} lineHeight={'20px'}>
                                 <ArrowForward sx={{ height: '14px', position: 'relative', top: '3px', color: colors.white }} />
                                 kitus ortopedinės paskirties gaminius ir įvairias pagalbines priemones neįgaliems žmonėms.
                             </Typography>
