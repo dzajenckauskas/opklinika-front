@@ -7,17 +7,17 @@ const HeroBanner = () => {
     const colors = getColors()
     return (
         <Stack overflow={'hidden'}>
-            <Stack direction={'row'} maxHeight={500} height={'100%'} width={'100vw'} overflow={'hidden'}
+            <Stack direction={'row'} maxHeight={700} height={'100%'} width={'100vw'} overflow={'hidden'}
                 position={'absolute'} left={0} top={{ lg: 130, md: 130, sm: 80, xs: 80 }} zIndex={9}
                 sx={{ background: 'linear-gradient(#f9f9f910,#1e6da119);', backgroundColor: colors.primary, opacity: .7, }} >
             </Stack>
             <Stack direction={'row'} overflow={'hidden'} width={'100vw'}
-                height={{ lg: '950px', md: '500px', sm: '700px', xs: '500px' }} alignItems={'center'}
+                height={{ lg: '700px', md: '700px', sm: '700px', xs: '700px' }} alignItems={'center'}
                 position={'absolute'} left={0}
                 top={{ lg: 130, md: 130, sm: 80, xs: 80 }} sx={{ opacity: .7 }}
                 pt={{ lg: 30, md: 20, sm: 10, xs: 0 }}>
                 <Image alt={'ortopedijos specialistai'} src={'/media/banner.webp'}
-                    layout={'fill'} objectFit={'cover'} objectPosition={'center'} priority />
+                    layout={'fill'} objectFit={'cover'} priority />
             </Stack>
             <Stack minHeight={'460px'} zIndex={100} justifyContent={'flex-end'} alignItems={'flex-start'}
                 sx={{
