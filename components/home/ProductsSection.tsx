@@ -1,4 +1,5 @@
 import { ProductsType } from '@/app/products/productTypes';
+import { ArrowForward } from '@mui/icons-material';
 import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
@@ -40,11 +41,17 @@ const ProductsSection = ({ products, color }: Props) => {
                                     <Grid container spacing={4}>
                                         {renderProducts}
                                     </Grid>}
-                                <Link passHref href={'/katalogas'}>
-                                    <Stack pt={2} direction={'row'} justifyContent={'center'}>
-                                        <Button sx={{ fontSize: 14 }} variant='outlined'>PRODUKTŲ KATALOGAS</Button>
-                                    </Stack>
-                                </Link>
+                                <Stack direction={'row'} sx={{ width: '100%', justifyContent: 'flex-end' }} pt={0}>
+                                    <Link href={'/katalogas'} >
+                                        <Button size="small" disableRipple sx={{
+                                            display: 'flex', flexDirection: 'row', alignContent: 'center',
+                                            ':hover': { backgroundColor: 'transparent', textDecoration: 'underline' }
+                                        }}>
+                                            {"PERŽIŪRĖTI KATALOGĄ"}
+                                            <ArrowForward sx={{ height: '14px', color: colors.primary }} />
+                                        </Button>
+                                    </Link>
+                                </Stack>
                             </Stack>
                         </Stack>
                     </Stack>

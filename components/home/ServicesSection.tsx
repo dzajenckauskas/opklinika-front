@@ -1,7 +1,10 @@
 import { ServicesResponseType } from '@/app/services/ServiceType';
+import { ArrowBack, ArrowForward } from '@mui/icons-material';
+import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
+import Link from 'next/link';
 import React from 'react'
 import { getColors } from '../layout/colors';
 import ServiceCard from '../services/ServiceCard';
@@ -37,6 +40,17 @@ const ServicesSection = ({ services, color }: Props) => {
                         <Grid container spacing={2}>
                             {renderServices}
                         </Grid>
+                        <Stack direction={'row'} sx={{ width: '100%', justifyContent: 'flex-end' }} pt={4}>
+                            <Link href={'/kainorastis'} >
+                                <Button size="small" disableRipple sx={{
+                                    display: 'flex', flexDirection: 'row', alignContent: 'center',
+                                    ':hover': { backgroundColor: 'transparent', textDecoration: 'underline' }
+                                }}>
+                                    {"PASLAUGŲ KAINORAŠTIS"}
+                                    <ArrowForward sx={{ height: '14px', color: colors.primary }} />
+                                </Button>
+                            </Link>
+                        </Stack>
                     </Stack>
                 </Stack>
             </Stack>
