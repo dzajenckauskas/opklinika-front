@@ -17,7 +17,7 @@ const KainorastisPage = ({ reviews, pricelists }: Props) => {
     const renderPricelist = pricelists.data.map((pricelistGroup, index) => {
         return (
             <Stack key={pricelistGroup.id} maxWidth={'700px'}>
-                <Typography fontSize={18} color={'primary.main'} fontWeight={600} pt={2} pb={1}>
+                <Typography fontSize={18} color={'primary.main'} fontWeight={600} pb={1} >
                     {pricelistGroup.attributes.title}
                 </Typography>
                 {pricelistGroup.attributes.serviceLines?.map((serviceLine) => {
@@ -53,7 +53,7 @@ const KainorastisPage = ({ reviews, pricelists }: Props) => {
                 })}
                 {pricelists.data[(index) !== 1 ? index - 1 : 0]?.attributes.notes !== pricelists.data[index]?.attributes.notes &&
                     <Stack>
-                        <Stack justifyContent={'center'} width={{ lg: '100%', md: '100%', sm: '100%', xs: '100%' }} py={1}>
+                        <Stack justifyContent={'center'} width={{ lg: '100%', md: '100%', sm: '100%', xs: '100%' }} pt={0} pb={3}>
                             {pricelistGroup?.attributes?.notes?.map((note) => (
                                 <Typography key={note.id} color={colors.primary} fontStyle={'italic'} fontSize={12} lineHeight={'14px'}>
                                     {note?.text}
