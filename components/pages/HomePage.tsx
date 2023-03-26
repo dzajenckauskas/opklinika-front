@@ -60,7 +60,7 @@ const HomePage = ({ services, reviews, products }: Props) => {
                 </Stack>
                 <Stack direction={'row'} height={400} width={'100%'} overflow={'hidden'}
                     position={'absolute'} zIndex={-1}>
-                    <Image priority alt={'.attributes.title'} objectFit={'cover'} src={'/assets/images/cover.png'} layout={'fill'}
+                    <Image loading="lazy" alt={'.attributes.title'} objectFit={'cover'} src={'/assets/images/cover.png'} layout={'fill'}
                         style={{ position: 'relative', opacity: 0.15, objectFit: 'cover', objectPosition: 'center' }} />
                 </Stack>
             </Stack>
