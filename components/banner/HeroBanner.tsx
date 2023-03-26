@@ -16,7 +16,7 @@ const HeroBanner = () => {
                 position={'absolute'} left={0}
                 top={{ lg: 130, md: 130, sm: 80, xs: 80 }} sx={{ opacity: .7 }}
                 pt={{ lg: 30, md: 20, sm: 10, xs: 0 }}>
-                <Image alt={'ortopedijos specialistai'} src={'/media/banner.jpg'}
+                <Image alt={'ortopedijos specialistai'} src={'/media/banner.webp'}
                     layout={'fill'} objectFit={'cover'} objectPosition={'center'} priority />
             </Stack>
             <Stack minHeight={'460px'} zIndex={100} justifyContent={'flex-end'} alignItems={'flex-start'}
