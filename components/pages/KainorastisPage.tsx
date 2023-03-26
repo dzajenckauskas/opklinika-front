@@ -67,7 +67,7 @@ const KainorastisPage = ({ reviews, pricelists }: Props) => {
     })
 
     return (
-        <Layout title={'Kainoraštis'} reviews={reviews}>
+        <Layout title={'Paslaugų kainoraštis'} reviews={reviews}>
             <Stack pb={20} spacing={{ lg: 30, md: 10, sm: 10, xs: 10 }} direction={{ lg: 'row', md: 'row', sm: 'column', xs: 'column' }}
                 sx={{ maxWidth: '1200px', width: '100%', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 }, }}>
                 <Stack width={'100%'}>

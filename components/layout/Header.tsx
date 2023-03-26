@@ -50,10 +50,10 @@ const Header = () => {
                 }}>
                     <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
                         <Stack direction={'column'} spacing={3} px={3} py={8}>
-                            <Link passHref href={'/katalogas'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Katalogas</Typography></Link>
-                            <Link passHref href={'/kainorastis'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Kainoraštis</Typography></Link>
-                            <Link passHref href={'/#services'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Paslaugos</Typography></Link>
-                            <Link passHref href={'#contacts'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Kontaktai</Typography></Link>
+                            <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/katalogas'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Katalogas</Typography></Link>
+                            <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/kainorastis'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Kainoraštis</Typography></Link>
+                            <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/#services'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Paslaugos</Typography></Link>
+                            <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'#contacts'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Kontaktai</Typography></Link>
                         </Stack>
                     </Stack>
                 </Stack>}
