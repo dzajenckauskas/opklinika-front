@@ -27,9 +27,9 @@ const ServiceCard = ({ service }: Props) => {
                 }}>
                     <Stack direction={'row'} height={300} width={'100%'}
                         position={'absolute'} zIndex={991} >
-                        {imageUrl && <Image priority alt={service.attributes.title} objectFit={'cover'}
+                        {imageUrl && <Image alt={service.attributes.title} objectFit={'cover'}
                             src={imageUrl}
-                            layout={'fill'} style={{ position: 'relative', opacity: 0.1, objectFit: 'cover' }} />}
+                            layout={'fill'} loading="lazy" style={{ position: 'relative', opacity: 0.1, objectFit: 'cover' }} />}
                     </Stack>
                     <Stack direction={'row'} height={300}
                         sx={{ background: 'linear-gradient(#f9f9f940,#1e6da199);', backgroundColor: colors.primary, opacity: .9, }}

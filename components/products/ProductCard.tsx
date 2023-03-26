@@ -37,7 +37,7 @@ const ProductCard = ({ product, preview }: Props) => {
                     <Stack>
                         <Link passHref href={`/produktai/${product.attributes.slug}`} style={{ width: '100%' }}>
                             <Stack sx={{ '::hover': { opacity: .8 }, px: 2, pt: 3 }}>
-                                {imageUrl && <Image src={imageUrl}
+                                {imageUrl && <Image src={imageUrl} loading="lazy"
                                     alt={product.attributes.images?.data && product.attributes.images?.data[0].attributes.name}
                                     height={340} width={340} objectFit={'contain'} />}
                             </Stack>
