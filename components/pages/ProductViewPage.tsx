@@ -38,7 +38,7 @@ const ProductViewPage = ({ product }: Props) => {
                                     src={imageUrl} width={1093} height={1051} objectFit={'contain'} />
                             </Stack>}
                         <Stack spacing={1}>
-                            <Typography variant='h1' maxWidth={600} pb={2}>
+                            <Typography variant='h1' maxWidth={600} textTransform={'uppercase'} pb={2}>
                                 {product?.attributes?.title}
                             </Typography>
                             {product?.attributes?.category?.data?.attributes.title &&

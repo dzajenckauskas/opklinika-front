@@ -42,23 +42,23 @@ function Cookies() {
                 <Stack direction={{ lg: 'row', md: 'row', sm: 'column', xs: 'column' }} justifyContent={'space-between'}
                     alignItems={{ lg: 'center', md: 'center', sm: 'flex-start', xs: 'flex-start' }} px={{ lg: 5, md: 5, sm: 3, xs: 3 }} py={3}
                     position={'fixed'} bottom={0} zIndex={999}
-                    sx={{ backgroundColor: colors.primary, width: '100%', boxShadow: 'rgba(0, 0, 0, 0.16) 0px 22px 70px 4px' }}>
+                    sx={{ backgroundColor: '#154d73F2', width: '100%', boxShadow: 'rgba(0, 0, 0, 0.16) 20px 2px 35px 4px' }}>
                     <Stack width={'100%'} mb={1}>
                         <Typography color={colors.white} fontSize={'16px'} fontWeight={600} pb={1}>
-                            Sutikimas su privatumo politika
+                            Šioje svetainėje naudojami slapukai
                         </Typography>
                         <Stack direction={'row'} justifyContent={'flex-start'} alignItems={'top'} pr={{ lg: 4, md: 4, sm: 0, xs: 0 }}>
                             <Typography color={'#fff'} fontSize={'14px'} fontWeight={400} lineHeight={'16px'}>
                                 Šios internetinės parduotuvės veikimui reikalingi slapukai (angl. cookies). Dėl detalesnės informacijos, kuri saugoma slapukuose, skaitykite mūsų {' '}
                                 <Link href="/privatumo-politika" passHref>
-                                    <span style={{ textDecoration: 'underline' }}>privatumo politiką</span>
-                                </Link>. Slapukų iš šios parduotuvės priėmimui, spauskite &ldquo;Leisti&ldquo;.
+                                    <span style={{ textDecoration: 'underline' }}>privatumo politiką.</span>
+                                </Link>
                             </Typography>
                         </Stack>
                     </Stack>
                     <Stack direction={'row'} spacing={2} pt={1} width={{ sm: '50%', xs: '100%' }}>
                         <Button sx={{ width: { sm: '50%', xs: '100%' } }} onClick={acceptPrivacyPolicy} variant={'contained'} color={'info'} >
-                            <Typography color={colors.primary} fontSize={'14px'} fontWeight={400} px={3} py={1}>LEISTI</Typography>
+                            <Typography color={'#154d73'} fontSize={'14px'} fontWeight={400} px={3} py={1}>LEISTI</Typography>
                         </Button>
                         <Button sx={{ width: { sm: '50%', xs: '100%' } }} onClick={rejectPrivacyPolicy} variant={'outlined'} color={'info'} >
                             <Typography color={'#fff'} fontSize={'14px'} fontWeight={400} px={3} py={1}>NELEISTI</Typography>
