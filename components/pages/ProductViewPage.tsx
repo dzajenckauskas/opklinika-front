@@ -17,14 +17,14 @@ const ProductViewPage = ({ product }: Props) => {
 
     return (
         <Stack alignItems={'flex-start'} p={4} maxWidth={'lg'} mx={'auto'} minHeight={'80vh'} sx={{ backgroundColor: '#f9f9f9' }}>
-            <Link href={'/katalogas'} >
+            <Link href={'/ortopedijos-technikos-katalogas'} >
                 <Stack direction={'row'} sx={{ alignItems: 'center' }}>
                     <ArrowBack sx={{ height: '14px', color: colors.primary }} />
                     <Button size="small" disableRipple sx={{
                         display: 'flex', flexDirection: 'row', alignContent: 'center',
                         ':hover': { backgroundColor: 'transparent', textDecoration: 'underline' }
                     }}>
-                        {"Katalogas"}
+                        {"Ortopedijos technikos katalogas"}
                     </Button>
                 </Stack>
             </Link>

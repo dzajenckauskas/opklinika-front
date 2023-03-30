@@ -35,7 +35,7 @@ const ProductCard = ({ product, preview }: Props) => {
                             </Button>
                         </CardActions>}
                     <Stack>
-                        <Link passHref href={`/produktai/${product.attributes.slug}`} style={{ width: '100%' }}>
+                        <Link passHref href={`/ortopedijos-technika/${product.attributes.slug}`} style={{ width: '100%' }}>
                             <Stack sx={{ '::hover': { opacity: .8 }, px: 2, pt: 3 }}>
                                 {imageUrl && <Image src={imageUrl} loading="lazy"
                                     alt={product.attributes.images?.data && product.attributes.images?.data[0].attributes.name}
@@ -43,7 +43,7 @@ const ProductCard = ({ product, preview }: Props) => {
                             </Stack>
                         </Link>
                         <Stack px={2} py={2}>
-                            <Link passHref href={`/produktai/${product.attributes.slug}`} style={{ width: '100%' }}>
+                            <Link passHref href={`/ortopedijos-technika/${product.attributes.slug}`} style={{ width: '100%' }}>
                                 <Typography fontSize={20} lineHeight={'22px'} gutterBottom color={colors.primary} fontWeight={900}
                                     sx={{ ':hover': { filter: 'brightness(75%)', cursor: 'pointer' } }}>
                                     {(product.attributes.title)}
@@ -67,7 +67,7 @@ const ProductCard = ({ product, preview }: Props) => {
                         </Stack>
                     </Stack>
                     <CardActions sx={{ p: 0, pt: 0, position: 'relative', bottom: 0 }}>
-                        <Link passHref href={`/produktai/${product.attributes.slug}`} style={{ width: '100%' }}>
+                        <Link passHref href={`/ortopedijos-technika/${product.attributes.slug}`} style={{ width: '100%' }}>
                             <Button size="large" color="primary" variant='contained' fullWidth
                                 sx={{ borderRadius: 0, height: '50px' }}>
                                 Peržiūrėti

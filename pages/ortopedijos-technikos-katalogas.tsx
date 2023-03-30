@@ -15,7 +15,7 @@ export default function Katalogas({ products, reviews }: Props) {
     return (
         <>
             <Head>
-                <title>Ortopedijos paslaugų klinika: Katalogas</title>
+                <title>Ortopedijos technikos katalogas - Ortopedijos paslaugų klinika</title>
                 <meta name="description" content="Ortopedijos paslaugų klinika" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />

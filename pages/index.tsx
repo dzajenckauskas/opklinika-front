@@ -1,4 +1,4 @@
-import { ProductAttributesType, ProductsType } from '@/app/products/productTypes'
+import { ProductsType } from '@/app/products/productTypes'
 import { getCustomerReviewsQuery } from '@/app/reviews/getCustomerReviewsQuery'
 import { getServicesQuery } from '@/app/services/getServicesQuery'
 import { ReviewsResponseType } from '@/app/services/ReviewTypes'
@@ -20,7 +20,8 @@ export default function Home({ products, services, reviews }: Props) {
     <>
       <Head>
         <title>Ortopedijos paslaugų klinika</title>
-        <meta name="description" content="Ortopedijos paslaugų klinika" />
+        <meta name="description" content="Ortopedijos paslaugų klinika pagal individualius poreikius
+         parenka, pritaiko ir gamina ortopedijos priemones, bei techniką Vilniuje" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

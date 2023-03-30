@@ -41,7 +41,7 @@ const ServicesSection = ({ services, color }: Props) => {
                             {renderServices}
                         </Grid>
                         <Stack direction={'row'} sx={{ width: '100%', justifyContent: 'flex-end' }} pt={4}>
-                            <Link href={'/kainorastis'} >
+                            <Link href={'/paslaugu-kainorastis'} >
                                 <Button size="small" disableRipple sx={{
                                     display: 'flex', flexDirection: 'row', alignContent: 'center',
                                     ':hover': { backgroundColor: 'transparent', textDecoration: 'underline' }

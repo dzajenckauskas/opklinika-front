@@ -31,7 +31,7 @@ const ProductsSection = ({ products, color }: Props) => {
                         maxWidth: '1200px', mx: 'auto',
                     }} pt={2} pb={10} alignItems={'center'} >
                         <Typography variant='h1' color={color ?? '#1E6EA1'} py={5} textAlign={'center'}>
-                            {'NAUJI PRODUKTAI'}
+                            {'INDIVIDUALIAI GAMINAMA TECHNIKA'}
                         </Typography>
                         <Stack color={'primary.main'} direction={'row'} sx={{
                             maxWidth: '1200px', mx: 'auto',
@@ -42,7 +42,7 @@ const ProductsSection = ({ products, color }: Props) => {
                                         {renderProducts}
                                     </Grid>}
                                 <Stack direction={'row'} sx={{ width: '100%', justifyContent: 'flex-end' }} pt={0}>
-                                    <Link href={'/katalogas'} >
+                                    <Link href={'/ortopedijos-technikos-katalogas'} >
                                         <Button size="small" disableRipple sx={{
                                             display: 'flex', flexDirection: 'row', alignContent: 'center',
                                             ':hover': { backgroundColor: 'transparent', textDecoration: 'underline' }

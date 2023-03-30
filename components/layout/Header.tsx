@@ -25,10 +25,10 @@ const Header = () => {
                             </Link>
                         </Stack>
                         <Stack direction={'row'} spacing={5} p={4} sx={{ display: { xs: 'none', md: 'flex' } }}>
-                            <Link passHref href={'/katalogas'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Katalogas</Typography></Link>
-                            <Link passHref href={'/kainorastis'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Kainoraštis</Typography></Link>
-                            <Link passHref href={'/#services'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Paslaugos</Typography></Link>
-                            <Link passHref href={'#contacts'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Kontaktai</Typography></Link>
+                            <Link passHref href={'/ortopedijos-technikos-katalogas'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Katalogas</Typography></Link>
+                            <Link passHref href={'/paslaugu-kainorastis'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Kainoraštis</Typography></Link>
+                            <Link passHref href={'/#ortopedijos-paslaugos'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Paslaugos</Typography></Link>
+                            <Link passHref href={'#kontaktai'}><Typography fontSize={14} color={primaryColor} fontWeight={400}>Kontaktai</Typography></Link>
                         </Stack>
                         <Stack direction={'row'} px={{ lg: 4, md: 4, sm: 3, xs: 3 }} sx={{ display: { xs: 'flex', md: 'none', cursor: 'pointer' } }} alignSelf={'center'}>
                             <div className={`hamburger ${openMenu ? 'is-active' : ''}`} id="hamburger" onClick={() => { setOpenMenu(!openMenu) }}>
@@ -50,8 +50,8 @@ const Header = () => {
                 }}>
                     <Stack direction={'row'} justifyContent={'space-between'} alignItems={'center'}>
                         <Stack direction={'column'} spacing={3} px={3} py={8}>
-                            <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/katalogas'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Katalogas</Typography></Link>
-                            <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/kainorastis'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Kainoraštis</Typography></Link>
+                            <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/ortopedijos-technikos-katalogas'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Katalogas</Typography></Link>
+                            <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/paslaugu-kainorastis'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Kainoraštis</Typography></Link>
                             <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'/#services'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Paslaugos</Typography></Link>
                             <Link onClick={() => { setOpenMenu(!openMenu) }} passHref href={'#contacts'}><Typography fontSize={14} textTransform={'uppercase'} color={primaryColor} fontWeight={600}>Kontaktai</Typography></Link>
                         </Stack>

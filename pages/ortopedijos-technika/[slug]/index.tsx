@@ -17,8 +17,8 @@ const ProductView = ({ product }: Props) => {
     return (
         <>
             <Head>
-                <title>Ortopedijos paslaugų klinika: Katalogas</title>
-                <meta name="description" content="Ortopedijos paslaugų klinika" />
+                <title>Ortopedijos technika - Ortopedijos paslaugų klinika</title>
+                <meta name="description" content="Individualiai ir serijiniu būdu gaminamos ortopedijos technikos katalogas Ortopedijos paslaugų klinikoje" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
