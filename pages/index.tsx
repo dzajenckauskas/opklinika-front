@@ -1,3 +1,5 @@
+import { getCategoriesQuery } from '@/app/categories/getCategoriesQuery'
+import { CategoriesResponseType } from '@/app/categories/ServiceType'
 import { ProductsType } from '@/app/products/productTypes'
 import { getCustomerReviewsQuery } from '@/app/reviews/getCustomerReviewsQuery'
 import { getServicesQuery } from '@/app/services/getServicesQuery'
@@ -11,11 +13,12 @@ import Head from 'next/head'
 
 type Props = {
   services: ServicesResponseType;
+  categories: CategoriesResponseType;
   products: ProductsType;
   reviews: ReviewsResponseType;
 }
 
-export default function Home({ products, services, reviews }: Props) {
+export default function Home({ products, services, reviews, categories }: Props) {
   return (
     <>
       <Head>
@@ -29,6 +32,7 @@ export default function Home({ products, services, reviews }: Props) {
         <HomePage services={services}
           reviews={reviews}
           products={products}
+          categories={categories}
         />
 
       </Stack>
@@ -37,13 +41,16 @@ export default function Home({ products, services, reviews }: Props) {
 }
 export const getServerSideProps: GetServerSideProps = async () => {
   const services = await axios.get(getServicesQuery())
+  const categories = await axios.get(getCategoriesQuery())
   const reviews = await axios.get(getCustomerReviewsQuery())
   const products = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/products?filters[isNew][$eq]=true&populate=*`)
+  console.log(categories.data);
 
   return {
     props: {
       products: products.data,
       services: services.data,
+      categories: categories.data,
       reviews: reviews.data
     }
   }

@@ -1,3 +1,4 @@
+import { CategoriesResponseType } from '@/app/categories/ServiceType';
 import { ProductsType } from '@/app/products/productTypes';
 import { ReviewsResponseType } from '@/app/services/ReviewTypes';
 import { ServicesResponseType } from '@/app/services/ServiceType';
@@ -6,6 +7,7 @@ import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import Image from 'next/legacy/image';
 import HeroBanner from '../banner/HeroBanner';
+import CategoriesSection from '../home/CategoriesSection';
 import ProductsSection from '../home/ProductsSection';
 import ServicesSection from '../home/ServicesSection';
 import Layout from '../Layout';
@@ -16,15 +18,16 @@ type Props = {
     services: ServicesResponseType;
     reviews?: ReviewsResponseType;
     products: ProductsType;
+    categories: CategoriesResponseType;
 }
 
-const HomePage = ({ services, reviews, products }: Props) => {
+const HomePage = ({ services, reviews, products, categories }: Props) => {
     const colors = getColors()
     return (
         <Layout color={colors.primary} reviews={reviews}>
             <HeroBanner />
+            <CategoriesSection categories={categories} />
             <ProductsSection products={products} />
-
             <Stack sx={{
                 backgroundColor: colors.primary,
                 width: '100%', position: 'relative', zIndex: 99,
