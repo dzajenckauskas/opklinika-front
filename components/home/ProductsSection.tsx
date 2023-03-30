@@ -12,10 +12,10 @@ import ProductCard from '../products/ProductCard';
 type Props = {
     products: ProductsType;
     color?: string;
-
+    title?: string;
 }
 
-const ProductsSection = ({ products, color }: Props) => {
+const ProductsSection = ({ products, color, title }: Props) => {
     const colors = getColors()
     const renderProducts = products?.data.map((product) =>
         <ProductCard product={product} key={product.id} preview />
@@ -31,7 +31,7 @@ const ProductsSection = ({ products, color }: Props) => {
                         maxWidth: '1200px', mx: 'auto',
                     }} pt={2} pb={10} alignItems={'center'} >
                         <Typography variant='h1' color={color ?? '#1E6EA1'} py={5} textAlign={'center'}>
-                            {'INDIVIDUALIAI GAMINAMA TECHNIKA'}
+                            {title}
                         </Typography>
                         <Stack color={'primary.main'} direction={'row'} sx={{
                             maxWidth: '1200px', mx: 'auto',

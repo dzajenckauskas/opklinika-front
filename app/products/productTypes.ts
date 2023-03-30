@@ -19,6 +19,7 @@ export type ProductType = {
 
 export type ProductAttributesType = {
     isNew?: boolean;
+    individualyMade?: boolean;
     type: string;
     typeGroup: string;
     title: string;

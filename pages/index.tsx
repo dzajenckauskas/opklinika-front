@@ -14,11 +14,12 @@ import Head from 'next/head'
 type Props = {
   services: ServicesResponseType;
   categories: CategoriesResponseType;
-  products: ProductsType;
+  newProducts: ProductsType;
+  individualProducts: ProductsType;
   reviews: ReviewsResponseType;
 }
 
-export default function Home({ products, services, reviews, categories }: Props) {
+export default function Home({ newProducts, individualProducts, services, reviews, categories }: Props) {
   return (
     <>
       <Head>
@@ -31,7 +32,8 @@ export default function Home({ products, services, reviews, categories }: Props)
       <Stack sx={{ minHeight: '100vh', backgroundColor: '#fff' }}>
         <HomePage services={services}
           reviews={reviews}
-          products={products}
+          individualProducts={individualProducts}
+          newProducts={newProducts}
           categories={categories}
         />
 
@@ -43,12 +45,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const services = await axios.get(getServicesQuery())
   const categories = await axios.get(getCategoriesQuery())
   const reviews = await axios.get(getCustomerReviewsQuery())
-  const products = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/products?filters[isNew][$eq]=true&populate=*`)
-  console.log(categories.data);
+  const newProducts = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/products?filters[isNew][$eq]=true&populate=*`)
+  const individualProducts = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/products?filters[individualyMade][$eq]=true&populate=*`)
 
   return {
     props: {
-      products: products.data,
+      newProducts: newProducts.data,
+      individualProducts: individualProducts.data,
       services: services.data,
       categories: categories.data,
       reviews: reviews.data
