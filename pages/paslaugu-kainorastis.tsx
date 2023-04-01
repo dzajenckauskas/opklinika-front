@@ -15,8 +15,8 @@ export default function Kainorastis({ reviews, pricelists }: Props) {
   return (
     <>
       <Head>
-        <title>Ortopedijos paslaugų klinika: Kontaktai</title>
-        <meta name="description" content="Ortopedijos paslaugų klinika" />
+        <title>Ortopedijos paslaugų kainoraštis - Ortopedijos paslaugų klinika</title>
+        <meta name="description" content="Ortopedijos paslaugų kainoraštis" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -26,10 +26,8 @@ export default function Kainorastis({ reviews, pricelists }: Props) {
 }
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const reviews = await axios.get(getCustomerReviewsQuery())
-  // const pricelists = await axios.get(getCustomerReviewsQuery())
   const pricelists = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/pricelists?populate=*`)
 
-  // /api/pricelists/
   return {
     props: {
       pricelists: pricelists.data,

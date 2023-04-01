@@ -15,7 +15,7 @@ export default function PrivacyPolicyPage({ reviews }: Props) {
     return (
         <>
             <Head>
-                <title>Ortopedijos paslaugų klinika: PrivacyPolicyPage</title>
+                <title>Privatumo politika - Ortopedijos paslaugų klinika</title>
                 <meta name="description" content="Ortopedijos paslaugų klinika" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
