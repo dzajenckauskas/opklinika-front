@@ -18,7 +18,7 @@ const ProductView = ({ product }: Props) => {
         <>
             <Head>
                 <title>{`${product.attributes.title} - Ortopedijos paslaugų klinika`}</title>
-                <meta name="description" content="Individualiai ir serijiniu būdu gaminamos ortopedijos technikos katalogas Ortopedijos paslaugų klinikoje" />
+                <meta name="description" content={`${product.attributes.title}. ${product.attributes.description}`} />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>

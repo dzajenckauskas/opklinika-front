@@ -38,7 +38,7 @@ const ProductCard = ({ product, preview }: Props) => {
                         <Link passHref href={`/ortopedijos-technika/${product.attributes.slug}`} style={{ width: '100%' }}>
                             <Stack sx={{ '::hover': { opacity: .8 }, px: 2, pt: 3 }}>
                                 {imageUrl && <Image src={imageUrl} loading="lazy"
-                                    alt={product.attributes.images?.data && product.attributes.images?.data[0].attributes.name}
+                                    alt={product.attributes.title}
                                     height={340} width={340} objectFit={'contain'} />}
                             </Stack>
                         </Link>

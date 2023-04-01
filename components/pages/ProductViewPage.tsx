@@ -34,7 +34,7 @@ const ProductViewPage = ({ product }: Props) => {
                         spacing={{ lg: 4, md: 4, sm: 4, xs: 4 }}>
                         {imageUrl &&
                             <Stack sx={{ backgroundColor: '#fff', boxShadow: 'rgba(0, 0, 0, 0.15) 2px 6px 16px !important' }}>
-                                <Image alt={product?.attributes.images?.data[0]?.attributes.alternativeText}
+                                <Image alt={product?.attributes.title}
                                     src={imageUrl} width={1093} height={1051} objectFit={'contain'} />
                             </Stack>}
                         <Stack spacing={1}>
@@ -86,7 +86,7 @@ const ProductViewPage = ({ product }: Props) => {
                                                     {'Diagnozės'}
                                                 </Typography>
                                             </Stack>
-                                            <Stack width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }} direction={'row'} alignItems={'center'} p={1} sx={{ borderLeft: '1px solid #1e6da1' }}>
+                                            <Stack display={{ lg: 'flex', md: 'flex', sm: 'flex', xs: 'none' }} width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }} direction={'row'} alignItems={'center'} p={1} sx={{ borderLeft: '1px solid #1e6da1' }}>
                                                 <Typography color={colors.primary} fontSize={16} fontWeight={600} textTransform={'uppercase'} lineHeight={'15px'} >
                                                     {'Gydytojai'}
                                                 </Typography>
@@ -104,13 +104,11 @@ const ProductViewPage = ({ product }: Props) => {
                                             </Stack>
                                         ))}
                                     </Stack>
-                                    <Stack direction={{ lg: 'row', md: 'row', sm: 'row', xs: 'column' }} display={{ lg: 'none', md: 'none', sm: 'none', xs: 'flex' }} sx={{ backgroundColor: '#1e6da1' }} >
-                                        <Stack justifyContent={'center'} width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }}
-                                            sx={{ border: '.5px solid #1e6da1', p: 1, }}>
-                                            <Typography color={'#fff'} fontSize={14} lineHeight={'18px'}>
-                                                {'Gydytojai'}
-                                            </Typography>
-                                        </Stack>
+                                    <Stack width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }} direction={'row'} alignItems={'center'} p={1
+                                    } sx={{ border: '1px solid #1e6da1' }} display={{ lg: 'none', md: 'none', sm: 'none', xs: 'flex' }}>
+                                        <Typography color={colors.primary} fontSize={16} fontWeight={600} textTransform={'uppercase'} lineHeight={'15px'} >
+                                            {'Gydytojai'}
+                                        </Typography>
                                     </Stack>
                                     <Stack justifyContent={'center'} width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }}
                                         sx={{ border: '.5px solid #1e6da1', p: 1, borderLeft: '1px solid #1e6da1', }}>
