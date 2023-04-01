@@ -42,7 +42,7 @@ function Cookies() {
                 <Stack direction={{ lg: 'row', md: 'row', sm: 'column', xs: 'column' }} justifyContent={'space-between'}
                     alignItems={{ lg: 'center', md: 'center', sm: 'flex-start', xs: 'flex-start' }} px={{ lg: 5, md: 5, sm: 3, xs: 3 }} py={3}
                     position={'fixed'} bottom={0} zIndex={999}
-                    sx={{ backgroundColor: '#154d73F2', width: '100%', boxShadow: 'rgba(0, 0, 0, 0.16) 20px 2px 35px 4px' }}>
+                    sx={{ backgroundColor: colors.primaryTransparent, width: '100%', boxShadow: 'rgba(0, 0, 0, 0.16) 20px 2px 35px 4px' }}>
                     <Stack width={'100%'} mb={1}>
                         <Typography color={colors.white} fontSize={'16px'} fontWeight={600} pb={1}>
                             Šioje svetainėje naudojami slapukai
