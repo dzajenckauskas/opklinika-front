@@ -5,30 +5,51 @@ import Typography from '@mui/material/Typography'
 import axios from 'axios'
 import React, { useState } from 'react'
 import { getColors } from '../layout/colors'
+import * as yup from 'yup';
+import { SubmitHandler, useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { ContactFormType } from '@/app/contact-form/ContactFormType'
 
 const ContactForm = () => {
 
     const colors = getColors()
     const [completed, setCompleted] = useState(false)
-    const [email, setEmail] = useState<string>()
-    const [name, setName] = useState<string>()
-    const [message, setMessage] = useState<string>()
-    const onSubmit = () => {
+    const onSubmit = (args: ContactFormType) => {
         axios.post(process.env.NEXT_PUBLIC_API_URL + "/api/contact-forms", {
             data: {
-                email: email,
-                name: name,
-                message: message
+                email: args.email,
+                name: args.name,
+                message: args.message
             }
         })
             .then((response) => {
                 console.log(response);
                 setCompleted(true)
+                reset()
             });
     }
+
+    const contactFormSchema = yup.object({
+        email: yup.string().email(`Neteisingas el. pašto adresas`).required(`Įveskite el. pašto adresą`),
+        message: yup.string().required(`Žinutė yra privaloma`),
+        name: yup.string().required(`Vardas yra privalomas`),
+    }).required();
+
+    const form = useForm<ContactFormType>({
+        resolver: yupResolver(contactFormSchema),
+    });
+
+    const { register, handleSubmit, formState: { errors }, reset } = form
+
+    const submit: SubmitHandler<ContactFormType> = async (
+        args: ContactFormType
+    ) => {
+        onSubmit(args)
+    };
+
     return (
         <Stack width={{ lg: '50%', md: '50%', sm: '50%', xs: '100%' }} pt={{ lg: 2, md: 2, sm: 2, xs: 8 }}>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={handleSubmit(submit)} noValidate>
                 <Typography color={colors.white} variant='h3'>
                     Palikite mums žinutę
                 </Typography>
@@ -42,21 +63,24 @@ const ContactForm = () => {
                             color={'info'} sx={{ fontSize: 14 }} variant={'outlined'} InputProps={{ sx: { color: colors.white } }}
                             InputLabelProps={{ sx: { color: colors.white } }}
                             fullWidth size='small' label='Vardas'
-                            onChange={(e) => setName(e.target.value)} />
+                            {...register("name")} error={errors.name?.message ? true : false}
+                            helperText={errors.name?.message} />
 
                         <TextField
                             required
                             color={'info'} sx={{ fontSize: 14 }} variant={'outlined'} InputProps={{ sx: { color: colors.white } }}
                             InputLabelProps={{ sx: { color: colors.white } }}
                             fullWidth size='small' label='El. paštas'
-                            onChange={(e) => setEmail(e.target.value)} />
+                            {...register("email")} error={errors.email?.message ? true : false}
+                            helperText={errors.email?.message} />
                     </Stack>
                     <TextField
                         required
                         color={'info'} sx={{ fontSize: 14 }} variant={'outlined'} InputProps={{ sx: { color: colors.white } }}
                         InputLabelProps={{ sx: { color: colors.white } }}
                         fullWidth size='small' label='Žinutės tekstas' rows={6} multiline
-                        onChange={(e) => setMessage(e.target.value)} />
+                        {...register("message")} error={errors.message?.message ? true : false}
+                        helperText={errors.message?.message} />
                 </Stack>
 
                 <Button type={'submit'} variant='outlined' fullWidth
@@ -67,7 +91,7 @@ const ContactForm = () => {
                             backgroundColor: colors.white, border: '2px solid #fff',
                         }
                     }}>
-                    SIŲSTI UŽKLAUSĄ
+                    SIŲSTI ŽINUTĘ
                 </Button>
 
                 {completed &&

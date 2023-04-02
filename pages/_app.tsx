@@ -77,7 +77,7 @@ const mainTheme = createTheme({
       main: '#090909',
     },
     error: {
-      main: '#EA0000'
+      main: '#fff'
     },
     info: {
       main: '#fff',
