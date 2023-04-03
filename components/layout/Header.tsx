@@ -20,7 +20,7 @@ const Header = () => {
                 }}>
                     <Stack direction={'row'} justifyContent={'space-between'} sx={{ width: '100%', maxWidth: '1200px', mx: 'auto' }}>
                         <Stack width='300px' px={{ lg: 4, md: 4, sm: 3, xs: 3 }} height={'100%'} alignSelf={'center'}>
-                            <Link passHref href={'/'}>
+                            <Link passHref href={'/'} aria-label={'Ortopedijos paslaugų klinika'}>
                                 <Logo icon title subtitle line primaryColor={primaryColor} />
                             </Link>
                         </Stack>

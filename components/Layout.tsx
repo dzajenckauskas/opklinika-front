@@ -141,10 +141,10 @@ const Layout = ({ children, title, color, reviews }: Props) => {
                     {'Pacientų atsiliepimai'}
                 </Typography>
                 <Stack direction={'row'} sx={{ maxWidth: '650px', mx: 'auto', alignItems: 'center', position: 'relative', width: '100%', px: { lg: 10, md: 10, sm: 10, xs: 8 }, pb: 2 }}>
-                    <Button variant='contained' sx={{ position: 'absolute', opacity: .5, left: '20px', height: 20, width: 20, borderRadius: '50%', p: 0, minWidth: 20 }}
+                    <Button aria-label='to previous slide' variant='contained' sx={{ position: 'absolute', opacity: .5, left: '20px', height: 20, width: 20, borderRadius: '50%', p: 0, minWidth: 20 }}
                         onClick={toPreviousSlide}><ArrowBackIosNew sx={{ p: .7 }} /></Button>
                     {renderReviews && renderReviews[activeSlide]}
-                    <Button variant='contained' sx={{ position: 'absolute', opacity: .5, right: '20px', height: 20, width: 20, borderRadius: '50%', p: 0, minWidth: 20 }}
+                    <Button aria-label='to next slide' variant='contained' sx={{ position: 'absolute', opacity: .5, right: '20px', height: 20, width: 20, borderRadius: '50%', p: 0, minWidth: 20 }}
                         onClick={toNextSlide}><ArrowForwardIos sx={{ p: .7 }} /></Button>
                 </Stack>
             </Stack>}
