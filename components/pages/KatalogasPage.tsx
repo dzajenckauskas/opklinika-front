@@ -1,11 +1,12 @@
 import { ProductsType } from '@/app/products/productTypes'
 import { ReviewsResponseType } from '@/app/services/ReviewTypes'
-import { Grid, Pagination } from '@mui/material'
+import { Grid, Pagination, Typography } from '@mui/material'
 import Stack from '@mui/material/Stack'
 import { useRouter } from 'next/router'
 import { ChangeEvent } from 'react'
 import Layout from '../Layout'
 import ProductCard from '../products/ProductCard'
+import Link from 'next/link'
 
 type Props = {
     products?: ProductsType;
@@ -17,7 +18,7 @@ const KatalogasPage = ({ products, reviews }: Props) => {
         <ProductCard product={product} key={product.id} />
     ))
     const router = useRouter()
-    const handleChange = (e: ChangeEvent<unknown>, p: number) => {
+    const handleChange = (_e: ChangeEvent<unknown>, p: number) => {
         router.push({
             query: { ...router.query, page: p.toString() },
         })
@@ -25,15 +26,16 @@ const KatalogasPage = ({ products, reviews }: Props) => {
     const { page } = router.query
 
     return (
-        <Layout title={'ORTOPEDIJOS TECHNIKOS KATALOGAS'} color={"#1E6EA1"} reviews={reviews}>
+        <Layout catalog title={'ORTOPEDIJOS TECHNIKOS KATALOGAS'} color={"#1E6EA1"} reviews={reviews}>
             <Stack color={'primary.main'} direction={'row'} sx={{
                 maxWidth: '1200px', mx: 'auto',
                 px: { lg: 4, md: 4, sm: 3, xs: 3 }, pb: 10
             }}>
                 <Stack spacing={4} direction={'column'}>
-                    {products && <Grid container spacing={4}>
-                        {renderProducts}
-                    </Grid>}
+                    {products &&
+                        <Grid container spacing={4}>
+                            {renderProducts}
+                        </Grid>}
                     {products && products?.meta.pagination.pageCount > 1 &&
                         <Stack direction={'row'} mb={4} width={'100%'} justifyContent={'center'} pt={2}>
                             <Pagination count={products?.meta.pagination.pageCount} page={page ? Number(page) : 1}

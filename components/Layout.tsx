@@ -1,5 +1,5 @@
 import { ReviewsResponseType } from '@/app/services/ReviewTypes';
-import { ArrowBackIosNew, ArrowForwardIos } from '@mui/icons-material';
+import { ArrowBackIosNew, ArrowForward, ArrowForwardIos } from '@mui/icons-material';
 import Button from '@mui/material/Button';
 import Rating from '@mui/material/Rating';
 import Stack from '@mui/material/Stack';
@@ -16,11 +16,12 @@ import Image from 'next/legacy/image';
 type Props = {
     children: React.ReactNode;
     title?: string;
+    catalog?: boolean;
     color?: string;
     reviews?: ReviewsResponseType;
 }
 
-const Layout = ({ children, title, color, reviews }: Props) => {
+const Layout = ({ children, title, color, reviews, catalog }: Props) => {
     const [activeSlide, setActiveSlide] = useState<number>(0)
     // const [touchStart, setTouchStart] = useState(0);
     // const [touchEnd, setTouchEnd] = useState(0);
@@ -90,12 +91,33 @@ const Layout = ({ children, title, color, reviews }: Props) => {
         <Stack sx={{ minHeight: '100vh', height: '100%', backgroundColor: '#f9f9f9' }}>
             <Header />
             <Stack minHeight={'80vh'}>
-                {title && <Typography fontSize={25} fontWeight={900} lineHeight={'20px'} color={color ?? '#1E6EA1'} mb={4} sx={{
+                {!catalog && title && <Typography fontSize={25} fontWeight={900} lineHeight={'20px'} color={color ?? '#1E6EA1'} mb={4} sx={{
                     textAlign: 'left', width: '100%', pt: 8,
                     textTransform: 'uppercase', maxWidth: '1200px', mx: 'auto', px: { lg: 4, md: 4, sm: 3, xs: 3 },
                 }}>
                     {title}
                 </Typography>}
+
+                {catalog && <Stack mb={2} sx={{ px: { lg: 4, md: 4, sm: 3, xs: 3 }, mx: 'auto', width: '100%', maxWidth: '1200px', }}>
+                    <Typography fontSize={25} fontWeight={900} lineHeight={'20px'} color={color ?? '#1E6EA1'} sx={{
+                        textAlign: 'left', pt: 8,
+                        textTransform: 'uppercase',
+                    }}>
+                        {title}
+                    </Typography>
+
+                    <Button size="small" disableRipple sx={{
+                        px: 0,
+                        pt: 2,
+                        width: 'max-content',
+                        ':hover': { backgroundColor: 'transparent', textDecoration: 'underline' }
+                    }}>
+                        <Link passHref href={'/MC-katalogas.pdf'} target='_blank'>
+                            {"ATSISIŲSTI KATALOGĄ"}
+                            <ArrowForward sx={{ height: '14px', color: colors.primary, transform: "rotate(90deg)", position: 'relative', top: 2 }} />
+                        </Link>
+                    </Button>
+                </Stack>}
                 {children}
             </Stack>
             <Stack sx={{
