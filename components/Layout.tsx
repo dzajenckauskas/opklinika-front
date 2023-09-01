@@ -112,7 +112,7 @@ const Layout = ({ children, title, color, reviews, catalog }: Props) => {
                         width: 'max-content',
                         ':hover': { backgroundColor: 'transparent', textDecoration: 'underline' }
                     }}>
-                        <Link passHref href={'/MC-katalogas.pdf'} target='_blank'>
+                        <Link passHref href={'https://mocc.lt/MC-katalogas.pdf'} target='_blank'>
                             {"ATSISIŲSTI KATALOGĄ"}
                             <ArrowForward sx={{ height: '14px', color: colors.primary, transform: "rotate(90deg)", position: 'relative', top: 2 }} />
                         </Link>
