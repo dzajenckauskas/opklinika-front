@@ -48,11 +48,11 @@ const ProductViewPage = ({ product }: Props) => {
                                         {product?.attributes?.category?.data?.attributes.title}
                                     </span>
                                 </Typography>}
-                            {product?.attributes?.price &&
+                            {/* {product?.attributes?.price &&
                                 <Typography color={colors.primary} fontSize={12}>
                                     {'KAINA '} <br />
                                     <span style={{ fontWeight: 600, color: colors.grey, fontSize: 16, lineHeight: '14px' }}>{product?.attributes.price}€</span>
-                                </Typography>}
+                                </Typography>} */}
                             {product?.attributes?.prices &&
                                 <Typography color={colors.primary} fontSize={12}>
                                     {'KAINOS '} <br />
