@@ -98,7 +98,7 @@ const Layout = ({ children, title, color, reviews, catalog }: Props) => {
                     {title}
                 </Typography>}
 
-                {catalog && <Stack mb={2} sx={{ px: { lg: 4, md: 4, sm: 3, xs: 3 }, mx: 'auto', width: '100%', maxWidth: '1200px', }}>
+                {catalog && title && <Stack mb={2} sx={{ px: { lg: 4, md: 4, sm: 3, xs: 3 }, mx: 'auto', width: '100%', maxWidth: '1200px', }}>
                     <Typography fontSize={25} fontWeight={900} lineHeight={'20px'} color={color ?? '#1E6EA1'} sx={{
                         textAlign: 'left', pt: 8,
                         textTransform: 'uppercase',

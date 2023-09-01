@@ -24,7 +24,7 @@ const ProductViewPage = ({ product }: Props) => {
                         display: 'flex', flexDirection: 'row', alignContent: 'center',
                         ':hover': { backgroundColor: 'transparent', textDecoration: 'underline' }
                     }}>
-                        {"Ortopedijos technikos katalogas"}
+                        {"Ortopedijos priemonių katalogas"}
                     </Button>
                 </Stack>
             </Link>
