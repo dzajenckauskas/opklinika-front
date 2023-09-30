@@ -55,7 +55,7 @@ const ContactForm = () => {
     }).required();
 
     const form = useForm<ContactFormType>({
-        resolver: yupResolver(contactFormSchema),
+        resolver: yupResolver(contactFormSchema as any),
     });
 
     const { register, handleSubmit, formState: { errors }, reset } = form
