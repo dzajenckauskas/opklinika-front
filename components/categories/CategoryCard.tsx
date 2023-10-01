@@ -18,7 +18,7 @@ const CategoryCard = ({ category }: Props) => {
     return (
         <>
             <Grid item lg={4} md={4} sm={6} xs={12} >
-                <Link href={'/ortopedijos-technikos-katalogas'} passHref>
+                <Link href={'/ortopedijos-technikos-katalogas/1'} passHref>
                     <Stack onMouseEnter={() => setfirst(!first)} onMouseLeave={() => setfirst(false)} sx={{
                         overflow: 'hidden', minWidth: 200,
                         width: '100%', position: 'relative', display: 'flex',
