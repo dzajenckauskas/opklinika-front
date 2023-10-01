@@ -8,7 +8,7 @@ import { ServicesResponseType } from '@/app/services/ServiceType'
 import HomePage from '@/components/pages/HomePage'
 import Stack from '@mui/material/Stack'
 import axios from 'axios'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
 type Props = {
@@ -41,7 +41,7 @@ export default function Home({ newProducts, individualProducts, services, review
     </>
   )
 }
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const services = await axios.get(getServicesQuery())
   const categories = await axios.get(getCategoriesQuery())
   const reviews = await axios.get(getCustomerReviewsQuery())

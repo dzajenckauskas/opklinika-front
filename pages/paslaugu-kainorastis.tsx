@@ -1,10 +1,10 @@
-import Head from 'next/head'
-import KainorastisPage from '@/components/pages/KainorastisPage'
+import { PricelistsResponseType } from '@/app/pricelists/PricelistTypes'
 import { getCustomerReviewsQuery } from '@/app/reviews/getCustomerReviewsQuery'
-import axios from 'axios'
-import { GetServerSideProps } from 'next'
 import { ReviewsResponseType } from '@/app/services/ReviewTypes'
-import { PricelistsResponseType, PricelistType } from '@/app/pricelists/PricelistTypes'
+import KainorastisPage from '@/components/pages/KainorastisPage'
+import axios from 'axios'
+import { GetStaticProps } from 'next'
+import Head from 'next/head'
 
 type Props = {
   reviews: ReviewsResponseType;
@@ -24,7 +24,7 @@ export default function Kainorastis({ reviews, pricelists }: Props) {
     </>
   )
 }
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getStaticProps: GetStaticProps = async () => {
   const reviews = await axios.get(getCustomerReviewsQuery())
   const pricelists = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/pricelists?populate=*`)
 

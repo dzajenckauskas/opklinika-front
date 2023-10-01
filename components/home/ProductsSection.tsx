@@ -38,11 +38,11 @@ const ProductsSection = ({ products, color, title }: Props) => {
                         }}>
                             <Stack spacing={4} direction={'column'}>
                                 {products &&
-                                    <Grid container spacing={4}>
+                                    <Grid container spacing={4} sx={{ position: 'relative', left: -32 }}>
                                         {renderProducts}
                                     </Grid>}
                                 <Stack direction={'row'} sx={{ width: '100%', justifyContent: 'flex-end' }} pt={0}>
-                                    <Link href={'/ortopedijos-technikos-katalogas'} >
+                                    <Link href={'/ortopedijos-technikos-katalogas/1'} >
                                         <Button size="small" disableRipple sx={{
                                             display: 'flex', flexDirection: 'row', alignContent: 'center',
                                             ':hover': { backgroundColor: 'transparent', textDecoration: 'underline' }

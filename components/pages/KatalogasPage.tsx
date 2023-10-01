@@ -1,12 +1,11 @@
 import { ProductsType } from '@/app/products/productTypes'
 import { ReviewsResponseType } from '@/app/services/ReviewTypes'
-import { Grid, Pagination, Typography } from '@mui/material'
+import { Grid, Pagination } from '@mui/material'
 import Stack from '@mui/material/Stack'
 import { useRouter } from 'next/router'
 import { ChangeEvent } from 'react'
 import Layout from '../Layout'
 import ProductCard from '../products/ProductCard'
-import Link from 'next/link'
 
 type Props = {
     products?: ProductsType;
@@ -19,11 +18,10 @@ const KatalogasPage = ({ products, reviews }: Props) => {
     ))
     const router = useRouter()
     const handleChange = (_e: ChangeEvent<unknown>, p: number) => {
-        router.push({
-            query: { ...router.query, page: p.toString() },
-        })
+        const path = router.asPath.substring(0, router.asPath.lastIndexOf('/')) + "/" + p
+        router.push(path)
     };
-    const { page } = router.query
+    const page = router.query.id
 
     return (
         <Layout catalog title={'ORTOPEDIJOS PRIEMONIŲ KATALOGAS'} color={"#1E6EA1"} reviews={reviews}>
@@ -33,7 +31,9 @@ const KatalogasPage = ({ products, reviews }: Props) => {
             }}>
                 <Stack spacing={4} direction={'column'}>
                     {products &&
-                        <Grid container spacing={4}>
+                        <Grid container spacing={4} sx={{
+                            position: 'relative', left: -32
+                        }}>
                             {renderProducts}
                         </Grid>}
                     {products && products?.meta.pagination.pageCount > 1 &&

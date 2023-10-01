@@ -3,7 +3,7 @@ import { getCustomerReviewsQuery } from '@/app/reviews/getCustomerReviewsQuery';
 import { ReviewsResponseType } from '@/app/services/ReviewTypes';
 import KatalogasPage from '@/components/pages/KatalogasPage';
 import axios from 'axios'
-import { GetServerSideProps } from 'next'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 
 type Props = {
@@ -25,9 +25,32 @@ export default function Katalogas({ products, reviews }: Props) {
     )
 }
 
+export async function getStaticPaths() {
+    return {
+        paths: [
+            {
+                params: {
+                    id: '1',
+                },
+            },
+            {
+                params: {
+                    id: '2',
+                },
+            },
+            {
+                params: {
+                    id: '3',
+                },
+            }
+        ],
+        fallback: false,
+    }
+}
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-    const data = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/products?pagination[page]=${context.query.page ?? 1}&pagination[pageSize]=12&populate=*`)
+export const getStaticProps: GetStaticProps = async (context: any) => {
+    const id = context.params.id
+    const data = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/products?pagination[page]=${id ?? 1}&pagination[pageSize]=12&populate=*`)
     const reviews = await axios.get(getCustomerReviewsQuery())
 
     return {
