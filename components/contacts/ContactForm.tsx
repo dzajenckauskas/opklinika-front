@@ -11,29 +11,9 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { ContactFormType } from '@/app/contact-form/ContactFormType'
 
 const ContactForm = () => {
-
     const colors = getColors()
     const [completed, setCompleted] = useState(false)
     const onSubmit = async (args: ContactFormType) => {
-        const res = await fetch("/api/sendgrid", {
-            body: JSON.stringify({
-                email: args.email,
-                name: args.name,
-                subject: args.message,
-                message: args.message,
-            }),
-            headers: {
-                "Content-Type": "application/json",
-            },
-            method: "POST",
-        });
-
-        const { error } = await res.json();
-        if (error) {
-            console.log(error);
-            return;
-        }
-
         axios.post(process.env.NEXT_PUBLIC_API_URL + "/api/contact-forms", {
             data: {
                 email: args.email,
