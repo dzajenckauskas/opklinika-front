@@ -1,6 +1,6 @@
 export type ProductsType = {
     data: ProductType[];
-    meta: ProductMetaType;
+    meta?: ProductMetaType;
 }
 
 export type ProductMetaType = {

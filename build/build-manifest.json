@@ -29,6 +29,21 @@
       "static/chunks/webpack.js",
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
+    ],
+    "/ortopedijos-technika/[slug]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/ortopedijos-technika/[slug].js"
+    ],
+    "/ortopedijos-technikos-katalogas/[id]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/ortopedijos-technikos-katalogas/[id].js"
+    ],
+    "/paslaugu-kainorastis": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/paslaugu-kainorastis.js"
     ]
   },
   "ampFirstPages": []
