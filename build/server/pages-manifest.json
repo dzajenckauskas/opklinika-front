@@ -2,8 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/ortopedijos-technikos-katalogas/[id]": "pages/ortopedijos-technikos-katalogas/[id].js",
-  "/": "pages/index.js",
-  "/ortopedijos-technika/[slug]": "pages/ortopedijos-technika/[slug].js",
-  "/paslaugu-kainorastis": "pages/paslaugu-kainorastis.js"
+  "/ortopedijos-technikos-katalogas/[id]": "pages/ortopedijos-technikos-katalogas/[id].js"
 }
