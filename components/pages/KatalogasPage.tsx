@@ -36,9 +36,9 @@ const KatalogasPage = ({ products, reviews }: Props) => {
                         }}>
                             {renderProducts}
                         </Grid>}
-                    {products && products?.meta.pagination.pageCount > 1 &&
+                    {products && products?.meta?.pagination?.pageCount && products?.meta?.pagination?.pageCount > 1 &&
                         <Stack direction={'row'} mb={4} width={'100%'} justifyContent={'center'} pt={2}>
-                            <Pagination count={products?.meta.pagination.pageCount} page={page ? Number(page) : 1}
+                            <Pagination count={products?.meta?.pagination?.pageCount} page={page ? Number(page) : 1}
                                 onChange={handleChange} color={'primary'} shape="rounded" />
                         </Stack>}
                 </Stack>

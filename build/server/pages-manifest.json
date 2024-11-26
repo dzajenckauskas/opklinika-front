@@ -2,5 +2,12 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/ortopedijos-technikos-katalogas/[id]": "pages/ortopedijos-technikos-katalogas/[id].js"
+  "/api/hello": "pages/api/hello.js",
+  "/ortopedijos-technikos-katalogas/[id]": "pages/ortopedijos-technikos-katalogas/[id].js",
+  "/paslaugu-kainorastis": "pages/paslaugu-kainorastis.js",
+  "/": "pages/index.js",
+  "/privatumo-politika": "pages/privatumo-politika.js",
+  "/ortopedijos-technika/[slug]": "pages/ortopedijos-technika/[slug].js",
+  "/sitemap.xml": "pages/sitemap.xml.js",
+  "/404": "pages/404.html"
 }
