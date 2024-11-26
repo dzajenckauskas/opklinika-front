@@ -1,4 +1,5 @@
-/** @type {import('next').NextConfig} */
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'https://default-api-url.com';
+
 const nextConfig = {
   reactStrictMode: true,
   distDir: "build",
@@ -6,11 +7,11 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: `${process.env.NEXT_PUBLIC_API_URL}/api/:path*`
+        destination: `${apiUrl}/api/:path*`
       },
       {
         source: '/uploads/:path*',
-        destination: `${process.env.NEXT_PUBLIC_API_URL}/uploads/:path*`
+        destination: `${apiUrl}/uploads/:path*`
       }
     ]
   },
@@ -28,4 +29,4 @@ const nextConfig = {
   }
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;
