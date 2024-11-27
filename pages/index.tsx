@@ -38,7 +38,7 @@ export default function Home({ newProducts, individualProducts, services, review
         />
         <meta property="og:url" content={process.env.NEXT_PUBLIC_URL} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_URL}/media/homepage-banner.jpg`} />
+        <meta property="og:image" content={`${process.env.NEXT_PUBLIC_URL}/media/banner.jpg`} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Ortopedijos paslaugų klinika | Kokybiškos Ortopedijos Paslaugos Vilniuje" />
@@ -46,7 +46,7 @@ export default function Home({ newProducts, individualProducts, services, review
           name="twitter:description"
           content="Profesionali ortopedijos klinika Vilniuje – individualios ortopedinės priemonės, konsultacijos ir reabilitacija. Kreipkitės į mūsų specialistus šiandien!"
         />
-        <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_URL}/media/homepage-banner.jpg`} />
+        <meta name="twitter:image" content={`${process.env.NEXT_PUBLIC_URL}/media/banner.jpg`} />
 
         <meta name="robots" content="index, follow" />
         <meta
