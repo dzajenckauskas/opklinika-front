@@ -56,27 +56,25 @@ export default function Home({ newProducts, individualProducts, services, review
         <meta name="author" content="Ortopedijos paslaugų klinika" />
 
         <script type="application/ld+json">
-          {`
-    {
-      "@context": "https://schema.org",
-      "@type": "MedicalOrganization",
-      "name": "Ortopedijos paslaugų klinika",
-      "url": "${process.env.NEXT_PUBLIC_URL}",
-      "logo": "${process.env.NEXT_PUBLIC_URL}/favicon.ico",
-      "description": "Profesionali ortopedijos klinika Vilniuje. Gydytojų konsultacijos, diagnostika, reabilitacija ir individualių ortopedijos priemonių gamyba.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Laisvės pr. 77",
-        "addressLocality": "Vilnius",
-        "addressCountry": "LT"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+37060792111",
-        "contactType": "customer service"
-      }
-    }
-    `}
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalOrganization",
+            "name": "Ortopedijos paslaugų klinika",
+            "url": process.env.NEXT_PUBLIC_URL,
+            "logo": `${process.env.NEXT_PUBLIC_URL}/favicon.ico`,
+            "description": "Profesionali ortopedijos klinika Vilniuje. Gydytojų konsultacijos, diagnostika, reabilitacija ir individualių ortopedijos priemonių gamyba.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Laisvės pr. 77",
+              "addressLocality": "Vilnius",
+              "addressCountry": "LT"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+37060792111",
+              "contactType": "customer service"
+            }
+          })}
         </script>
 
         <link rel="icon" href="/favicon.ico" />

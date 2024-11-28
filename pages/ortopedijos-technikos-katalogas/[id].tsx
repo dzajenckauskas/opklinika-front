@@ -48,29 +48,28 @@ export default function Katalogas({ products, reviews }: Props) {
                 <meta name="author" content="Ortopedijos paslaugų klinika" />
 
                 <script type="application/ld+json">
-                    {`
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Ortopedijos technikos katalogas",
-        "description": "Atraskite platų ortopedijos technikos pasirinkimą: įtvarai, protezai, avalynė ir kitos priemonės pagal individualius poreikius.",
-        "url": "${process.env.NEXT_PUBLIC_URL}/ortopedijos-technikos-katalogas/1",
-        "numberOfItems": 20,
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "url": "${process.env.NEXT_PUBLIC_URL}/ortopedijos-technikos-katalogas/item1"
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "url": "${process.env.NEXT_PUBLIC_URL}/ortopedijos-technikos-katalogas/item2"
-          }
-        ]
-      }
-    `}
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "ItemList",
+                        "name": "Ortopedijos technikos katalogas",
+                        "description": "Atraskite platų ortopedijos technikos pasirinkimą: įtvarai, protezai, avalynė ir kitos priemonės pagal individualius poreikius.",
+                        "url": `${process.env.NEXT_PUBLIC_URL}/ortopedijos-technikos-katalogas/1`,
+                        "numberOfItems": 20,
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "url": `${process.env.NEXT_PUBLIC_URL}/ortopedijos-technikos-katalogas/item1`,
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "url": `${process.env.NEXT_PUBLIC_URL}/ortopedijos-technikos-katalogas/item2`,
+                            },
+                        ],
+                    })}
                 </script>
+
 
                 <link rel="icon" href="/favicon.ico" />
             </Head>

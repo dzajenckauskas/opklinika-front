@@ -54,29 +54,28 @@ const ProductView = ({ product }: Props) => {
                 <meta name="author" content="Ortopedijos paslaugų klinika" />
 
                 <script type="application/ld+json">
-                    {`
-      {
-        "@context": "https://schema.org",
-        "@type": "Product",
-        "name": "${product?.attributes?.title}",
-        "description": "${product?.attributes?.description}",
-        "url": "${process.env.NEXT_PUBLIC_URL}/ortopedijos-technika/${product?.attributes?.slug}",
-        "image": "${process.env.NEXT_PUBLIC_URL}/${imageUrl}",
-        "brand": "Ortopedijos paslaugų klinika",
-        "sku": "${product?.attributes?.type}",
-        "category": "${product?.attributes?.category?.data?.attributes.title}",
-        "productType": "${product?.attributes?.type}",
-        "offers": {
-          "@type": "Offer",
-          "url": "${process.env.NEXT_PUBLIC_URL}/ortopedijos-technika/${product?.attributes?.slug}",
-          "priceCurrency": "EUR",
-          "price": "${product?.attributes?.price}",
-          "priceValidUntil": "2024-12-31",
-          "availability": "https://schema.org/InStock"
-        }
-      }
-    `}
+                    {JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "Product",
+                        "name": product?.attributes?.title,
+                        "description": product?.attributes?.description,
+                        "url": `${process.env.NEXT_PUBLIC_URL}/ortopedijos-technika/${product?.attributes?.slug}`,
+                        "image": `${process.env.NEXT_PUBLIC_URL}/${imageUrl}`,
+                        "brand": "Ortopedijos paslaugų klinika",
+                        "sku": product?.attributes?.type,
+                        "category": product?.attributes?.category?.data?.attributes?.title,
+                        "productType": product?.attributes?.type,
+                        "offers": {
+                            "@type": "Offer",
+                            "url": `${process.env.NEXT_PUBLIC_URL}/ortopedijos-technika/${product?.attributes?.slug}`,
+                            "priceCurrency": "EUR",
+                            "price": product?.attributes?.price,
+                            "priceValidUntil": "2024-12-31",
+                            "availability": "https://schema.org/InStock",
+                        },
+                    })}
                 </script>
+
 
                 <link rel="icon" href="/favicon.ico" />
             </Head>
