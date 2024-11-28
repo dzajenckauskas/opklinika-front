@@ -55,7 +55,7 @@ export default function Home({ newProducts, individualProducts, services, review
         />
         <meta name="author" content="Ortopedijos paslaugų klinika" />
 
-        <script type="application/ld+json">
+        {/* <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "MedicalOrganization",
@@ -75,7 +75,7 @@ export default function Home({ newProducts, individualProducts, services, review
               "contactType": "customer service"
             }
           })}
-        </script>
+        </script> */}
 
         <link rel="icon" href="/favicon.ico" />
       </Head>

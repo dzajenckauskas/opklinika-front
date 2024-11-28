@@ -47,7 +47,7 @@ export default function Katalogas({ products, reviews }: Props) {
                 />
                 <meta name="author" content="Ortopedijos paslaugų klinika" />
 
-                <script type="application/ld+json">
+                {/* <script type="application/ld+json">
                     {JSON.stringify({
                         "@context": "https://schema.org",
                         "@type": "ItemList",
@@ -68,7 +68,7 @@ export default function Katalogas({ products, reviews }: Props) {
                             },
                         ],
                     })}
-                </script>
+                </script> */}
 
 
                 <link rel="icon" href="/favicon.ico" />
