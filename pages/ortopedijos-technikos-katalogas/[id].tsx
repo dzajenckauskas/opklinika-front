@@ -9,9 +9,10 @@ import Head from 'next/head'
 type Props = {
     products: ProductsType;
     reviews: ReviewsResponseType;
+    id?: number;
 
 }
-export default function Katalogas({ products, reviews }: Props) {
+export default function Katalogas({ products, reviews, id }: Props) {
     return (
         <>
             <Head>
@@ -21,14 +22,14 @@ export default function Katalogas({ products, reviews }: Props) {
                     content="Atraskite platų ortopedijos technikos pasirinkimą Vilniuje: įtvarai, protezai, ortopedinė avalynė ir kitos priemonės pagal individualius poreikius. Užsakykite dabar!"
                 />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <link rel="canonical" href={`${process.env.NEXT_PUBLIC_URL}/ortopedijos-technikos-katalogas/1`} />
+                <link rel="canonical" href={`${process.env.NEXT_PUBLIC_URL}/ortopedijos-technikos-katalogas/${id}`} />
 
                 <meta property="og:title" content="Ortopedijos technikos katalogas | Kokybiškos Priemonės Jūsų Sveikatai" />
                 <meta
                     property="og:description"
                     content="Peržiūrėkite mūsų ortopedijos technikos katalogą: aukštos kokybės įtvarai, protezai, ortopedinė avalynė ir daugiau. Užtikrinkite komfortą ir sveikatą su mūsų sprendimais!"
                 />
-                <meta property="og:url" content={`${process.env.NEXT_PUBLIC_URL}/ortopedijos-technikos-katalogas/1`} />
+                <meta property="og:url" content={`${process.env.NEXT_PUBLIC_URL}/ortopedijos-technikos-katalogas/${id}`} />
                 <meta property="og:type" content="website" />
                 <meta property="og:image" content={`${process.env.NEXT_PUBLIC_URL}/media/ortopedija.jpg`} />
 
@@ -111,7 +112,8 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
     return {
         props: {
             products: data.data,
-            reviews: reviews.data
+            reviews: reviews.data,
+            id: id,
 
         }
     }
