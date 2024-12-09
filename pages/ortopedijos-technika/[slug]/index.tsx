@@ -110,7 +110,7 @@ export const getStaticProps = async (context: any) => {
     const data = await axios.get(getProductQuery(slug))
     return {
         props: {
-            product: data.data.data[0],
+            product: data?.data?.data?.[0],
         }
     }
 }
