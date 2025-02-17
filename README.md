@@ -1,38 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Opklinika
 
-## Getting Started
+## Overview
+Opklinika is a medical services platform designed to connect users with healthcare providers. This frontend project is built using modern web technologies to ensure a seamless user experience and efficient content management.
 
-First, run the development server:
+## Tech Stack
+- **Frontend:** React, Next.js, TypeScript
+- **Backend:** Strapi CMS (Headless CMS)
+- **Database:** PostgreSQL
+- **Deployment:** VPS (Linux-based)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Features
+- **Dynamic content management** powered by Strapi CMS.
+- **SEO-optimized architecture** with Next.js for server-side rendering.
+- **Responsive design** ensuring a smooth experience on all devices.
+- **Fast performance and scalability** through optimized code and efficient state management.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup & Installation
+### Prerequisites
+Ensure you have the following installed:
+- Node.js (>= 16.x)
+- npm or yarn
+- PostgreSQL
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Installation Steps
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/dzajenckauskas/opklinika-front.git
+   cd opklinika-front
+   ```
+2. Install dependencies:
+   ```sh
+   npm install  # or yarn install
+   ```
+3. Set up environment variables:
+   - Create a `.env.local` file in the root directory.
+   - Add necessary environment variables (e.g., Strapi API keys, database connection).
+4. Start the development server:
+   ```sh
+   npm run dev  # or yarn dev
+   ```
+5. Access the app at `http://localhost:3000`.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Deployment
+- The project is deployed on a VPS with Nginx as a reverse proxy.
+- Uses **PM2** for process management.
+- CI/CD automation with **GitHub Actions**.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Future Improvements
+- Implement **user authentication** for personalized experiences.
+- Improve **UI/UX** with enhanced accessibility and design updates.
+- Add **multi-language support** to reach a wider audience.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Contributing
+Contributions are welcome! Feel free to fork the repo, submit issues, or suggest improvements.
 
-## Learn More
+## License
+This project is licensed under the MIT License.
 
-To learn more about Next.js, take a look at the following resources:
+---
+For any inquiries or collaborations, reach out via [GitHub](https://github.com/dzajenckauskas/).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
