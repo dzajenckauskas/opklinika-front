@@ -3,6 +3,8 @@
 ## Overview
 Opklinika is a medical services platform designed to connect users with healthcare providers. This frontend project is built using modern web technologies to ensure a seamless user experience and efficient content management.
 
+Website: [www.opklinika.lt](https://www.opklinika.lt)
+
 ## Tech Stack
 - **Frontend:** React, Next.js, TypeScript
 - **Backend:** Strapi CMS (Headless CMS)
